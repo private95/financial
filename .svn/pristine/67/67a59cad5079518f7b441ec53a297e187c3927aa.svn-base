@@ -1,0 +1,16 @@
+$(document).ready(function(){
+	alert()
+	//首页获取数据
+	$.ajax({
+		url:"/adminUser",
+		type:"post",
+		dataType:"json",
+		data:{"userList":"what"},
+		success:function(data){
+			console.log(data)
+		},
+		error:function(err){
+			console.log(err)
+		}
+	})
+})

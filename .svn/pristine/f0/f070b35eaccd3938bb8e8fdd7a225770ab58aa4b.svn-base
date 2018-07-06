@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <title>理财百科</title>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/free_release.css"/>   
+    <link href="cityselect/cityLayout.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!--头部-->
+<header id="header">
+    <!--导航-->
+    <div id="navs"></div>
+    <div id="header_box"></div>
+    <div class="groom">
+        <p>发布信息</p>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li>></li>
+            <li><a href="/free_release">发布信息</a></li>
+        </ul>
+    </div>
+</header>
+    <!--主体-->
+<section id="main">
+    <div id="main_box">
+        <!--1.私募公司-->
+        <div class="private_top">
+            <p>私募公司</p>
+            <a class="company">收起</a>
+        </div>
+        <form id="form1" enctype="multipart/form-data">
+        <div class="private company_jb">
+            <!--1.企业基本信息-->
+                <p class="basic">企业基本信息</p>
+                <table class="btn btn_cancel">
+                    <tr>
+                        <td>
+                             <a>企业全称 ：</a><label for="enterprise"><input name="name" type="text"  id="enterprise"></label>
+                        </td>
+                        <td class="right">
+                             <a>产品数目 ：</a><label for="productsNumber"><input name="productsNumber" type="number" id="enterprise"></label>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                             <a>核心人物 ：</a><label for="personName"><input name="personName" type="text" id="personName"></label>
+                        </td>
+                        <td class="right">
+                       	    <!--  <a>注册资金 ：</a><label for="capitalMoney"><input name="capitalMoney" type="number" style="width: 220px" id="capitalMoney"/> 万元人民币</label> -->
+                       		<a style="margin-left:-5px">注册资金 ：</a><label for="capitalMoney"><input name="capitalMoney" type="number" style="width: 220px" id="capitalMoney"/> 万元人民币</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           	<a>所在地区 ：</a><label for="address"><input name="address" id="citySelect"  type="text"  class="city_input" readonly="readonly"/></label>
+                        </td>
+                        <td class="right">
+                            <a>备案编码 ：</a><label for="recordCode"><input name="recordCode" type="text" id="recordCode"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                       		 <a>成立时间 ：</a><label for="establishTime"><input name="establishTime" type="date"  placeholder="选择日期" id="establishTime"></label>
+                         </td>
+                        <td class="right">
+                             <a>代表作品 ：</a><label for="production"><input name="production"  type="text" id="production"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        <a>投资理念 :</a>&nbsp;&nbsp;<label><textarea name="idea" cols="117" rows="6" id="idea" minlength="10" placeholder="(10/100)字符"></textarea></label>
+                        </td>
+                    </tr>
+                </table>
+
+            <!--2.基金经理-->
+                <p class="basic">基金经理</p>
+            <div id="basic_box">
+                <table class="btn_1 jijinmessage" id="tab_basic">
+                    <tr>
+                        <td>
+                        	<label for="USERname">成员姓名 ：</label>
+                            <input type="text" name="fundManagerName" id="USERnamed"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="intro">成员介绍 ：</label>
+                            <textarea name="idea" cols="117" rows="6" id="intro2" minlength="10" placeholder="(10/100)字符"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input type="button" class="ipt" id="basic_btn" value="+"/>
+            <input type="button" class="ipt2" id="basic_btn2" value="-"/>
+            <!--3.投研团队-->
+            <p class="basic">投研团队</p>
+            <div id="research">
+                <table class="btn_1 tuoyanTerm" id="btn_research">
+                <tr>
+                    <td><label for="name">成员姓名 ：</label>
+                        <input type="text" name="t_username" id="t_username"/>
+                    </td> 
+                </tr>
+                <tr>
+                    <td colspan="2"><label for="linian">成员介绍 ：</label>
+                        <textarea name="idea" cols="117" rows="6" id="linian"  placeholder="(10/100)字符"></textarea>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <input type="button" class="ipt" id="ipt_research" value="+"/>
+            <input type="button" class="ipt" id="ipt_research2" value="-"/>
+        </div>
+        <!--2.旗下产品-->
+            <div class="private_top">
+                <p>旗下产品</p>
+                <a class="those">收起</a>
+            </div>
+            <div class="private btm_those">
+            <!--1.产品基本信息-->
+                <p class="basic">产品基本信息</p>
+                <table class="btn btn_let">
+                    <tr>
+                        <td>产 品 名 称 ：</td>
+                        <td>
+                            <label for="product_name"><input type="text" name="productName" id="product_name"/></label>
+                        </td>
+                        <td>基 金 公 司 ：</td>
+                        <td>
+                            <label for="jijin_campony"><input type="text" name="fundCompany" id="jijin_campony"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>基 金 经 理 ：</td>
+                        <td>
+                            <label for="jijin_manager"><input type="text" name="fundManage" id="jijin_manager"/></label>
+                        </td>
+                        <td>证券经纪商 ：</td>
+                        <td>
+                            <label for="Brokers"><input type="text" name="broker" id="Brokers"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投 资 顾 问 ：</td>
+                        <td>
+                            <label for="Investment_advisor"><input type="text" name="advisor" id="Investment_advisor"/></label>
+                        </td>
+                        <td>期货经纪商：</td>
+                        <td>
+                            <label for="qihuo_brokers"><input type="text" name="futuresBrokers" id="qihuo_brokers" /></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>基金管理人 ：</td>
+                        <td>
+                            <label for="jijin_manager"><input type="text" name="fundManager" id="jijin_manager"/></label>
+                        </td>
+                        <td>认 购 起 点 ：</td>
+                        <td>
+                            <label for="ren_start"><input type="text" name="startPoint" id="ren_statr"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>基金托管人 ：</td>
+                        <td>
+                            <label for="jijin_Custodian"><input type="text" name="custodian" id="jijin_Custodian"/></label>
+                        </td>
+                        <td>追 加 起 点 ：</td>
+                        <td>
+                            <label for="zhui_start"><input type="text" name="addPoint" id="zhui_start"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>外包机构方 ：</td>
+                        <td>
+                            <label for="wai_mechanism"><input type="text" name="agencey" id="mechanism"/></label>
+                        </td>
+                        <td>披 露 标 识 ：</td>
+                        <td>
+                            <label for="pi_mark"><input type="text" name="expression" id="pi_mark"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td>封 &nbsp; 闭 &nbsp; 期 &nbsp;：</td>
+                        <td>
+                            <label for="Closed_period"><input type="text" name="closedPeriod" id="Closed_period"/></label>&nbsp;&nbsp;个月
+                        </td>
+                        <!-- <td>备 案 编 号 ：</td>
+                        <td>
+                            <label for="bei_remark_num"><input type="text"name="recordCode" id="bei_remark_num"/></label>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td>成 立 时 间 ：</td>
+                        <td>
+                            <label for="stance_time"><input type="date"  placeholder="选择日期" name="productEsTime" id="stance_time"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>运 行 状 态 ：</td>
+                        <td>
+                            <label>
+                                <input type="radio" name="runningState" value="1"class="ipt_rad" id="gender1">封闭运行
+                                <input type="radio" name="runningState" value="0" class="ipt_rad" id="gender2" style="margin-left: 25px">开放运行
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>是 否 伞 行 ：</td>
+                        <td>
+                            <input type="radio" name="isNote" value="1"class="ipt_rad" id="gend1">是
+                            <input type="radio" name="isNote" value="0" class="ipt_rad" id="gend2" style="margin-left: 67px">否
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>投 资 策 略 ：</td>
+                        <td colspan="3" class="check">
+                            <label>
+                                <input name="investmentStrategy" value="股票策略" type="radio" class="ipt_rad"/>股票策略
+                               <!--  <input name="investmentStrategy" value="宏观策略" type="radio" class="ipt_rad"/>宏观策略 -->
+                                <input name="investmentStrategy" value="管理期货" type="radio" class="ipt_rad"/>管理期货
+                               <!--  <input name="investmentStrategy" value="事件驱动" type="radio" class="ipt_rad"/>事件驱动
+                                <input name="investmentStrategy" value="相对价值" type="radio" class="ipt_rad"/>相对价值
+                                <input name="investmentStrategy" value="固定收益" type="radio" class="ipt_rad"/>固定收益
+                                <input name="investmentStrategy" value="组合策略" type="radio" class="ipt_rad"/>组合策略
+                                <input name="investmentStrategy" value="复合策略" type="radio" class="ipt_rad"/>复合策略 -->
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>产 品 类 型 ：</td>
+                        <td class="check" colspan="3">
+                            <label>
+                            <input name="productType" value="信托产品" type="radio" class="ipt_rad"/>信托产品
+                            <input name="productType" value="主动发行" type="radio" class="ipt_rad"/>主动发行
+                            <input name="productType" value="公募专户" type="radio" class="ipt_rad"/>公募专户
+                            <input name="productType" value="券商资管" type="radio" class="ipt_rad"/>券商资管
+                            <input name="productType" value="期货资管" type="radio" class="ipt_rad"/>期货资管
+                            <input name="productType" value="有限合伙" type="radio" class="ipt_rad"/>有限合伙
+                            </label>
+                        </td>
+                    </tr>
+                   <!--  <tr>
+                        <td>产 品 星 级 ：</td>
+                        <td class="check_1" colspan="3">
+                            <label>
+                            <input name="level" value="五星级" type="radio" class="ipt_rad"/>五星级
+                            <input name="level" value="四星级" type="radio" class="ipt_rad"/>四星级
+                            <input name="level" value="三星" type="radio" class="ipt_rad"/>三星级
+                            <input name="level" value="两星级" type="radio" class="ipt_rad"/>两星级
+                            <input name="level" value="一星级" type="radio" class="ipt_rad"/>一星级
+                            </label>
+                        </td>
+                    </tr> -->
+                   <!--  <tr>
+                        <td>认 购 起 点 ：</td>
+                        <td>
+                            <label><input name="subscribeStartingPoint" type="number"/></label>万人民币
+                        </td>
+                        <td>追 加 起 点 ：</td>
+                        <td>
+                            <label><input name="additionalStartingPoint" type="number"/></label>万人民币
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td>最 新 净 值 ：</td>
+                        <td>
+                            <label><input name="netValue" type="number"/></label>
+                        </td>
+                        <td>累 计 净 值 ：</td>
+                        <td>
+                            <label><input name="accumulatedNet" type="number"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>今 年 收 益 ：</td>
+                        <td>
+                            <label><input name="profitTisYear" type="number"/></label>%
+                        </td>
+                        <td>累 计 收 益 ：</td>
+                        <td>
+                            <label><input name="accumulatedIncome" type="number"/></label>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>预 &nbsp;&nbsp;警&nbsp; &nbsp;线 ：</td>
+                        <td>
+                            <label><input name="warnigLine" type="text"/></label>
+                        </td>
+                        <td>止 &nbsp;&nbsp;损 &nbsp;&nbsp;线&nbsp;：</td>
+                        <td>
+                            <label><input name="stopLine" type="text"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>初 始 规 模 ：</td>
+                        <td>
+                            <label><input name="beginScale" type="number"/></label>万
+                        </td>
+                        <td>备 案 骗 号 ：</td>
+                        <td>
+                            <label><input name="recordNumber" type="text"/></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>存 续 期 限 ：</td>
+                        <td>
+                            <label><input name="existence" type="number"/></label>个月
+                        </td>
+                        <td>业 绩 报 酬 ：</td>
+                        <td>
+                            <label><input name="reward" type="number"/></label>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>认 购 费 率 ：</td>
+                        <td>
+                            <label><input name="rate" type="number"/></label>%
+                        </td>
+                        <td>赎 回 费 率 ：</td>
+                        <td>
+                            <label><input name="redemptionRate" type="number"/></label>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>赎回费率说明 ：</td>
+                        <td colspan="3">
+                            <textarea name="redemptionRateNote" cols="117" rows="6" placeholder="如：封闭区间不可赎回，封闭期后赎回费为2%"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>开&nbsp; 放 &nbsp;日 ：</td>
+                        <td colspan="3">
+                            <textarea name="openDate" cols="117" rows="6" placeholder="如：每月(自然月)的第十日(自然日)如遇节假日或节假日..."></textarea>
+                        </td>
+                    </tr>
+                </table>
+            <!--2.历史分红-->
+               <!--  <p class="basic">历史分红</p>
+                <div id="bonus">
+                    <table class="btn_2 storyfen" id="btn_bonus">
+                    <tr>
+                        <td style="text-align: left">分 红 日 期 ：
+                            <input type="date" name="dateBonus" placeholder="选择日期">
+                        </td>
+                        <td>
+                            分 红 额 ：<label><input name="moneyBonus" type="text"/></label>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <input type="button" id="ipt_bonus" class="ipt" value="+">
+                 <input type="button" id="ipt_bonus2" class="ipt" value="+"> -->
+            <!--3.历史拆分-->
+               <!--  <p class="basic">历史拆分</p>
+                <div id="split">
+                    <table class="btn_2 storychai" id="btn_split">
+                    <tr>
+                        <td style="text-align: left">拆 分 日 期 ：
+                            <input type="date" name="date" placeholder="选择日期">
+                        </td>
+                        <td>
+                            <label>
+                            拆 分 比 率 ：
+                            <input name="proportionA" type="text" style="width: 70px;height: 19px;"/> ：
+                            <input name="proportionB" type="text" style="width: 70px;height: 19px;"/>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <input type="button" class="ipt" id="ipt_split" value="+">
+                <input type="button" class="ipt" id="ipt_split2" value="-"> -->           
+            <!--5.历史净值-->
+               <!--  <p class="basic">历史净值</p>
+                <div id="worth">
+                    <table class="btn_3 storyjing" id="btn_worth">
+                    <tr>
+                        <td style="width: 110px">单 位 净 值 ：</td>
+                        <td><label><input name="unitNet" type="text"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>累 计 净 值 ：<br/><span>(分红再投资)</span></td>
+                        <td>
+                            <input name="topNetValue" type="text" class="splical"/>
+                        </td>
+                        <td>累 计 净 值 ：<br/><span>(分红不投资)</span></td>
+                        <td><label><input name="topNetValueNO" type="text" class="splical"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>占流通股比率 ：</td>
+                        <td><label><input name="ratio" type="number"/></label>%</td>
+                        <td>变 动 比 率 ：</td>
+                        <td><label><input name="changePercent" type="number"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>截 止 日 期 ：</td>
+                        <td>
+                            <input type="date" name="endTime" placeholder="选择日期">
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <input type="button" class="ipt" id="ipt_worth" value="+">
+                <input type="button" class="ipt" id="ipt_worth2" value="-"> -->
+            <!--6.动态回撤-->
+               <!--  <p class="basic">动态回撤</p>
+                <div id="retracement">
+                    <table class="btn_2 distroy" id="btn_retracement">
+                    <tr>
+                        <td style="text-align: left">回 撤 日 期 ：</td>
+                        <td>
+                            <input type="date" name="retracementDate" placeholder="选择日期">
+                        </td>
+                        <td class="tbs"><input type="number" name="retraPercent" style="width: 296px;"/>%</td>
+                    </tr>
+                </table>
+                </div>
+                <input type="button" class="ipt" id="ipt_retracement" value="+">
+                <input type="button" class="ipt" id="ipt_retracement2" value="-"> -->
+            <!--7.区间收益-->
+                <p class="basic">收 益 率 情 况</p>
+                <div class="tbs_top">
+                    <span style="font-size:14px">收 益 区 间 ：</span>
+                    <input type="date" name="incomeInterval" placeholder="选择日期">
+                    <table class="btn_4">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>本基金</th>
+                                <th>同类平均</th>
+                                <th>沪深300</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>成立以来</td>
+                                <td><label><input name="fundSince" type="text"/></label></td>
+                                <td><label><input name="congenerAverageSince" type="text"/></label></td>
+                                <td><label><input name="shszSince" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>近年以来</td>
+                                <td><label><input name="fundRecentYears" type="text"/></label></td>
+                                <td><label><input name="congenerAverageRecentYears" type="text"/></label></td>
+                                <td><label><input name="shszRecentYears" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>近一个月</td>
+                                <td><label><input name="fundOneMonth" type="text"/></label></td>
+                                <td><label><input name="congenerAverageOneMonth" type="text"/></label></td>
+                                <td><label><input name="shszOneMonth" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>近三个月</td>
+                                <td><label><input name="fundThreeMonth" type="text"/></label></td>
+                                <td><label><input name="congenerAverageThreeMonth" type="text"/></label></td>
+                                <td><label><input name="shszThreeMonth" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近半年</td>
+                                <td><label><input name="fundHalfYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageHalfYear" type="text"/></label></td>
+                                <td><label><input name="shszHalfYear" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近一年</td>
+                                <td><label><input name="fundOneYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageOneYear" type="text"/></label></td>
+                                <td><label><input name="shszOneYear" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近两年</td>
+                                <td><label><input name="fundTwoYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageTwoYear" type="text"/></label></td>
+                                <td><label><input name="shszTwoYear" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近三年</td>
+                                <td><label><input name="fundThreeYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageThreeYear" type="text"/></label></td>
+                                <td><label><input name="shszThreeYear" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近五年</td>
+                                <td><label><input name="fundFiveYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageFiveYear" type="text"/></label></td>
+                                <td><label><input name="shszFiveYear" type="text"/></label></td>
+                            </tr>
+                            <tr>
+                                <td>最近十年</td>
+                                <td><label><input name="fundTenYear" type="text"/></label></td>
+                                <td><label><input name="congenerAverageTenYear" type="text"/></label></td>
+                                <td><label><input name="shszTenYear" type="text"/></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <!--8.收益风险-->
+               <!--  <p class="basic">收益风险</p>
+                <table class="btn_4">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>最近一年</th>
+                        <th>最近两年</th>
+                        <th>最近三年</th>
+                        <th>最近五年</th>
+                        <th>成立以来</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>年华波动率</td>
+                        <td><label><input name="annualVolatilityOneYear" type="number"/></label></td>
+                        <td><label><input name="annualVolatilityTowYear" type="number"/></label></td>
+                        <td><label><input name="annualVolatilityThreeYear" type="number"/></label></td>
+                        <td><label><input name="annualVolatilityFiveYear" type="number"/></label></td>
+                        <td><label><input name="annualVolatilitySince" type="number"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>最大回撤</td>
+                        <td><label><input name="MaxRetracementOneYear" type="text"/></label></td>
+                        <td><label><input name="MaxRetracementTowYear" type="text"/></label></td>
+                        <td><label><input name="MaxRetracementThreeYear" type="text"/></label></td>
+                        <td><label><input name="MaxRetracementFiveYear" type="text"/></label></td>
+                        <td><label><input name="MaxRetracementSince" type="text"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>夏普比率</td>
+                        <td><label><input name="sharpeRatioOneYear" type="number"/></label></td>
+                        <td><label><input name="sharpeRatioTowYear" type="number"/></label></td>
+                        <td><label><input name="sharpeRatioThreeYear" type="number"/></label></td>
+                        <td><label><input name="sharpeRatioFiveYear" type="number"/></label></td>
+                        <td><label><input name="sharpeRatioSince" type="number"/></label></td>
+                    </tr>
+                    <tr>
+                        <td>索提诺比率</td>
+                        <td><label><input name="sortinoRatioOneYear" type="number"/></label></td>
+                        <td><label><input name="sortinoRatioTowYear" type="number"/></label></td>
+                        <td><label><input name="sortinoRatioThreeYear" type="number"/></label></td>
+                        <td><label><input name="sortinoRatioFiveYear" type="number"/></label></td>
+                        <td><label><input name="sortinoRatioSince" type="number"/></label></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="Prompt">
+                    <p>提示 ：</p>
+                     <p>&nbsp;&nbsp;&nbsp;&nbsp;进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，比1越大，越能战胜市场。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，如果为负数，则反映基金在下跌市场里能取得正收益。</p>
+                </div> -->
+            <!--9.融智评级-->
+                <!-- <p class="basic">融智评级</p>
+                <table class="btn_4 btn_slt">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>一年</th>
+                        <th>两年</th>
+                        <th>三年</th>
+                        <th>五年</th>
+                        <th>十年</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>融智星级</td>
+                            <td>
+                                <select>
+                                    <option name="starOne" value="高">高</option>
+                                    <option name="starOne" value="偏高">偏高</option>
+                                    <option name="starOne" value="中">中</option>
+                                    <option name="starOne" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="starTow" value="高">高</option>
+                                    <option name="starTow" value="偏高">偏高</option>
+                                    <option name="starTow" value="中">中</option>
+                                    <option name="starTow" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="starThree" value="高">高</option>
+                                    <option name="starThree" value="偏高">偏高</option>
+                                    <option name="starThree" value="中">中</option>
+                                    <option name="starThree" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="starFive" value="高">高</option>
+                                    <option name="starFive" value="偏高">偏高</option>
+                                    <option name="starFive" value="中">中</option>
+                                    <option name="starFive" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="starTen" value="高">高</option>
+                                    <option name="starTen" value="偏高">偏高</option>
+                                    <option name="starTen" value="中">中</option>
+                                    <option name="starTen" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>收益等级</td>
+                            <td>
+                                <select>
+                                    <option name="incomeLevelOne" value="高">高</option>
+                                    <option name="incomeLevelOne" value="偏高">偏高</option>
+                                    <option name="incomeLevelOne" value="中">中</option>
+                                    <option name="incomeLevelOne" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="incomeLevelTow" value="高">高</option>
+                                    <option name="incomeLevelTow" value="偏高">偏高</option>
+                                    <option name="incomeLevelTow" value="中">中</option>
+                                    <option name="incomeLevelTow" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="incomeLevelThree" value="高">高</option>
+                                    <option name="incomeLevelThree" value="偏高">偏高</option>
+                                    <option name="incomeLevelThree" value="中">中</option>
+                                    <option name="incomeLevelThree" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="incomeLevelFive" value="高">高</option>
+                                    <option name="incomeLevelFive" value="偏高">偏高</option>
+                                    <option name="incomeLevelFive" value="中">中</option>
+                                    <option name="incomeLevelFive" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="incomeLevelTen" value="高">高</option>
+                                    <option name="incomeLevelTen" value="偏高">偏高</option>
+                                    <option name="incomeLevelTen" value="中">中</option>
+                                    <option name="incomeLevelTen" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>风险等级</td>
+                            <td>
+                                <select>
+                                    <option name="riskLevelOne" value="高">高</option>
+                                    <option name="riskLevelOne" value="偏高">偏高</option>
+                                    <option name="riskLevelOne" value="中">中</option>
+                                    <option name="riskLevelOne" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="riskLevelTow" value="高">高</option>
+                                    <option name="riskLevelTow" value="偏高">偏高</option>
+                                    <option name="riskLevelTow" value="中">中</option>
+                                    <option name="riskLevelTow" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="riskLevelThree" value="高">高</option>
+                                    <option name="riskLevelThree" value="偏高">偏高</option>
+                                    <option name="riskLevelThree" value="中">中</option>
+                                    <option name="riskLevelThree" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="riskLevelFive" value="高">高</option>
+                                    <option name="riskLevelFive" value="偏高">偏高</option>
+                                    <option name="riskLevelFive" value="中">中</option>
+                                    <option name="riskLevelFive" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select>
+                                    <option name="riskLevelTen" value="高">高</option>
+                                    <option name="riskLevelTen" value="偏高">偏高</option>
+                                    <option name="riskLevelTen" value="中">中</option>
+                                    <option name="riskLevelTen" value="偏低">偏低</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="Prompt">
+                    <p>提示 ：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;1.进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，比1越大，越能战胜市场。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;2.进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，如果为负数，则反映基金在下跌市场里能取得正收益。</p>
+                </div> -->
+            <!--10.进攻能力-->
+               <!--  <p class="basic">进攻能力</p>
+                <table class="btn_4">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>最近一年</th>
+                        <th>最近两年</th>
+                        <th>最近三年</th>
+                        <th>最近五年</th>
+                        <th>成立以来</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>同类平均</td>
+                            <td>
+                                <label><input name="attackCongenerAverageOne" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackCongenerAverageTow" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackCongenerAverageThree" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackCongenerAverageFive" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackCongenerAverageSince" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>本基金</td>
+                            <td>
+                                <label><input name="attackFundOne" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackFundTow" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackFundThree" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackFundFive" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                            <td>
+                                <label><input name="attackFundSince" type="number"/></label>
+                                <span>%</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            <!--11.防守能力-->
+               <!--  <p class="basic">防守能力</p>
+                <table class="btn_4">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>最近一年</th>
+                        <th>最近两年</th>
+                        <th>最近三年</th>
+                        <th>最近五年</th>
+                        <th>成立以来</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>同类平均</td>
+                        <td>
+                            <label><input name="defenseCongenerAverageOne" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseCongenerAverageTow" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseCongenerAverageThree" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseCongenerAverageFive" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseCongenerAverageSince" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>本基金</td>
+                        <td>
+                            <label><input name="defenseFundOne" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseFundTow" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseFundThree" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseFundFive" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                        <td>
+                            <label><input name="defenseFundSince" type="number"/></label>
+                            <span>%</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table> -->
+ <!--                <div class="Prompt">
+                    <p>提示 ：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;1.进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，比1越大，越能战胜市场。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;2.进攻能力以上行捕获率表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，如果为负数，则反映基金在下跌市场里能取得正收益。</p>
+                </div> -->
+        </div>
+            <!--<input type="button" class="ipt" value="+"/>-->
+        <ul id="sub_reset">
+                <li>
+                    <input type="text" value="提交" id="submit" readonly/>
+                </li>
+                <li>
+                    <input type="reset" value="重置"/>
+                </li>
+            </ul>
+    </form>
+    </div>
+</section>
+    <!--底部-->
+<footer id="foot"></footer>
+</body>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/common.js"></script>
+<script src="cityselect/cityselect.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/free_release.js"></script>
+</html>

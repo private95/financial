@@ -1,0 +1,134 @@
+package com.iparhan.financial.entity;
+
+public class CompanyTwo {
+	private int id;
+	private String name; // 企业名称
+	private String productsNumber; // 产品数目
+	private String personName; // 产品数目
+	private String capitalMoney; // 投资资金 万元为单位
+	private String address; // 所在地区
+	private String recordCode; // 备案编码
+	private String establishTime; // 成立日期
+	private String production; // 代表作品
+	private String idea_company; // 投资理念
+	private int tuser_id;// 用户id,查询我的发布
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public CompanyTwo(int id, String name, String productsNumber, String personName, String capitalMoney,
+			String address, String recordCode, String establishTime, String production, String idea_company,
+			int tuser_id) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.productsNumber = productsNumber;
+		this.personName = personName;
+		this.capitalMoney = capitalMoney;
+		this.address = address;
+		this.recordCode = recordCode;
+		this.establishTime = establishTime;
+		this.production = production;
+		this.idea_company = idea_company;
+		this.tuser_id = tuser_id;
+	}
+
+	public int getTuser_id() {
+		return tuser_id;
+	}
+
+	public void setTuser_id(int tuser_id) {
+		this.tuser_id = tuser_id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getProductsNumber() {
+		return productsNumber;
+	}
+
+	public void setProductsNumber(String productsNumber) {
+		this.productsNumber = productsNumber;
+	}
+
+	public String getPersonName() {
+		return personName;
+	}
+
+	public void setPersonName(String personName) {
+		this.personName = personName;
+	}
+
+	public String getCapitalMoney() {
+		return capitalMoney;
+	}
+
+	public void setCapitalMoney(String capitalMoney) {
+		this.capitalMoney = capitalMoney;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getRecordCode() {
+		return recordCode;
+	}
+
+	public void setRecordCode(String recordCode) {
+		this.recordCode = recordCode;
+	}
+
+	public String getEstablishTime() {
+		return establishTime;
+	}
+
+	public void setEstablishTime(String establishTime) {
+		this.establishTime = establishTime;
+	}
+
+	public String getProduction() {
+		return production;
+	}
+
+	public void setProduction(String production) {
+		this.production = production;
+	}
+
+	public String getIdea_company() {
+		return idea_company;
+	}
+
+	public void setIdea_company(String idea_company) {
+		this.idea_company = idea_company;
+	}
+
+	@Override
+	public String toString() {
+		return "CompanyTwo [id=" + id + ", name=" + name + ", productsNumber=" + productsNumber + ", personName="
+				+ personName + ", capitalMoney=" + capitalMoney + ", address=" + address + ", recordCode=" + recordCode
+				+ ", establishTime=" + establishTime + ", production=" + production + ", idea_company=" + idea_company
+				+ ", tuser_id=" + tuser_id + "]";
+	}
+
+	public CompanyTwo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}

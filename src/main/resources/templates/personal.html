@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>理财百科</title>
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/personal.css" />
+<link rel="stylesheet" href="css/zxf_page.css" />
+</head>
+
+<body>
+	<header id="header">
+		<!--导航-->
+		<div id="navs"></div>
+		<div id="header_box"></div>
+		<div class="groom">
+			<p>我的资料</p>
+			<ul>
+				<li><a href="/">首页</a></li>
+				<li>></li>
+				<li><a href="#">我的资料</a></li>
+			</ul>
+		</div>
+	</header>
+	<section id="main_box">
+		<!--右侧-->
+		<div id="rt_main">
+			<ul class="clear1">
+				<li class="active" id="ziliao"><a data-toggle="tab"
+					href="#datum">我的资料</a></li>
+				<li id="shocang"><a data-toggle="tab" href="#collection">
+						我的收藏 </a></li>
+				<li id="fabu"><a data-toggle="tab" href="#release">我的发布 </a></li>
+			</ul>
+		</div>
+		<!--左侧-->
+		<div id="lt_main">
+			<!--1.我的资料 -->
+			<div id="datum" class="ltn show">
+				<ul class="datum_nav">
+					<li class="slt"><a href="#content1">账号资料</a></li>
+					<li><a href="#content2">身份资料</a></li>
+					<li><a href="#content3" class="fx">风险评测</a></li>
+					<li><a href="#content4">账号绑定</a></li>
+					<li><a href="#content5">修改密码</a></li>
+				</ul>
+				<div class="datum_list">
+					<!--账号资料-->
+					<ul id="content1" class="zl_list active">
+						<li><p>账号资料</p></li>
+						<li><span>用户名:</span><input type="text" id="usernamed"
+							placeholder="请输入用户名" name="username" /></li>
+						<li><span>邮箱地址:</span><input type="text" id="emails"
+							placeholder="请输入邮件" name="email" /></li>
+						<li><span>通讯地址:</span> <textarea class="tet" name="address"
+								id="addressed" placeholder="请填写通讯地址"></textarea></li>
+						<li>
+							<button type="submit" onClick="account();">保存</button>
+						</li>
+					</ul>
+					<!--身份资料-->
+					<ul id="content2" class="zl_list">
+						<li><p>身份资料</p></li>
+						<li><span>真实姓名 ：</span><input type="text" id="realName"
+							placeholder="请输入真实姓名" name="TureName" /></li>
+						<li><span>证件类型 ：</span> <input type="text" id="idType"
+							placeholder="请输入证件类型" name="IdCardType" value="身份证"
+							readonly="readonly" /> <!-- <select class="slt" name="" id="idType" name="IdCardType">
+                                    <option value="">身份证</option>
+                                </select> --></li>
+						<li><span>证 件 号&nbsp; ：</span> <input type="text"
+							id="idNumber" placeholder="请输入证件号" name="IdCard" /></li>
+						<li>
+							<button type="submit" onClick="idCard();">提交认证</button>
+						</li>
+					</ul>
+					<!--风险评测-->
+					<div id="content3" class="zl_list">
+						<h2>风险评测</h2>
+						<div class="evaResult">
+							<span>您已完成投资风险评测，结果为：</span><em class="result-type">稳健型投资人</em>
+						</div>
+						<div id="evaChart" class="evaChart"></div>
+						<a class="evaBtn_again" href="/evaluation">再次评测</a>
+						<div class="suggestTipAgain">本年最多可再重评3次</div>
+					</div>
+					<!--绑定账号-->
+					<ul id="content4" class="zl_list">
+						<li><p>绑定账号</p></li>
+						<li><span>身份证号 ：</span> <input type="text"
+							placeholder="请输入您的证件号" id="BindIDcard" name="BindIDcard"
+							maxlength="18" /></li>
+
+						<li><span>登录密码 ：</span> <input type="password"
+							placeholder="请输入6~12位有效密码" id="BindPassword" name="BindPassword"
+							maxlength="12" /></li>
+						<!--  <li>
+                                <span>确认新密码 ：</span>
+                                <input type="password" placeholder="请输入6~12位有效密码" id="BindTurePwd" name="BindTurePwd" maxlength="12"/>
+                            </li> -->
+						<li>
+							<button type="submit" onClick="accountBind();">提交绑定</button>
+						</li>
+					</ul>
+					<!--修改密码-->
+				 	<ul id="content5" class="zl_list">
+						<li><p>修改密码</p></li>
+						<li><span>当前密码 ：</span><input type="password"
+							placeholder="请确认当前密码" id="NowPwd" name="NowPwd" /></li>
+
+						<li><span>新密码 ：</span> <input type="password"
+							placeholder="请输入6~12位有效密码" id="NewPwd" name="NewPwd" /></li>
+						<li><span>确认新密码 ：</span> <input type="password"
+							placeholder="请输入6~12位有效密码" id="NewTrePwd" name="NewTrePwd"
+							maxlength="12" /></li>
+						<li>
+							<button type="submit" onclick="ChangePwd();">修改密码</button>
+						</li>
+					</ul> 
+				</div>
+			</div>
+			<!--2.我的收藏-->
+			<div id="collection" class="ltn">
+				<p>
+					<span>自选私募</span>
+				</p>
+				<table class="tbe  table  table-responsive">
+					<thead>
+						<tr>
+							<th>基金简称</th>
+							<th>投资策略</th>
+							<th>最近净值</th>
+							<th>累计净值</th>
+							<th>近一个月%</th>
+							<th>累计%</th>
+							<th>年化%</th>
+							<th>一年评级</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody class="table1">
+						<tr>
+							<td>保银-中国价值</td>
+							<td>股票策略</td>
+							<td>1.6160</td>
+							<td>2.21%</td>
+							<td>61.60%</td>
+							<td>61.60%</td>
+							<td>19.07%</td>
+							<td>****</td>
+							<td><a href="#">删除</a></td>
+						</tr>
+						<tr>
+							<td>保银-中国价值</td>
+							<td>股票策略</td>
+							<td>1.6160</td>
+							<td>2.21%</td>
+							<td>61.60%</td>
+							<td>61.60%</td>
+							<td>19.07%</td>
+							<td>****</td>
+							<td><a href="#">删除</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--3.我的发布-->
+			<div id="release" class="ltn">
+				<p>
+					<span>我的发布</span>
+				</p>
+				<table class="tbe">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>企业名称</th>
+							<th>产品名称</th>
+							<th>成立日期</th>
+							<th>发布状态</th>
+							<th colspan="2">操作</th>
+						</tr>
+					</thead>
+					<tbody class="table2">
+					</tbody>
+				</table>
+				<!-- 分页 -->
+				<div class="zxf_pagediv"
+					style="margin-bottom: 50px; margin-top: 50px;"></div>
+			</div>
+		</div>
+	</section>
+	<!--底部-->
+	<br />
+	<br />
+	<br />
+	<br />
+	<!-- template模板 -->
+	<script id="tpl" type="text/x-handlebars-template">
+			
+				{{#each this}}
+					<tr>
+						<td>{{id}}</td>
+						<td>{{name}}</td>
+						<td>{{production}}</td>
+						<td>{{establishTime}}</td>
+						<td>--</td>
+						<td><button class="btn btn-primary deletes">删除</button></td>
+					</tr>
+				{{/each}}
+	</script>
+
+	<footer id="foot"></footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/zxf_page.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="js/echarts.common.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/common.js"></script>
+<script src="js/personal.js"></script>
+<script>
+
+/* var orgno = '${account.id}';
+alert(orgno) */
+</script>
+</html>

@@ -1,0 +1,85 @@
+
+#main>.main_page .page {
+    width: 380px;
+    margin: 30px auto;
+    border: 1px solid #EBEBEB;
+    box-sizing: border-box;
+    min-height: 480px;
+}
+
+#main>.main_page .reset p {
+    text-align: center;
+    height: 65px;
+    line-height: 65px;
+    font-size: 18px;
+}
+#main>.main_page .reset .sign_in {
+    padding-top: 0;
+}
+#main>.main_page .sign_in {
+    padding: 40px;
+}
+#main .sign_in .ipt {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    line-height: 50px;
+    font-size: 14px;
+    outline: none;
+    padding: 5px 0 5px 35px;
+    border: 1px solid #e0e3ec;
+    box-shadow: inset 0 0 0 rgba(0,0,0,.075);
+    background: url(../images/login_page/touxiang1.png) no-repeat 10px center scroll;
+}
+#main>.main_page .register .btn-primary {
+    width: 88px;
+    height: 50px;
+    background-color: #0FAEFF;
+    border: 0;
+    color: #ffffff;
+    outline: none;
+}
+#main>.main_page .register_1 {
+    width: 210px;
+    height: 50px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    line-height: 50px;
+    font-size: 14px;
+    padding: 5px 0 5px 15px;
+    border: 1px solid #e0e3ec;
+    box-shadow: inset 0 0 0 rgba(0, 0, 0, .075);
+}
+#main>.main_page .register {
+    display: flex;
+}
+#main>.main_page .sign_in .ipt_ps {
+    background: url(../images/login_page/mima.png) no-repeat 10px center scroll;
+}
+#main>.main_page .reset_1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#main>.main_page .reset_1 a {
+    font-size: 14px;
+    color: #0FAEFF;
+}
+#main>.main_page .sbt {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: #0FAEFF;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+
+
+#main>.main_bac {
+    width: 100%;
+    height: 249px;
+    background-image: url(../images/login_page/beijing.png);
+}

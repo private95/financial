@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8"></meta>
+<title>理财百科</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link rel="shortcut icon" href="logo.ico">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/zxf_page.css" />
+<script type="text/javascript">
+		function Seach(){
+			window.location.href="/special_inquiry?SearchKey="+$("#Search").val();;		 
+		}
+</script>
+</head>
+<body>
+	<header id="top">
+		<div class="top-logo">
+			<div class="top-main clear">
+				<span class="logo"><a><img src="/images/logo.png" /></a></span>
+				<div id="navs"></div>
+			</div>
+			<div id="search">
+				<p>您 最 好 的 投 资 咨 询 平 台</p>
+				<ul class="Search_default">
+					<!-- <li><a class="active" href="#">全部</a></li> 
+					<li><a href="#">基金名称</a></li>
+					<li><a href="#">基金公司</a></li>
+					<li><a href="#">最新净值</a></li>
+					<li><a href="#">累计收益</a></li>
+					<li><a href="#">年化收益</a></li>
+					<li><a href="#">风险等级</a></li>  -->
+				</ul>
+				<div class="search-main">
+
+					<!-- <div class="search_classification">
+						<span class="span_no"> <span class="all_text">全部</span> <em
+							class="bg_pic"></em>
+						</span>
+						<ul class="classificationlist">
+							<li>全部</li>
+							<li>公司</li>
+							<li>基金</li>
+						</ul>
+					</div> -->
+					<div class="Search_input_parent">
+						<input type="search" placeholder="请输入产品 / 经理 / 公司等关键词" class="searchInput"  autocomplete="on" id="Search"/>
+						<a href="#" id="TurnRounds" onclick="Seach();"></a>
+						<!-- <div class="HistorySearch">
+							<ul id="histlory"></ul>
+						</div> -->
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="main">
+		<!--理财产品-->
+		<div id="financing">
+			<p class="financial">为您精选理财产品</p>
+			<div class="Recommend">
+				<p>
+					<span>产品<br />推荐
+					</span>
+				</p>
+				<div class="fund">
+					<div>
+						<p class="company_name1">保银紫荆怒放私募资金</p>
+						<ul>
+						
+							<li>
+								<p class="one_shouyi">57.08%</p> <span>累计收益</span>
+							</li>
+
+							<li>
+								<p class="one_jingzhi">1.5769</p> <span>累计净值</span>
+							</li>
+
+							<li>
+								<p class="one_celue">股票策略</p> <span>投资策略</span>
+							</li>
+							<li ><a href="#" id="abc">了解详情 </a>
+							</li>
+							
+						</ul>
+					</div>
+					<div class="fund_bottom">
+						<p class="company_name2">保银紫荆怒放私募资金</p>
+						<ul>
+							<li>
+								<p class="two_shouyi">57.08%</p> <span>累计收益</span>
+							</li>
+
+							<li>
+								<p class="two_jingzhi">1.5769</p> <span>累计净值</span>
+							</li>
+
+							<li>
+								<p class="two_celue">股票策略</p> <span>投资策略</span>
+							</li>
+							<li><a href="/details"> 了解详情 </a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="More">
+				<a class="main_more" href="/recommend_march">更多推荐</a>
+			</div>
+		</div>
+		<!--私募产品排行-->
+		<div id="Ranking">
+			<p>私募产品排行</p>
+			<table class="btns table table-striped table-responsive">
+				<thead>
+					<tr>
+						<th>排名</th>
+						<th>基金公司</th>
+						<th>基金简称</th>
+						<th>最新净值</th>
+						<th>累计%</th>
+						<th>近一个月%</th>
+						<th>年化%</th>
+						<th>夏普比率</th>
+						<th>一年评级</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- <tr>
+	                    <td>1</td>
+	                    <td>中海信托-明河</td>
+	                    <td>星河投资</td>
+	                    <td>股票策略</td>
+	                    <td>2.1190</td>
+	                    <td>111.90%</td>
+	                    <td>83.46%</td>
+	                    <td>29.90%</td>
+	                    <td>1.21</td>
+	                    <td>*****</td>
+	                    <td>
+	                        <a href="/ranking_offering">了解详情</a>
+	                    </td>
+               		 </tr> -->
+				</tbody>
+			</table>
+			<div class="zxf_pagediv" style="margin-bottom: 20px"></div>
+			<div class="More">
+				<a class="main_more" href="/ranking_offering">查看更多排行</a>
+			</div>
+		</div>
+		<!--更多专项查询-->
+		<!-- <div id="special">
+			<p>为您提供更多的专项查询</p>
+			<ul class="query">
+				<li class="Company"><a href="/special_inquiry?id=6&type=2"> <span></span>
+						<p>企业名称</p>
+				</a></li>
+				<li class="Company"><a href="/special_inquiry?id=7&type=2"> <span></span>
+						<p>法人 / 股东</p>
+				</a></li>
+				<li class="Company"><a href="/special_inquiry?id=8&type=2"> <span></span>
+						<p>产品代表</p>
+				</a></li>
+				<li class="fund"><a href="/special_inquiry?id=9&type=2"> <span></span>
+						<p>累计收益</p>
+				</a></li>
+			</ul>
+			<ul class="query_1">
+				<li class="Company"><a href="/special_inquiry?id=10&type=2"> <span></span>
+						<p>成立日期</p>
+				</a></li>
+				<li class="fund"><a href="/special_inquiry?id=5&type=1"> <span></span>
+						<p>风险等级</p>
+				</a></li>
+				<li class="fund"><a href="/special_inquiry?id=11&type=1"> <span></span>
+						<p>投资策略</p>
+				</a></li>
+			</ul>
+			<div class="More_check">
+				<a class="main_more" href="/special_inquiry">更多专项查询</a>
+			</div>
+		</div> -->
+		<!--最新企业信息-->
+		<div id="enterprise">
+			<p>为您提供最新企业信息</p>
+			<ul class="enterprise_list">
+				<!-- <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#">深圳英大资本管理有限公司</a>
+                        </li>
+                        <li><span>成立日期 : 2015-09-15</span></li>
+                        <li><span>法人代表 : 张传良</span></li>
+                        <li><span>注册资本 : 2000万人民币</span></li>
+                        <li><span>注册地区 : 广东</span></li>
+                    </ul>
+                </li> -->
+			</ul>
+			<div class="cha_enterprise">
+				<a class="main_more" href="/enterprise_information">查看更多企业信息</a>
+			</div>
+		</div>
+	</section>
+	<!--回到顶部 -->
+	<div class="gotop"></div>
+	<!-- template模板 -->
+	<script id="tpl" type="text/x-handlebars-template">
+			
+				{{#each this}}
+					<tr>
+						<td>{{id}}</td>
+						<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
+						<td>{{fundCompany}}</td>
+						<td>{{nav}}</td>
+						<td class="red">{{cumulative_nav}}</td>
+						<td class="red" id="type">{{topOneMonth}}</td>
+						<td class="red">{{annualized}}</td>
+						<td class="red">{{sharpeatio}}</td>
+						<td>{{oneyearrating}}</td>
+						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
+					</tr>
+				{{/each}}
+	</script>
+	<!--底部-->
+	<footer id="foot"></footer>
+
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="js/zxf_page.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/special_inquiry.js"></script>
+</html>

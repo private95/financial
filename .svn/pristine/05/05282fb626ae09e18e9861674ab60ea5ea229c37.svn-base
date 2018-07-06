@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" >
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/special_inquiry.css"/>
+    <link rel="stylesheet" href="css/zxf_page.css"/>
+</head>
+<body>
+    <header id="header">
+        <!--导航-->
+        <div id="navs"></div>
+        
+       <div id="header_box2">
+       		<div class="top">
+			    <div id="top-main">
+			        <!--閸ョ偓鐖�-->
+			        <span class="logo"><a href="/"><img src="/images/logo.png"/></a></span>
+			        <!--鐎佃壈鍩呮稉搴㈡偝缁便垺顢�-->
+			        <div class="search">
+			            <div class="search-main">
+			                <input type="text" placeholder="请输入产品 / 经理 / 公司等关键词" id="SearchInputs" class="pig"/>
+			                <a id="SearchButtton" name="" ></a>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+       </div>
+        <div class="groom">
+            <p>专项查询</p>
+            <ul>
+                <li><a href="/">首页</a></li>
+                <li>></li>
+                <li><a href="/release_information">专项查询</a></li>
+            </ul>
+        </div>
+        <a class="TabClick"></a>
+    </header>
+<section id="main">
+    <div id="main_title">
+        <ul class="nav-main">
+            <li class="in_click jijin">
+                <a href="#main_box" id="jijin_part">基金</a>
+            </li>
+            <li class="qiye">
+                <a href="#main_part" id="company_part">企业信息</a>
+            </li>
+        </ul>
+    </div>
+    <!--1.基金-->
+    <div id="main_box" class="show">
+        <div class="list_top">
+            <p class="parent">
+                <span>已选条件 ：</span>
+                <!-- <span class="bt_click">基金名称<a class="delete-btn">x</a></span> -->
+            </p>
+            <ul>
+                <li>
+                    <span>搜索范围 ：</span>
+                </li>
+                <li class="list-item">
+                    <span>基金简称</span>
+                </li>
+                <li class="list-item">
+                    <span>基金公司</span>
+                </li>
+                <li class="list-item">
+                    <span>投资策略</span>
+                </li>
+               <!--  <li class="list-item">
+                    <span>最新净值</span>
+                </li>
+                <li class="list-item">
+                    <span>年化收益</span>
+                </li>
+                <li class="list-item">
+                    <span>风险等级</span>
+                </li> -->
+            </ul>
+        </div>
+        <!--数据列表-->
+        <div class="jijinData">
+        	 <table class="tbe table table-striped table-responsive">
+	            <thead>
+	                <tr>	                	
+	                    <th>基金简称</th>
+	                    <th>基金公司</th>
+	                    <th>投资策略</th>
+	                    <th>最新净值</th>
+	                    <th>累计%</th>
+	                    <th>近一个月%</th>
+	                    <th>年化%</th>
+	                    <th>夏普比率</th>
+	                    <th>操作</th>
+	                </tr>
+	            </thead>
+	            <tbody id="tbody1">
+	            </tbody>
+	        </table>
+	         <!-- template模板 -->
+			<script id="tpl2" type="text/x-handlebars-template">
+			
+				{{#each this}}
+					<tr>
+						<td>{{fund_shortName}}</td>
+						<td>{{fundCompany}}</td>
+						<td>{{nav}}</td>
+						<td>{{cumulative_nav}}</td>
+						<td class="red">{{topOneMonth}}</td>
+						<td>{{price_date}}</td>
+						<td><a href="#">了解详情</a></td>
+					</tr>
+				{{/each}}
+			</script>
+			<!-- 分页 -->
+			<div class="zxf_pagediv" style="margin-bottom:50px"></div> 
+        </div>
+       <div class="jinjin_NotFound"></div>
+    </div>
+   
+    <!--2.企业信息-->
+    <div id="main_part">
+        <div class="list_top">
+            <p class="parent2">
+                <span>已选条件 ：</span>
+               <!--  <span class="bt_click">基金名称<a class="delete-btn">x</a></span> -->
+            </p>
+            <ul>
+                <li>
+                    <span>搜索范围 ：</span>
+                </li>
+                <li class="list_item2">
+                    <span>企业名称</span>
+                </li>
+                <li class="list_item2">
+                    <span>核心人物</span>
+                </li>
+                <li class="list_item2">
+                    <span>代表产品</span>
+                </li>
+                <li class="list_item2">
+                    <span>产品数</span>
+                </li>
+                <li class="list_item2">
+                    <span>成立日期</span>
+                </li>
+                <li class="list_item2">
+                    <span>累计收益</span>
+                </li>
+            </ul>
+        </div>
+        <div class="Datalist">
+        	 <table class="tbe table table-striped table-responsive ">
+	            <thead>
+	            <tr>
+	            	<th>编号</th>
+	                <th>企业名称</th>
+	                <th>核心人物</th>
+	                <th>产品数</th>
+	                <th>成立日期</th>
+	                <th>累计收益</th>
+	                <th>代表产品</th>
+	                <th>操作</th>
+	            </tr>
+	            </thead>
+	            <tbody id="tbody2">
+	            </tbody>
+	        </table>
+	         <!-- template模板 -->
+			<script id="tpl" type="text/x-handlebars-template">
+			
+				{{#each this}}
+					<tr>
+						<td>{{id}}</td>
+						<td>{{name}}</td>
+						<td>{{personName}}</td>
+						<td>{{product_count}}</td>
+						<td>{{establishTime}}</td>
+						<td class="red">{{cumulative_nav}}</td>
+						<td>{{production}}</td>
+						<td><a href="/companyDetail">了解详情</a></td>
+					</tr>
+				{{/each}}
+			</script>
+			<!-- 分页 -->
+			<div class="zxf_pagediv" style="margin-bottom:50px"></div>
+			<div class="loading"><img src="/images/loading2.gif"/></div>
+        </div>
+       	<div class="NotFoundData">
+       		
+       	</div>
+    </div>
+   
+</section>
+    <footer id="foot"></footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/common.js"></script>
+<script src="js/zxf_page.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/special_inquiry.js"></script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" >
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/recommend.css"/>
+    <link rel="stylesheet" href="css/zxf_page.css"/>
+</head>
+<body>
+<header id="header">
+    <!--导航-->
+    <div id="navs"></div>
+    <div id="header_box"></div>
+    <div class="groom">
+        <p>私募推荐</p>
+        <ul>
+            <li><a href="">首页</a></li>
+            <li>></li>
+            <li><a href="#">私募推荐</a></li>
+        </ul>
+    </div>
+</header>
+<section id="main">
+    <div class="nav-box">
+        <ul class="nav-main">
+            <li>
+                <a href="/recommend_march">私募基金排名</a>
+            </li>
+            <li>
+                <a class="in_click" href="#">FOF基金</a>
+            </li>
+            <!-- <li>
+                <a href="/recommend_currency">货币基金</a>
+            </li>
+            <li>
+                <a href="/recommend_stock">股权</a>
+            </li> -->
+        </ul>
+    </div>
+    <div id="list">
+        <table class="tbn table table-responsive">
+            <thead>
+          			 <tr>
+						<th>排名</th>
+						<th>基金名称</th>
+						<th>基金公司</th>
+						<th>投资策略</th>
+						<th>最初净值</th>
+						<th>累计</th>
+						<th>最近两年</th>
+						<th>年化</th>
+						<th>夏普利率</th>
+						<th>一年评级</th>
+						<th>操作</th>
+					</tr>
+            </thead>
+            <tbody>
+           <!--  <tr>
+                <td>展鸿稳进1号一期私募</td>
+                <td>1.0310</td>
+                <td>2016-01-01</td>
+                <td>3.10%</td>
+                <td>2.67</td>
+                <td>3.18</td>
+                <td>陈方府</td>
+                <td>展鸿投资</td>
+                <td>
+                    <a href="#">了解详情</a>
+                </td>
+            </tr> -->            
+            </tbody>
+        </table>
+    </div>
+</section>
+  <!-- template模板 -->
+	<script id="tpl" type="text/x-handlebars-template">			
+				{{#each this}}
+					<tr>
+						<td>{{id}}</td>
+						<td><a href="/details" class="ClearAstyle">{{fund_short_name}}</a></td>
+						<td class="red">{{newest_nav}}</td>
+						<td>{{estabilishTime}}</td>
+						<td class="red">{{thisYear_nav}}%</td>
+						<td class="red">{{top_rate}}%</td>
+						<td>{{fundManager}}</td>
+						<td>{{fundCompany}}</td>
+						<td><a href="/details">了解详情</a></td>
+					</tr>
+				{{/each}}
+	</script>
+	<!-- 分页 -->
+	<div class="zxf_pagediv" style="margin-bottom:20px;margin-top:20px;"></div>
+	<div class="loading"><img src="/images/loading2.gif"/></div>
+<footer id="foot">
+</footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="js/zxf_page.js"></script>
+<script src="js/common.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/recommend_fof.js"></script>
+</html>

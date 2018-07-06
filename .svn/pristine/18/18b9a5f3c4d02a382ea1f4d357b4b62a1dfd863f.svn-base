@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/evaluation.css"/>
+</head>
+<body>
+<!--头部-->
+<header id="header">
+    <!--导航-->
+    <div id="navs"></div>
+    <div id="header_box"></div>
+    <div class="groom">
+        <p>风险评测</p>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li>&gt</li>
+            <li><a href="personal?tag=0">我的资料</a></li>
+            <li>和</li>
+            <li><a href="personal?tag=0">风险评测</a></li>
+        </ul>
+    </div>
+</header>
+<!--主体-->
+<section id="main_box">
+    <ul id="main_list">
+        <li>
+            <ul>
+                <li>
+                    <p>1、您是否确认是为自己购买的私募基金产品？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="是" name="1"/>是
+                    </label>
+                    <label>
+                        <input type="radio" value="否" name="1"/>否
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>2、您是否确认金融资产不低于300万元？
+                        （金融资产包括银行存款、股票、债券、基金份额、资产管理计划、
+                        银行理财产品、信托计划、保险产品、期货权益等)
+                    </p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="是" name="2"/>是
+                    </label>
+                    <label>
+                        <input type="radio" value="否" name="2"/>否
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>3、您是否确认最近三年个人年均收入不低于50万元？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="是" name="3"/>是
+                    </label>
+                    <label>
+                        <input type="radio" value="否" name="3"/>否
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>4、您的年龄在以下哪个范围内？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="30岁以下" name="4"/>A.30岁以下
+                    </label>
+                    <label>
+                        <input type="radio" value="31岁至40岁" name="4"/>B.31岁至40岁
+                    </label>
+                    <label>
+                        <input type="radio" value="41岁至50岁" name="4"/>C.41岁至50岁
+                    </label>
+                    <label>
+                        <input type="radio" value="51岁至60岁" name="4"/>D.51岁至60岁
+                    </label>
+                    <label>
+                        <input type="radio" value="61岁以上" name="4"/>E.61岁以上
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>5、您的学历？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="硕士及以上" name="5"/>A.硕士及以上
+                    </label>
+                    <label>
+                        <input type="radio" value="本科" name="5"/>B.本科
+                    </label>
+                    <label>
+                        <input type="radio" value="中专或大专" name="5"/>C.中专或大专
+                    </label>
+                    <label>
+                        <input type="radio" value="高中及以下" name="5"/>D.高中及以下
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>6、您的职业为？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="金融行业一般从业人员" name="6"/>A.金融行业一般从业人员
+                    </label>
+                    <label>
+                        <input type="radio" value="一般企事业单位员工" name="6"/>B.一般企事业单位员工
+                    </label>
+                    <label>
+                        <input type="radio" value="专业技术人员" name="6"/>C.专业技术人员
+                    </label>
+                    <label>
+                        <input type="radio" value="普通职员" name="6"/>D.普通职员
+                    </label>
+                    <label>
+                        <input type="radio" value="无固定职业" name="6"/>E.无固定职业
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>7、您家庭可支配年收入是多少（折合人民币）？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="500万元以上" name="7"/>A.500万元以上
+                    </label>
+                    <label>
+                        <input type="radio" value="300-500万元" name="7"/>B.300-500万元
+                    </label>
+                    <label>
+                        <input type="radio" value="100-300万元" name="7"/>C.100-300万元
+                    </label>
+                    <label>
+                        <input type="radio" value="50-100万元" name="7"/>D.50-100万元
+                    </label>
+                    <label>
+                        <input type="radio" value="50万元以下" name="7"/>E.50万元以下
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>8、在您每年的家庭可支配收入中，可用于金融投资（储蓄存款除外）的比例为？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="50%以上" name="8"/>A.50%以上
+                    </label>
+                    <label>
+                        <input type="radio" value="30%至50%" name="8"/>B.30%至50%
+                    </label>
+                    <label>
+                        <input type="radio" value="20%至30%" name="8"/>C.20%至30%
+                    </label>
+                    <label>
+                        <input type="radio" value="10%至20%" name="8"/>D.10%至20%
+                    </label>
+                    <label>
+                        <input type="radio" value="10%以下" name="8"/>E.10%以下
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="ischecked">
+                <li>
+                    <p>9、您的证券投资知识可描述为？</p>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="丰富：对金融产品及其相关风险具有丰富的知识和理解" name="9"/>A.丰富：对金融产品及其相关风险具有丰富的知识和理解
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="了解：对金融产品及其相关风险有所了解，但并不深入" name="9"/>B.了解：对金融产品及其相关风险有所了解，但并不深入
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="有限：对某一种或几种金融产品及其相关风险有初步了解" name="9"/>C.有限：对某一种或几种金融产品及其相关风险有初步了解
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="了解一种" name="9"/>D.了解一种
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="全都不了解" name="9"/>E.全都不了解
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="ischecked">
+                <li>
+                    <p>10、您的投资经验可描述为：</p>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="参与过私募、资管、信托等产品的交易" name="10"/>A.参与过私募、资管、信托等产品的交易
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="参与过权证、期货、期权等产品的交易" name="10"/>B.参与过权证、期货、期权等产品的交易
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="参与过股票、基金等产品的交易" name="10"/>C.参与过股票、基金等产品的交易
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="购买过债券、保险等理财产品" name="10"/>D.购买过债券、保险等理财产品
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="除银行储蓄外，基本没有其他投资经验" name="10"/>E.除银行储蓄外，基本没有其他投资经验
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <p>11、您有多少年证券投资经验？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="10 年以上" name="11"/>A.10 年以上
+                    </label>
+                    <label>
+                        <input type="radio" value="5 到 10 年" name="11"/>B.5 到 10 年
+                    </label>
+                    <label>
+                        <input type="radio" value="3 到 5 年" name="11"/>C.3 到 5 年
+                    </label>
+                    <label>
+                        <input type="radio" value="1 到 3 年" name="11"/>D.1 到 3 年
+                    </label>
+                    <label>
+                        <input type="radio" value="1 年以内" name="11"/>E.1 年以内
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+        <ul>
+            <li>
+                <p>12、您觉得下面哪个选项可以最好的描述您的投资目标？</p>
+            </li>
+            <li class="ischecked">
+                <label>
+                    <input type="radio" value="激进成长" name="12"/>A.激进成长
+                </label>
+                <label>
+                    <input type="radio" value="显著成长" name="12"/>B.显著成长
+                </label>
+                <label>
+                    <input type="radio" value="稳健成长" name="12"/>C.稳健成长
+                </label>
+                <label>
+                    <input type="radio" value="谨慎成长" name="12"/>D.谨慎成长
+                </label>
+                <label>
+                    <input type="radio" value="避免亏损" name="12"/>D.避免亏损
+                </label>
+            </li>
+        </ul>
+    </li>
+        <li>
+            <ul>
+                <li>
+                    <p>13、您计划中的基金投资期限有多长？</p>
+                </li>
+                <li class="ischecked">
+                    <label>
+                        <input type="radio" value="10年以上" name="13"/>A.10年以上
+                    </label>
+                    <label>
+                        <input type="radio" value="5至10年内" name="13"/>B.5至10年内
+                    </label>
+                    <label>
+                        <input type="radio" value="3至5年" name="13"/>C.3至5年
+                    </label>
+                    <label>
+                        <input type="radio" value="1至3年" name="13"/>D.1至3年
+                    </label>
+                    <label>
+                        <input type="radio" value="1年内" name="13"/>D.1年内
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="ischecked">
+                <li>
+                    <p>14、以下哪项描述最符合您的投资态度？</p>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="希望赚取高回报，愿意为此承担较大本金损失" name="14"/>A.希望赚取高回报，愿意为此承担较大本金损失
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="寻求资金的较高收益和成长性，愿意为此承担有限本金损失" name="14"/>B.寻求资金的较高收益和成长性，愿意为此承担有限本金损失
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="保守投资，不希望本金损失，愿意承担一定幅度的收益波动" name="14"/>C.保守投资，不希望本金损失，愿意承担一定幅度的收益波动
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="厌恶风险，不希望本金损失，希望获得稳定回报" name="14"/>D.厌恶风险，不希望本金损失，希望获得稳定回报
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="全都不了解" name="14"/>E.全都不了解
+                    </label>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul class="ischecked">
+                <li>
+                    <p>15、假设有两种投资：投资A预期获得10%的收益，可能承担的损失非常小；投资B预期获得30%的收益，但可能承担较大亏损。您会怎么支配您的投资：</p>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="全部投资于收益较大且风险较大的B" name="15"/>A、全部投资于收益较大且风险较大的B
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="同时投资于A和B，但大部分资金投资于收益较大且风险较大的B" name="15"/>B、同时投资于A和B，但大部分资金投资于收益较大且风险较大的B
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="同时投资于A和B，但大部分资金投资于收益较小且风险较小的A" name="15"/>C、同时投资于A和B，但大部分资金投资于收益较小且风险较小的A
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="全部投资于收益较小且风险较小的A" name="15"/>D、全部投资于收益较小且风险较小的A
+                    </label>
+                </li>
+            </ul>
+        </li>        
+        <li>
+            <ul class="ischecked">
+                <li>
+                    <p>16、您认为自己能承受的最大投资损失是多少？</p>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="超过50%" name="16"/>A.超过50%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="30%至50%" name="16"/>B.30%至50%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="10%-30%" name="16"/>C.10%-30%
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="10%以内" name="16"/>D.10%以内
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" value="本金不亏损" name="16"/>E.本金不亏损
+                    </label>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="btn">
+         <button class="postData">提交测评</button>
+    </div>
+</section>
+<!--底部-->
+<footer id="foot"></footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/common.js"></script>
+<script src="js/evaluation.js"></script>
+</html>

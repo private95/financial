@@ -1,0 +1,136 @@
+package com.iparhan.financial.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+import com.iparhan.financial.entity.Company;
+import com.iparhan.financial.entity.CompanyTwo;
+import com.iparhan.financial.entity.PrivateCompany;
+import com.iparhan.financial.entity.PrivateStock;
+
+@Mapper
+public interface PrivateStockMapper {
+
+	/*
+	 * 首页私募排行查询，按照累计排名，降序 李佳乐 查询公司表，基金表，两表关联为company_id
+	 */
+	@Select("SELECT `t__spi_company`.`name`,`t__spi_privatestock`.`fundCompany`,`t__spi_privatestock`.`id`,`t__spi_privatestock`.`fund_shortName`,`t__spi_privatestock`.`nav`,`t__spi_privatestock`.`cumulative_nav`,`t__spi_privatestock`.`topOneMonth`,`t__spi_privatestock`.annualized,`t__spi_privatestock`.sharpeatio,`t__spi_privatestock`.oneyearrating FROM `t__spi_company`,`t__spi_privatestock` WHERE `t__spi_company`.`company_id`=`t__spi_privatestock`.`company_id` ORDER BY `t__spi_privatestock`.cumulative_nav DESC")
+	// list返回sql语句要查询的字段，是一个新建的实体
+	public List<PrivateCompany> getAllPriByCumDesc();
+
+	/*
+	 * 首页-私募产品排行数据-详情页面 根据选中基金获取id,根据id,在详情页面获取数据
+	 */
+	@Select("select * from t__spi_privatestock where id=#{id}")
+	public PrivateStock getPrivateStock(int id);
+
+	// ====================================================================================
+	/*
+	 * 查询一个月以来的收益有数据的全部企业信息 思路：根据t_PrivateStock表里面的数据根据topOneMonth字段来查询
+	 */
+	@Select("SELECT * FROM financial.t__spi_privatestock WHERE topOneMonth != 0")
+	List<PrivateStock> selectPrivateStockByOneMonth(PrivateStock privateStock);
+
+	/*
+	 * 查询根据三个月以来的收益数据来查询
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topThreeMonth != 0")
+	List<PrivateStock> selectPrivateStockByThreeMonth(PrivateStock privateStock);
+
+	/*
+	 * 根据半年的数据来查询全部数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topHalfYear != 0")
+	List<PrivateStock> selectPrivateStockBytopHalfYear(PrivateStock privateStock);
+
+	/*
+	 * 根据一年以来的数据来查询全部数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topOne != 0")
+	List<PrivateStock> selectPrivateStockBytopOne(PrivateStock privateStock);
+
+	/*
+	 * 两年以来的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topTwo != 0")
+	List<PrivateStock> selectPrivateStockBytopTwo(PrivateStock privateStock);
+
+	/*
+	 * 三年以来的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topThree != 0")
+	List<PrivateStock> selectPrivateStockBytopThree(PrivateStock privateStock);
+
+	/*
+	 * 5年以来的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topFive != 0")
+	List<PrivateStock> selectPrivateStockBytopFive(PrivateStock privateStock);
+
+	/*
+	 * 成立以来的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where topDate != 0")
+	List<PrivateStock> selectPrivateStockBytopDate(PrivateStock privateStock);
+
+	/*
+	 * 2018的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2018 != 0")
+	List<PrivateStock> selectPrivateStockBytop2018(PrivateStock privateStock);
+
+	/*
+	 * 2017的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2017 != 0")
+	List<PrivateStock> selectPrivateStockBytop2017(PrivateStock privateStock);
+
+	/*
+	 * 2016的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2016 != 0")
+	List<PrivateStock> selectPrivateStockBytop2016(PrivateStock privateStock);
+
+	/*
+	 * 2015的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2015 != 0")
+	List<PrivateStock> selectPrivateStockBytop2015(PrivateStock privateStock);
+
+	/*
+	 * 2014的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2014 != 0")
+	List<PrivateStock> selectPrivateStockBytop2014(PrivateStock privateStock);
+
+	/*
+	 * 2013的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2013 != 0")
+	List<PrivateStock> selectPrivateStockBytop2013(PrivateStock privateStock);
+
+	/*
+	 * 2012的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2012 != 0")
+	List<PrivateStock> selectPrivateStockBytop2012(PrivateStock privateStock);
+
+	/*
+	 * 2011的数据
+	 */
+	@Select("SELECT * from t__spi_PrivateStock where top2011 != 0")
+	List<PrivateStock> selectPrivateStockBytop2011(PrivateStock privateStock);
+	
+	@Update("UPDATE  t__spi_privatestock SET tuser_id = #{tuserId},is_collect =#{state}  where id = #{id}")
+	void updatePrivateStock(@Param("tuserId")Integer tuserId, @Param("id")Integer id,@Param("state")String state);
+	
+	@Select("select * from t__spi_privatestock where tuser_id = #{tuserId} and is_collect = '1'")
+	List<PrivateStock> selectByTuserId(@Param("tuserId")Integer tuserId);
+	
+
+}

@@ -1,0 +1,129 @@
+
+/*主体*/
+#main{
+	min-height:500px;
+	margin-top: -50px;
+}
+#main>.nav-box{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #F0F0F0;
+    box-sizing: border-box;
+}
+#main .nav-main{
+    display: flex;
+}
+#main .nav-main>li a{
+	text-decoration: none;
+    font-size: 16px;
+    margin-right: 40px;
+    color: #6E6E6E;
+    display: inline-block;
+    width: 96px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+}
+#main .nav-main>li .in_click{
+    color: #ffffff;
+    background-image: url("../images/recommend/ditu.png");
+    text-decoration: none;
+}
+#main .nav-main>li a:hover{
+    color: #ffffff;
+    background-image: url("../images/recommend/ditu.png");
+}
+/*数据列表*/
+#list>.tbn{
+    width: 100%;
+    border-collapse:collapse;
+    margin-top: 30px;
+    font-size: 14px;
+}
+#list>.tbn>thead>tr{
+   background-color:#F1F1F1 ;
+}
+#list>.tbn th{
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 55px;
+    border-bottom:none;
+    padding:0;
+    
+}
+#list>.tbn td{
+    text-align: center;
+    border:none;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 33px;
+}
+#list>.tbn td a{
+    color: #67C1FB;
+}
+#list>.tbn>tbody>tr:nth-of-type(even){
+    background-color: #F7F7F7;
+}
+/*数据列表结束*/
+/*分页*/
+#list>.paging{
+    display: flex;
+    margin: 30px 0;
+    justify-content: center;
+    line-height: 40px;
+}
+#list>.paging a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border:1px solid #F6F6F6;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #575757;
+}
+#list>.paging .lt a{
+    background-image: url("../images/recommend/xiangzuo.png");
+}
+#list>.paging .gt a{
+    background-image: url("../images/recommend/xiangyou.png");
+}
+#list>.paging .Jump{
+    margin: 0 10px;
+    font-size: 14px;
+}
+#list>.paging .Jump input{
+    width: 80px;
+    height: 40px;
+    margin: 0 5px;
+    outline:none;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#list>.paging .confirm a{
+    width: 80px;
+    margin: 0;
+    border-radius: 5px;
+}
+/*分页结束*/
+thead th{
+	text-align:center;
+	border-bottom:none;
+}
+.loading{
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	background:rgba(0,0,0,0.3);
+	display:block;
+}
+.loading img{
+	display:block;
+	float:left;
+	margin-top:25%;
+	margin-left:50%;
+}

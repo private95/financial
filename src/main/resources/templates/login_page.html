@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/login_register.css"/>
+	<link rel="stylesheet" href="css/animate.min.css"/>
+</head>
+
+<body>
+<header id="header">
+    <!--导航-->
+    <div id="navs"></div>
+    <div id="header_box"></div>
+    <div class="groom">
+        <p>登陆与注册</p>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li>></li>
+            <li><a href="/login">登陆</a></li>
+            <li>和</li>
+            <li><a href="/login">注册</a></li>
+        </ul>
+    </div>
+</header>
+
+    <!--主体-->
+    <section id="main">
+        <div class="main_page">
+        	
+            <div class="page page_log_reg" id="page1">
+                <div class="page_1">
+                    <a id="Land" class="active page_rt" data-toggle="tab" href="#content1">登陆</a>
+                    <a id="register" data-toggle="tab" href="#content2">注册</a>
+                </div>
+                <div class="sign_box">
+                	<div class="error">登录失败：用户名或密码错误</div>
+                    <!--登陆-->
+                    <div class="sign_in show" id="content1">
+                        <form id="loginForm">
+                            <ul>
+                                <li>
+                                    <label>
+                                        <input class="ipt" name="account" id="account" type="text" placeholder="请输入用户"/>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input class="ipt ipt_ps" name="password" id="password" type="password" placeholder="请输入6-12位密码"/>
+                                    </label>
+                                </li>
+                                <li class="ipt_2">
+                                    <p>
+                                        <input type="checkbox" id="remeBer" />
+                                        <span>下次自动登录</span>
+                                    </p>
+                                  <a class="forget">忘记密码</a>
+                                 </li>
+                                <li>
+                                    <input type="button" onClick="loginSubmit();" class="sbt" value="登陆"/>
+                                </li>
+                                <li class="spt">
+                                    <span>- - - - - - - 第三方账号登录 - - - - - - -</span>
+                                </li>
+                                <li class="ipt_3">
+                                        <a href="#" class="page_lt"></a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <!--注册-->
+                    <div class="sign_in overh" id="content2">
+                    	<div class="register-err">注册失败</div>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input id="raccount" name="raccount" class="ipt" type="text" placeholder="请输入用户"/>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input id="Email" name="rpassword" class="ipt2" type="email" placeholder="请输入邮箱号"/>
+                                </label>
+                            </li>
+                            <li class="register">
+                                <label>
+                 
+                                    <input class="register_1" type="text" placeholder="请输入验证码" id="Mark"/>
+                                </label>
+
+                                <button class="btn-primary " id="SendMark">获取验证码</button>
+
+
+                            </li>
+                            <li>
+                                <input class="ipt ipt_ps" id="rpassword" type="password" placeholder="请输入6-12位登陆密码" name="pwd" maxlength="12"/>
+                            </li>
+                            <li>
+                                <input class="ipt ipt_ps" id="rrpassword" type="password" placeholder="请再次输入密码" name="repwd" maxlength="12"/>
+                            </li>
+                            <li>
+                                <input type="button" class="sbt" onClick="register();" value="注册"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             <!--身份验证-->
+             <div class="page reset overhidden" id="page2">
+                    <p>身份验证</p>
+                    <div class="sign_in block">
+                        <ul>
+                            <li>
+                                <label>
+                                    <input class="ipt" type="text" placeholder="请输入用户名" id="usersname" name="charUsername"/>
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input id="Email2" name="charEmail" class="ipt2" type="email" placeholder="请输入邮箱号"/>
+                                </label>
+                            </li>                             
+                            <li>
+                                <div class="reset_1">
+                                    <a class="lt_zc" href="#">免费注册</a>
+                                    <a class="rt_dl" href="#">返回登录</a>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="button" class="sbt next" value="下一步"/>
+                            </li>
+                           <!--  <li class="spt">
+                                    <span>- - - - - - - 第三方账号登录 - - - - - - -</span>
+                            </li>
+                            <li class="ipt_3">
+                                <a href="#" class="page_lt"></a>                                  
+                            </li> -->
+                        </ul>
+                    </div>
+              </div>
+           
+            <!--重置密码-->
+          
+            <div class="page reset overhidden" id="page3">
+                    <p>重置密码</p>
+                    <div class="sign_in block">
+                        <ul>
+                            <li>
+                                <label>
+                                    <input class="ipt" type="text" placeholder="请输入用户名" id="usersname2" name="Newusername"/>
+                                </label>
+                            </li>
+                            <li class="register">
+                                <label>
+                                    <input class="register_1" type="text" id="information" placeholder="请输入短信验证"/>
+                                </label>
+                                <button class="btn-primary" id="SendMark1">获取验证码</button>
+                            </li>
+                            <li>
+                                <input class="ipt ipt_ps" type="password" placeholder="请输入新的6-12位登陆密码" id="N_pwd1" name="Newpwd"/>
+                            </li>
+                           <!--  <li>
+                                <input class="ipt ipt_ps" type="password" placeholder="请再次输入新登陆密码" id="N_pwd2" name="Newrepwd"/>
+                            </li> -->
+                            <li>
+                                <div class="reset_1">
+                                    <a class="lt_zc" href="#">免费注册</a>
+                                    <a class="rt_dl" href="#">返回登录</a>
+                                </div>
+                            </li>
+                            <li>
+                                <input type="button" class="sbt" value="确认" id="submit_pwd"/>
+                            </li>
+                            <!-- <li class="spt">
+                                    <span>- - - - - - - 第三方账号登录 - - - - - - -</span>
+                            </li>
+                            <li class="ipt_3">
+                                <a href="#" class="page_lt"></a>                                  
+                            </li> -->
+                        </ul>
+                    </div>
+            </div>
+      
+           
+        <div id="main_bac"></div>
+    </section>
+<!--底部-->
+<footer id="foot"></footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/common.js"></script>
+<script src="js/tool.js"></script>
+
+<script src="layer/layer.js"></script>
+<script src="js/login_register.js"></script>
+</html>

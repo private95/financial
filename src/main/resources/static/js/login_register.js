@@ -1,0 +1,518 @@
+var tag = location.search.getParam('tag');
+var $reg=$("#register");
+var $lad=$("#Land");
+if(tag==1){
+  $lad.addClass("active").siblings(".active").removeClass("active");
+  $($lad.attr("href")).addClass("show").siblings(".show").removeClass("show");
+}else if(tag==2){
+  $reg.addClass("active").siblings(".active").removeClass("active");
+  $($reg.attr("href")).addClass("show").siblings(".show").removeClass("show");
+}
+
+
+//登录与注册切换
+$(".page>.page_1").on("click","a",e=>{
+	
+    e.preventDefault();
+    var $tar=$(e.target);
+    if(!$tar.hasClass(".active")){
+    	$('.error').hide();
+    	$('.register-err').hide();
+        $tar.addClass("active").siblings(".active").removeClass("active");
+        $($tar.attr("href")).addClass("show").siblings(".show").removeClass("show");
+        $('input').not('input[type=button]').val('')
+    }
+});
+//键盘监听事件
+document.onkeydown=function(e){ 
+	var keyNum=window.event ? e.keyCode :e.which;  //获取被按下的键值 
+	//判断如果用户按下了回车键（keycody=13）
+	if(keyNum==13){ 
+		//alert('您按下了回车');
+		loginSubmit()
+	} 
+} 
+//登陆
+function loginSubmit(){
+	//alert()
+	//验证不能为空
+    var $account = $("#account").val();
+    var $password = $("#password").val();
+    var arry=[{"name":"account","data":$account},{"name":"password","data":$password}];
+    for(var i=0;i<arry.length;i++){
+    	if(arry[i].data==''){
+    		Loing(arry[i].name);
+    		 return
+    	}
+    }
+    //
+    function  Loing(name){
+    	var newAarry=[{"name":"account","data":"用户名不能为空"},{"name":"password","data":"密码不能为空"}];
+    	for(var j=0;j<newAarry.length;j++){
+    		if(newAarry[j].name==name){
+    			layer.open({
+  				  title: '提示信息',
+  				  content: newAarry[j].data
+  			  	}); 
+  			  return
+    		}
+    	}
+    }
+    
+    //验证密码长度
+    if($password.length<6){
+    	layer.open({
+  		  title: '提示信息',
+  		  content: '请输入6-12位密码'
+    	}); 
+    }else{
+    	//console.log(getCookie("userInfo"))
+    	$.ajax({
+            url:"/loginDemo",
+            type:"post",
+            dataType: "json",
+            async:true,
+            data:{
+                "username" : $account,
+                "password" : $password
+            },
+            success: function(data) {
+            	console.log(data)
+            	
+                if(data == 1){
+                	 localStorage.setItem("login", "yes");
+                     localStorage.setItem("username", $account)
+                	if($('#remeBer').is(":checked")){
+                 		setCookie("username", $account,1)
+                 		
+                 	}
+                	layer.msg("登录成功")
+                	setTimeout(function(){
+                		location.href="/"
+                	},1500)
+                	 
+                }else{
+                	 $('.error').show();
+                	//$("#accountPenl").html("您输入的账户名或密码错误");
+                   // location.href="#";
+                    //undisabledloginbtn();
+                	 //location.href="/";
+                }
+            },
+            error:function(){
+            	layer.open({
+            		  title: '提示信息',
+            		  content: '链接服务器出错了...'
+            	}); 
+            }
+        });
+    }
+
+  
+    
+}
+//记住用户名和密码
+//cookie
+function getCookie(c_name){
+	if (document.cookie.length>0)
+	  {
+	  c_start=document.cookie.indexOf(c_name + "=")
+	  if (c_start!=-1)
+	    { 
+	    c_start=c_start + c_name.length+1 
+	    c_end=document.cookie.indexOf(";",c_start)
+	    if (c_end==-1) c_end=document.cookie.length
+	    return unescape(document.cookie.substring(c_start,c_end))
+	    } 
+	  }
+	return ""
+}
+	
+function setCookie(c_name,value,expiredays){
+	var exdate=new Date()
+	exdate.setDate(exdate.getDate()+expiredays)
+	document.cookie=c_name+ "=" +escape(value)+
+	((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+}
+
+function checkCookie(){
+	username=getCookie('username')
+	if (username!=null && username!="")
+	  {alert('Welcome again '+username+'!')}
+	else 
+	  {
+	  username=prompt('Please enter your name:',"")
+	  if (username!=null && username!="")
+	    {
+	    setCookie('username',username,365)
+	    }
+	  }
+}
+
+
+
+
+//注册
+//邮箱发送验证码
+$('#SendMark').click(function(){
+	var $email=$("#Email").val();
+	  var reg=/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+	    if(reg.test($email)===false){
+	    	layer.open({
+				  title: '提示信息',
+				  content: '您输入的邮箱格式不正确'
+			 }); 
+			  return
+	    }else{
+	//获取邮箱
+	$.ajax({
+		url:"/getRandomText",
+		type:"post",
+		dataType:"json",
+		data:{"email":$email},
+		success:function(data){
+			//console.log(data);
+			if(data.code=="S"){
+				layer.msg("验证码发送成功,请注意查收")
+			}else{
+				layer.msg("验证码发送失败")
+			}
+			
+		},
+		error:function(err){
+			console.log(err);
+		}
+	})}
+})
+
+	   
+
+
+
+
+function register(){
+    var $raccount=$("#raccount").val();
+    var $rpassword=$("#rpassword").val();
+    var $rrpassword=$("#rrpassword").val();
+    var $Email=$("#Email").val();
+    var $Mark=$("#Mark").val();
+    //验证不能为空
+    var array=[{"name":"raccount","data":$raccount},{"name":"pwd","data":$rpassword},{"name":"repwd","data":$rrpassword},{"name":"rpassword","data":$Email},{"name":"mark","data":$Mark}];
+    for(var i=0;i<array.length;i++){
+    	if(array[i].data == ""){
+			 // console.log(array[i].name)
+    			Getinfo(array[i].name);
+			  return
+		}
+    }
+    //
+    function  Getinfo(name){
+    	var newAarry=[{"name":"raccount","data":"用户名不能为空"},{"name":"pwd","data":"密码不能为空"},{"name":"repwd","data":"确认密码不能为空"},{"name":"rpassword","data":"邮箱不能为空"},{"name":"mark","data":"验证码不能为空"}];
+    	for(var j=0;j<newAarry.length;j++){
+    		if(newAarry[j].name==name){
+    			layer.open({
+  				  title: '提示信息',
+  				  content: newAarry[j].data
+  			  	}); 
+  			  return
+    		}
+    	}
+    }
+
+   
+    //验证邮箱和密码
+    var reg=/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    if(reg.test($Email)===false){
+    	layer.open({
+			  title: '提示信息',
+			  content: '您输入的邮箱格式不正确'
+		 }); 
+		  return
+    }else if($rpassword.length<6){
+    	layer.open({
+			  title: '提示信息',
+			  content:'请输入6-12位密码'
+		 }); 
+		  return
+    }else if($rpassword!==$rrpassword){
+    	layer.open({
+			  title: '提示信息',
+			  content:'两次输入的密码不一致'
+		 }); 
+		 return
+    }else{
+    	 $.ajax({
+         	url: "/registerDemo",
+             type: "post",
+             dataType: "json",
+             data: {"username": $raccount, "password": $rpassword,"email":$Email,"code":$Mark},
+             async: false,
+             success: function (data) {
+                 //注册成功
+                 if (data == 1) {
+                     localStorage.setItem("login", "yes");
+                     localStorage.setItem("username", $raccount)
+                     rtn = true;
+                     layer.msg('恭喜您,注册成功');
+                     setTimeout(function(){
+                    	 location.href="/";
+                     },2000)
+                     
+                     
+                 }else if(data==2){
+                	 $('.register-err').text("此用户名已被注册！")
+                	$('.register-err').show();
+                  	$('.overh').find('input').focus(function(){
+                  		$('.register-err').hide()
+                  	})
+                 }else if(data==3){
+                	 $('.register-err').text("此邮箱已被注册！")
+                 	$('.register-err').show();
+                   	$('.overh').find('input').focus(function(){
+                   		$('.register-err').hide()
+                   	})
+                  }else if(data==4){
+                 	 $('.register-err').text("验证码错误！")
+                 	$('.register-err').show();
+                   	$('.overh').find('input').focus(function(){
+                   		$('.register-err').hide()
+                   	})
+                  } 
+                 
+                 
+             },
+             error: function (data) {
+                //$("#account_ms").html("链接服务器异常.");
+                 //rtn = false;
+            	 layer.open({
+	           		  title: '提示信息',
+	           		  content: '链接服务器出错了...'
+            	 });
+             }
+         });
+    }
+    
+}
+
+
+
+//微信登录
+
+$(".page_lt").click(function(){
+	alert("微信登录的js 文件");
+	$.ajax({
+		  type: 'POST',
+		  url: "/index/weixin",
+		  success: function(result){  
+		  },
+		});
+});
+
+
+/*$(".page_lt").on("click",function(event){
+	alert("微信登录的js 文件");
+	$.ajax({
+		  type: 'POST',
+		  url: "/index/weixin",
+		  success: function(result){
+			  
+		  },
+		});
+}*/
+//找回密码-身份验证
+$('.forget').click(function(){
+	//alert();	
+	$('#page1').css('display','none');
+	$('#page2').css('display','block');
+	$('#page3').css('display','none');
+	
+})
+//返回登录
+$('.rt_dl').click(function(){
+	$('#page1').css('display','block');
+	$('#page2').css('display','none');
+	$('#page3').css('display','none');
+})
+//免费注册
+$('.lt_zc').click(function(){
+	$('#page1').css('display','block');
+	$('#content1').removeClass('show');
+	$('#Land').removeClass('active');
+	$('#content2').addClass('show');
+	$('#register').addClass('active')
+	$('#page2').css('display','none');
+	$('#page3').css('display','none');
+})
+
+
+$('.next').click(function(){
+	//alert()
+	var username=$('#usersname').val();
+	var email=$('#Email2').val();
+	//验证不能为空
+	 var arry=[{"name":"charUsername","data":username},{"name":"charEmail","data":email}];
+	    for(var i=0;i<arry.length;i++){
+	    	if(arry[i].data==''){
+	    		CharePerson(arry[i].name)
+	    		 return
+	    	}
+	    }
+	    //
+	    function  CharePerson(name){
+	    	var newAarry=[{"name":"charUsername","data":"用户名不能为空"},{"name":"charEmail","data":"邮箱不能为空"}];
+	    	for(var j=0;j<newAarry.length;j++){
+	    		if(newAarry[j].name==name){
+	    			layer.open({
+	  				  title: '提示信息',
+	  				  content: newAarry[j].data
+	  			  	}); 
+	  			  return
+	    		}
+	    	}
+	    }
+	    //验证邮箱
+	    var reg=/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+	    if(reg.test(email)===false){ 
+	    	layer.open({
+				  title: '提示信息',
+				  content: '邮箱格式不正确'
+			 }); 
+			  return
+	    }else{
+	    	 $.ajax({
+	 			url:'/VerificationUsernameEmail',
+	 			data:{"username":username,"email":email},
+	 			type:"post",
+	 			dataType:"json",
+	 			success:function(res){
+	 				if(res.status==200){
+	 					alert("用户名和邮箱匹配")
+	 				}else{
+	 					alert("用户名和邮箱不匹配")
+	 				}
+	 				/*alert('yes')
+	 				console.log(res)*/
+	 			},
+	 			error:function(err){
+	 				layer.open({
+	 	  				  title: '提示信息',
+	 	  				  content: '服务器出错了'
+	 	  			}); 
+	 			}
+	 		})
+	    }
+	    $('#page1').css('display','none');
+		$('#page2').css('display','none');
+		$('#page3').css('display','block');//	    
+
+})
+
+//邮箱验证获取按钮
+$("#SendMark1").click(function(){
+	alert("获取邮箱验证");
+	//获取邮箱
+	var $email1=$("#Email2").val();
+	/*//获取用户名
+	var username=$("#usersname2").val();
+	//获取密码
+	var password=$("#N_pwd1").val();
+	//获取短信验证信息
+	var information=$("#information").val();*/
+	
+	$.ajax({
+		url:"/getRandomText",
+		type:"post",
+		dataType:"json",
+		data:{"email":$email1},
+		success:function(data){
+			//console.log(data);
+			if(data.code=="S"){
+				layer.msg("验证码发送成功，请注意查收")
+			}else{
+				layer.msg("验证码发送失败,验证码发送失败")
+			}
+			
+		},
+		error:function(err){
+			console.log(err);
+		}
+	})
+})
+
+
+
+
+
+
+//密码重置
+$('#submit_pwd').click(function(){
+	//获取邮箱
+	var $email2=$("#Email2").val();
+	//获取用户名
+	var username=$("#usersname2").val();
+	//获取密码
+	var password=$("#N_pwd1").val();
+	//获取短信验证信息
+	var information=$("#information").val();
+	
+	/*var  username=$('#usersname2').val();
+	var  password=$('#N_pwd1').val();
+	var  repassword=$('#N_pwd2').val();*/
+	//验证不为空
+	 var arry=[{"name":"usersname2","data":username},{"name":"information","data":information},{"name":"N_pwd1","data":password}];
+	    for(var i=0;i<arry.length;i++){
+	    	if(arry[i].data==''){
+	    		Newaccount(arry[i].name)
+	    		 return
+	    	}
+	    }
+	    //不为空提示
+	    function  Newaccount(name){
+	    	var newAarry=[{"name":"usersname2","data":"用户名不能为空"},{"name":"information","data":"验证码信息不能为空"},{"name":"N_pwd1","data":"密码不能为空"}];
+	    	for(var j=0;j<newAarry.length;j++){
+	    		if(newAarry[j].name==name){
+	    			layer.open({
+	  				  title: '提示信息',
+	  				  content: newAarry[j].data
+	  			  	}); 
+	  			  return
+	    		}
+	    	}
+	    }
+	   //验证密码
+	    if(password.length<6){
+	    	layer.open({
+				  title: '提示信息',
+				  content: '请输入6-12位密码'
+			 }); 
+			  return
+	    }/*else if(password!==repassword){
+	    	layer.open({
+				  title: '提示信息',
+				  content: '两次输入的密码不一致'
+			 }); 
+			  return
+	    }*/else{
+	    	 //重置密码数据提交
+		    $.ajax({
+				url:'/updateUserPassword',
+				data:{"username":username,"email":$email2,"information":information,"password":password},
+				type:"post",
+				dataType:"json",
+				success:function(data){
+					if(data.status==200){
+						alert("密码重置成功");
+					}else{
+						alert("密码重置失败")
+					}
+				},
+				error:function(err){
+					layer.open({
+		  				  title: '提示信息',
+		  				  content: '服务器出错了'
+		  			}); 
+				}
+			})
+	    }
+})
+

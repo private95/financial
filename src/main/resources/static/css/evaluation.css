@@ -1,0 +1,33 @@
+
+#main_box{
+    padding-bottom:50px;
+}
+#main_list>li{
+    margin-bottom: 30px;
+}
+#main_list p{
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+#main_list label{
+    margin: 0 80px 0 20px;
+    font-size: 14px;
+}
+#main_box>.btn{
+    text-align: center;
+}
+#main_box>.btn button{
+    width: 104px;
+    height: 46px;
+    border: 0;
+    background-color: #ffffff;
+    outline: none;
+    background-image: url("../images/baocun_1.png");
+    color: #F75E00;
+    font-size: 16px;
+}
+#main_box>.btn button:hover{
+    background-image: url("../images/baocun_2.png");
+    color: #ffffff;
+    cursor: pointer;
+}

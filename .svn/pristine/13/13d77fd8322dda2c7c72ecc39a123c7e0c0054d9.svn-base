@@ -1,0 +1,99 @@
+package com.iparhan.financial.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import com.iparhan.financial.dao.UserMapper;
+import com.iparhan.financial.entity.User;
+
+/**
+ * 登录功能
+ * 
+ * @author iparhan
+ *
+ */
+@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
+@RestController
+public class LoginController {
+
+	@Autowired
+	private UserMapper userMapper;
+
+	/*
+	 * 登录方法
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
+	@RequestMapping(value = "/loginDemo", method = RequestMethod.POST)
+	public int loginDemo(User user, HttpSession session, HttpServletRequest request) throws NullPointerException {
+		System.out.println("接受登录使用的前端发来的用户名和密码" + user.getUsername() + user.getPassword());
+		//验证邮箱的正则表达式
+		 String regex = "\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+		 if(user.getUsername().matches(regex)) {
+			 user.setEmail(user.getUsername());
+		 }
+		User userinfo = userMapper.isLogin(user);
+		if (userinfo != null && userinfo.getUsername() != null) {
+			session.setAttribute("user", userinfo);
+			request.getSession().setAttribute("account", userinfo.getId());
+			System.out.println("当前登录用户id：" + userinfo.getId());
+			System.out.println("当前登录用户：" + userinfo.getUsername());
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+	/*
+	 * 判断用户是否已经登录
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
+	@RequestMapping(value = "/loginCheck", method = RequestMethod.POST)
+	public int checkLogin(@Param("username") String username) {
+		/*
+		 * 点击免费发布信息的时候会有一个用户是否登录过的判断 接受前端发来的数据 如果有数据就说明有人在登录 返回关于这用户的所有信息 否则返回 数字 0
+		 * 让用戶先登录
+		 */
+		System.out.println("用于判断先看这用户有没有在数据库" + username);
+
+		// 1.先判断接受的参数有没有值
+		if (username == null && username.isEmpty() && username == "") {
+			return 0;
+		} else {
+			// 查询发布过去的
+			System.out.println("这个用户登录了的 ");
+		}
+		return 0;
+	}
+	
+	/*
+	 * 根据用户id修改密码
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
+	@RequestMapping(value = "/modifypassword", method = RequestMethod.POST)
+	public int updatePassword(@Param("NowPwd") String NowPwd,@Param("NewPwd") String NewPwd,
+			HttpServletRequest request) {
+		/*
+		 * 先判断旧密码是否正确
+		 * 然后根据用户id修改用户密码
+		 */
+		System.out.println("旧的密码" + NowPwd);
+		System.out.println("新的密码"+NewPwd);
+		String userId = (String) request.getSession().getAttribute("account");
+		System.out.println("用户的id是"+userId);
+		User user = userMapper.selectUserById(userId);
+		if (NowPwd.equals(user.getPassword())) {
+			userMapper.updateUserPwd(NewPwd, userId);
+			return 12345679;
+		}else {
+			return 000000000;
+		}
+		
+	}
+
+}
