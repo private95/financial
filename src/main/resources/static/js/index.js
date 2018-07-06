@@ -90,13 +90,13 @@ $(document).ready(function () {
     		$('.one_shouyi').text(data[0].cumulative_nav)
     		$('.one_jingzhi').text(data[0].nav)
     		$('.one_celue').text(data[0].corestrategy)
-    		$('#xq1').text(data[0].id)
     		$('#abc').attr('href','/details?id='+data[0].id);
     		  
     		$('.company_name2').text(data[1].fund_shortName)
     		$('.two_shouyi').text(data[1].cumulative_nav)
     		$('.two_jingzhi').text(data[1].nav)
     		$('.one_celue').text(data[1].corestrategy)
+    		$('#def').attr('href','/details?id='+data[1].id);
     	},
     	error:function(err){
     		layer.open({
