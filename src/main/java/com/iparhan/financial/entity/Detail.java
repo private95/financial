@@ -184,17 +184,4 @@ public class Detail {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String toString() {
-		return "Detail [companies=" + companies + ", bonus=" + bonus + ", dynamicRetras=" + dynamicRetras
-				+ ", fundManagers=" + fundManagers + ", historicalNets=" + historicalNets + ", productions="
-				+ productions + ", researchTeams=" + researchTeams + ", splits=" + splits + ", stockInvestments="
-				+ stockInvestments + ", topYears=" + topYears + ", topTens=" + topTens + ", topFives=" + topFives
-				+ ", topThrees=" + topThrees + ", topTwos=" + topTwos + ", topOnes=" + topOnes + ", topHalfYears="
-				+ topHalfYears + ", topThreeMonths=" + topThreeMonths + ", topOneMonths=" + topOneMonths + "]";
-	}
-	
-	
-	
-	
 }

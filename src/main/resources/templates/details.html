@@ -66,6 +66,16 @@
 	         		$('#main').find($('.top2012')[i]).html(arr[i].top2012+'%');
 	         		$('#main').find($('.topDate')[i]).html(arr[i].topDate+'%');
 	         		$('#main').find($('.top2011')[i]).html(arr[i].top2011+'%');
+	         		$('td').each(function(index){
+						if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0.000000%'||$(this).text()=='0.00%'||$(this).text()=='0个'||$(this).text()=='null%'){
+							$(this).text('--')
+						}
+					}) 
+	         		$('span').each(function(index){
+						if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0.000000%'||$(this).text()=='0.00%'||$(this).text()=='0个'||$(this).text()=='null%'){
+							$(this).text('--')
+						}
+					}) 
 	         	}
 	         	
 	         }
@@ -117,9 +127,9 @@
                     <li class="indexed product_res">
                         <span class="selected">产品要素</span>
                     </li>
-                    <!-- <li class="fenxi">
+                   <li class="fenxi">
                         <span>业绩分析</span>
-                    </li> -->
+                    </li> 
                 </ul>
             </div>
         </div>
@@ -353,7 +363,7 @@
             </div><!-- //// -->
         </div>
             <!--业绩分析-->
-       <!--  <div id="analysis" class="onepart detail_analysis">
+         <div id="analysis" class="onepart detail_analysis">
             <ul class="list_nav4">
                 <li>
                     <a class="bot" href="#">净值走势</a>
@@ -374,9 +384,9 @@
                     <a href="#fengge">风格分析</a>
                 </li>
             </ul>
-            右侧
+            <!-- 右侧 -->
             <div class="rt_sidebar">
-                1.净值走势
+              <!--   1.净值走势 -->
                 <div class="net_worth">
                     <div class="my_title">
                         <ul class="rt_title">
@@ -399,7 +409,7 @@
                             </li>
                         </ul>
                     </div>
-                    图片
+                  <!--   图片 -->
                     <div id="icon">
                         <p>
                              <span>净值展示 :</span>
@@ -434,9 +444,9 @@
                             </li>
                         </ul>						
                     </div>
-                	  图一
+                	<!--   图一 -->
                 	<div id="charts" style="width:820px;height:400px;" class="name1"></div>
-                    表格
+                 <!--    表格 -->
                     <div id="tbe" class="name2">                   
                         <table>
                             <thead>
@@ -479,8 +489,8 @@
                                 </tr>
                         </tbody>
                         </table>
-                        分页
-                        <ul class="paging">
+                      <!--   分页 -->
+                        <!-- <ul class="paging">
                             <li>
                                 <a href="#">首页</a>
                             </li>
@@ -496,10 +506,10 @@
                             <li>
                                 <a href="#">尾页</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
-                2.动态回撤
+              <!--   2.动态回撤 -->
                  <div class="profit" id="dongtai">
                     <ul class="rt_title">
                         <li>
@@ -512,10 +522,10 @@
                             <span>(截止日期 : 2018-03-09)</span>
                         </li>
                     </ul>
-                    股票浮动图
+                    <!-- 股票浮动图 -->
                     <div id="Delete" class="Chart" style="width:820px;height:400px;"></div>
                 </div>
-                3.区间收益
+               <!--  3.区间收益 -->
                 <div class="profit" id="qq">
                     <ul class="rt_title">
                         <li>
@@ -528,10 +538,10 @@
                             <span>(截止日期 : 2018-03-09)</span>
                         </li>
                     </ul>
-                    股票浮动图
+                  <!--   股票浮动图 -->
                     <div id="qujian" class="Chart" style="width:820px;height:400px"></div>
                 </div>
-                4.收益风险
+               <!--  4.收益风险 -->
                 <div class="risk" style="margin-top:50px;" id="fengxian">
                     <ul class="rt_title">
                     <li>
@@ -588,7 +598,7 @@
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.索提诺比率(Sortino Ratio)：区分了波动的好坏、衡量计算期内相同单位下行风险能获得的超额回报率。该比率越高、基金承担单位下行风险得到的超额回报率越高。</p>
                     </div>
                 </div>
-                5.融智评级
+                <!-- 5.融智评级 -->
                 <div class="grade" id="rongzhi">
                     <ul class="rt_title">
                         <li>
@@ -640,7 +650,7 @@
                         </tbody>
                     </table>
                 </div>
-                6.风格分析
+              <!--   6.风格分析 -->
                 <div class="analysis" id="fengge">
                     <ul class="rt_title">
                         <li>
@@ -653,12 +663,12 @@
                             <span>(截止日期 : 2018-03-09)</span>
                         </li>
                     </ul>
-                    分析导航
+               <!--      分析导航 -->
                     <div class="analysis_nav">
                         <a class="active">进攻能力</a>
                         <a>防守能力</a>
                     </div>
-                    表格
+                <!--     表格 -->
                     <table class="tbe_1">
                         <thead>
                         <tr>
@@ -689,14 +699,14 @@
                         </tr>
                         </tbody>
                     </table>
-                    提示文本
+                  <!--   提示文本 -->
                     <div class="txt">
                         <p>提示 ：</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.进攻能力以上行捕获率来表示，衡量反映市场上涨时，基金对市场的敏感程度，代表着此基金的进攻能力，该值越大越好，比1越大，越能战胜市场。</p>
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.防守能力以下行捕获率来表示，衡量反映市场下跌时，基金对市场的敏感程度，代表着此基金的防守能力，该值越小越好。如果为负数，则反映基金在下跌市场里能取得正收益。</p>
                     </div>
                 </div>
-            </div> -->
+            </div> 
             <!--左侧-->
             <div class="lt_sidebar sidebar">
             	 <div>

@@ -37,19 +37,6 @@ public class PrivateCompany {
 		this.company_id = company_id;
 	}
 
-	@Override
-	public String toString() {
-		return "PrivateCompany [name=" + name + ", fundCompany=" + fundCompany + ", id=" + id + ", fund_shortName="
-				+ fund_shortName + ", nav=" + nav + ", cumulative_nav=" + cumulative_nav + ", topOneMonth="
-				+ topOneMonth + ", annualized=" + annualized + ", sharpeatio=" + sharpeatio + ", oneyearrating="
-				+ oneyearrating + ", company_id=" + company_id + ", getName()=" + getName() + ", getFundCompany()="
-				+ getFundCompany() + ", getId()=" + getId() + ", getFund_shortName()=" + getFund_shortName()
-				+ ", getNav()=" + getNav() + ", getCumulative_nav()=" + getCumulative_nav() + ", getTopOneMonth()="
-				+ getTopOneMonth() + ", getAnnualized()=" + getAnnualized() + ", getSharpeatio()=" + getSharpeatio()
-				+ ", getOneyearrating()=" + getOneyearrating() + ", getCompany_id()=" + getCompany_id()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
-	}
 
 	public String getName() {
 		return name;

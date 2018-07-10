@@ -21,10 +21,6 @@ public class Split {
 	public void setProportion(String proportion) {
 		this.proportion = proportion;
 	}
-	@Override
-	public String toString() {
-		return "Split [date=" + date + ", proportion=" + proportion + "]";
-	}
 	public Split(String date, String proportion) {
 		super();
 		this.date = date;

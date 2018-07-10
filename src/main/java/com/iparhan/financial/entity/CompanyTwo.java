@@ -366,24 +366,6 @@ public class CompanyTwo {
 		this.idea_company = idea_company;
 	}
 
-	 
-    
-	@Override
-	public String toString() {
-		return "CompanyTwo [id=" + id + ", name=" + name + ", product_count=" + product_count + ", personName="
-				+ personName + ", capitalMoney=" + capitalMoney + ", address=" + address + ", company_id=" + company_id
-				+ ", recordCode=" + recordCode + ", establishTime=" + establishTime + ", production=" + production
-				+ ", idea_company=" + idea_company + ", corestrategy=" + corestrategy + ", price_date=" + price_date
-				+ ", nav=" + nav + ", cumulative_nav=" + cumulative_nav + ", annualincome=" + annualincome
-				+ ", cumulativeincome=" + cumulativeincome + ", key_manager_name=" + key_manager_name + ", topOneMonth="
-				+ topOneMonth + ", topThreeMonth=" + topThreeMonth + ", topHalfYear=" + topHalfYear + ", topOne="
-				+ topOne + ", topTwo=" + topTwo + ", topThree=" + topThree + ", topFive=" + topFive + ", topDate="
-				+ topDate + ", top2018=" + top2018 + ", top2017=" + top2017 + ", top2016=" + top2016 + ", top2015="
-				+ top2015 + ", top2014=" + top2014 + ", top2013=" + top2013 + ", top2012=" + top2012 + ", top2011="
-				+ top2011 + ", fund_shortName=" + fund_shortName + ", fundCompany=" + fundCompany + ", annualized="
-				+ annualized + ", sharpeatio=" + sharpeatio + ", tuser_id=" + tuser_id + "]";
-	}
-
 	public CompanyTwo(int id, String name, String product_count, String personName, String capitalMoney, String address,
 			String company_id, String recordCode, String establishTime, String production, String idea_company,
 			String corestrategy, String price_date, String nav, String cumulative_nav, String annualincome,
@@ -438,5 +420,6 @@ public class CompanyTwo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 }

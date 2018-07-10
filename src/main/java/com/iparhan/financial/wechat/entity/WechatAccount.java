@@ -64,12 +64,6 @@ public class WechatAccount {
 	public void setHeadimgurl(String headimgurl) {
 		this.headimgurl = headimgurl;
 	}
-	@Override
-	public String toString() {
-		return "WechatAccount [id=" + id + ", openid=" + openid + ", nickname=" + nickname + ", sex=" + sex
-				+ ", province=" + province + ", city=" + city + ", country=" + country + ", headimgurl=" + headimgurl
-				+ "]";
-	}
 	public WechatAccount(String id, String openid, String nickname, String sex, String province, String city,
 			String country, String headimgurl) {
 		super();

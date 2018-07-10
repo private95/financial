@@ -122,7 +122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports = Mock
 
-/***/ },
+	},
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 

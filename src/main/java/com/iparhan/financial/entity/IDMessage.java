@@ -29,10 +29,6 @@ public class IDMessage {
 	public void setIdNumber(String idNumber) {
 		IdNumber = idNumber;
 	}
-	@Override
-	public String toString() {
-		return "IDMessage [realName=" + realName + ", IdType=" + IdType + ", IdNumber=" + IdNumber + "]";
-	}
 	public IDMessage(String realName, String idType, String idNumber) {
 		super();
 		this.realName = realName;

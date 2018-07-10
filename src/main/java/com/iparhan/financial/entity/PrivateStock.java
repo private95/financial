@@ -215,18 +215,6 @@ public class PrivateStock {
 	public void setIs_collect(String is_collect) {
 		this.is_collect = is_collect;
 	}
-	@Override
-	public String toString() {
-		return "PrivateStock [id=" + id + ", fund_shortName=" + fund_shortName + ", fundCompany=" + fundCompany
-				+ ", nav=" + nav + ", cumulative_nav=" + cumulative_nav + ", cumulativeincome=" + cumulativeincome
-				+ ", yearNav=" + yearNav + ", sharperPercent=" + sharperPercent + ", profit_col5=" + profit_col5
-				+ ", establishTime=" + establishTime + ", riskgrade=" + riskgrade + ", company_id=" + company_id
-				+ ", tuser_id=" + tuser_id + ", is_collect=" + is_collect + "]";
-	}
-	
-	
-	
-
 	
 
 }

@@ -5,16 +5,22 @@
         <!--鐎佃壈鍩呮稉搴㈡偝缁便垺顢�-->
         <div class="search">
             <div class="search-main">
-                <input type="text" placeholder="请输入产品 / 经理 / 公司等关键词" id="SearchInputs" class="pig"/>
-                <a id="SearchButtton" name="" onclick="inputsearch()" ></a>
+                <input type="text" placeholder="请输入公司/基金等关键词"  class="pig" id="Search"/>
+                <a id="SearchButtton"  onclick="Seach();" ></a>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+		function Seach(){
+			window.location.href="/special_inquiry?SearchKey="+$("#Search").val();;		 
+		}
+</script>
+
+
 <script>
 	function inputsearch(){
 		var searchnum = $("#SearchInputs").val();
-		//alert("查询数据的数据"+searchnum)
 		$.ajax({
         	url:"/inputsearchdata",
         	type:"post",

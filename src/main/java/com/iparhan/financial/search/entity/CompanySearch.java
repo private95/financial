@@ -93,13 +93,28 @@ public class CompanySearch {
 	public void setPrice_date(String price_date) {
 		this.price_date = price_date;
 	}
-	@Override
-	public String toString() {
-		return "CompanySearch [id=" + id + ", name=" + name + ", personName=" + personName + ", product_count="
-				+ product_count + ", establishTime=" + establishTime + ", cumulative_nav=" + cumulative_nav
-				+ ", production=" + production + ", fund_shortName=" + fund_shortName + ", fundCompany=" + fundCompany
-				+ ", nav=" + nav + ", topOneMonth=" + topOneMonth + ", price_date=" + price_date + "]";
+	public CompanySearch() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
+	public CompanySearch(String id, String name, String personName, String product_count, String establishTime,
+			String cumulative_nav, String production, String fund_shortName, String fundCompany, Double nav,
+			Double topOneMonth, String price_date) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.personName = personName;
+		this.product_count = product_count;
+		this.establishTime = establishTime;
+		this.cumulative_nav = cumulative_nav;
+		this.production = production;
+		this.fund_shortName = fund_shortName;
+		this.fundCompany = fundCompany;
+		this.nav = nav;
+		this.topOneMonth = topOneMonth;
+		this.price_date = price_date;
+	}
+	 
 	
 
 }

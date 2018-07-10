@@ -51,11 +51,7 @@ public class HistoricalNet {
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-	@Override
-	public String toString() {
-		return "HistoricalNet [unitNet=" + unitNet + ", topNetValue=" + topNetValue + ", topNetValueNO=" + topNetValueNO
-				+ ", ratio=" + ratio + ", changePercent=" + changePercent + ", endTime=" + endTime + "]";
-	}
+	 
 	public HistoricalNet(String unitNet, String topNetValue, String topNetValueNO, String ratio, String changePercent,
 			String endTime) {
 		super();

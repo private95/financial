@@ -31,6 +31,13 @@ public interface PrivateStockMapper {
 	public List<PrivateCompany> inputSearchData(@Param("searchnum") String searchnum);
 	
 	/*
+	 * 多条件查询私募排行
+	 */
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON t_spi_privatestock.company_id = t_spi_company.company_id WHERE concat(t_spi_company.`name`,t_spi_company.corestrategy,t_spi_privatestock.fund_shortName) LIKE '%${searchnum}%'\n" + 
+			"")
+	public List<Company> selectSearchDatass(@Param("searchnum") String searchnum);
+	
+	/*
 	 * 根据公司名称查询公司有多少基金
 	 */
 	@Select("SELECT `t_spi_company`.* FROM `t_spi_company` INNER JOIN `t_spi_privatestock` on `t_spi_company`.`company_id`=`t_spi_privatestock`.`company_id` where `name`=#{companyName}")

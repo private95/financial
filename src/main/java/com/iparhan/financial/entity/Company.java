@@ -351,22 +351,6 @@ public class Company extends PrivateStock{
 		this.annualincome = annualincome;
 	}
 
-	 
-	@Override
-	public String toString() {
-		return "Company [id=" + id + ", name=" + name + ", personName=" + personName
-				+ ", capitalMoney=" + capitalMoney + ", address=" + address + ", recordCode=" + recordCode
-				+ ", establishTime=" + establishTime + ", production=" + production + ", idea=" + idea
-				+ ", idea_company=" + idea_company + ", tuser_id=" + tuser_id + ", annualincome=" + annualincome
-				+ ", product_count=" + product_count + ", corestrategy=" + corestrategy + ", nav=" + nav
-				+ ", price_date=" + price_date + ", cumulative_nav=" + cumulative_nav + ", topOneMonth=" + topOneMonth
-				+ ", topThreeMonth=" + topThreeMonth + ", topHalfYear=" + topHalfYear + ", topOne=" + topOne
-				+ ", topTwo=" + topTwo + ", topThree=" + topThree + ", topFive=" + topFive + ", topDate=" + topDate
-				+ ", top2018=" + top2018 + ", top2017=" + top2017 + ", top2016=" + top2016 + ", top2015=" + top2015
-				+ ", top2014=" + top2014 + ", top2013=" + top2013 + ", top2012=" + top2012 + ", top2011=" + top2011
-				+ ", company_id=" + company_id +"]";
-	}
-
 	public Company(PrivateStock privateStock, String id, String name, String personName, String capitalMoney,
 			String address, String recordCode, String establishTime, String production, String idea,
 			String product_count, String corestrategy, String nav, String price_date, String cumulative_nav,

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.iparhan.financial.dao.UserMapper;
 import com.iparhan.financial.service.MailService;
 import com.iparhan.financial.until.FinancialResult;
+import com.iparhan.financial.until.MD5Utils;
 import com.iparhan.financial.until.Verification;
 import com.iparhan.financial.vo.CommonResponseVO;
 
@@ -54,17 +55,19 @@ public class RegisterController {
 			return 4;
 		} else {
 			//System.out.println("未被使用");
-			userMapper.insertUser(username, password, email);
+			userMapper.insertUser(username, MD5Utils.md5Password(password), email);
 			return 1;
 		}
 	}
+	
+	
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
 	@RequestMapping(value = "/getRandomText")
 	public CommonResponseVO getRandomText(String email) {
 		//System.out.println("前端传递 ： "+email);
 		CommonResponseVO responseVO = new CommonResponseVO();
 		codeCompa = Verification.getStringRandom();
-		//System.out.println("生成的验证码 :"+codeCompa);
+		System.out.println("生成的验证码 :"+codeCompa);
 		mailService.sendSimpleMail(email, "邮箱注册验证码", codeCompa);
 		responseVO.success("验证码发送成功！");
 		return responseVO;
@@ -81,7 +84,7 @@ public class RegisterController {
 		String userEmail = userMapper.queryByUserName(username);
 		if (userEmail!=null&&email.equals(userEmail)) {
 			if (information!=null&&information.equals(codeCompa)) {
-				int num = userMapper.updateUserPassword(password, username, userEmail);
+				int num = userMapper.updateUserPassword(MD5Utils.md5Password(password), username, userEmail);
 				return FinancialResult.ok();
 			}else{
 				return FinancialResult.build(500, "验证码输入不正确");

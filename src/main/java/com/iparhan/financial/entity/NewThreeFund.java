@@ -174,16 +174,6 @@ public class NewThreeFund {
 	public void setTop2011(Double top2011) {
 		this.top2011 = top2011;
 	}
-	@Override
-	public String toString() {
-		return "NewThreeFund [id=" + id + ", fund_shortName=" + fund_shortName + ", fundCompany=" + fundCompany
-				+ ", nav=" + nav + ", price_date=" + price_date + ", cumulative_nav=" + cumulative_nav + ", yearNav="
-				+ yearNav + ", sharperPercent=" + sharperPercent + ", profit_col5=" + profit_col5 + ", topOneMonth="
-				+ topOneMonth + ", topThreeMonth=" + topThreeMonth + ", topHalfYear=" + topHalfYear + ", topOne="
-				+ topOne + ", topTwo=" + topTwo + ", topThree=" + topThree + ", topFive=" + topFive + ", top2018="
-				+ top2018 + ", top2017=" + top2017 + ", top2016=" + top2016 + ", top2015=" + top2015 + ", top2014="
-				+ top2014 + ", top2013=" + top2013 + ", top2012=" + top2012 + ", top2011=" + top2011 + "]";
-	}
 	public NewThreeFund(String id, String fund_shortName, String fundCompany, Double nav, String price_date,
 			Double cumulative_nav, Double yearNav, Double sharperPercent, int profit_col5, Double topOneMonth,
 			Double topThreeMonth, Double topHalfYear, Double topOne, Double topTwo, Double topThree, Double topFive,

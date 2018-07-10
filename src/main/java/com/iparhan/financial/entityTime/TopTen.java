@@ -30,11 +30,7 @@ public class TopTen {
 	public void setCsi300TopTen(String csi300TopTen) {
 		this.csi300TopTen = csi300TopTen;
 	}
-	@Override
-	public String toString() {
-		return "TopTen [fundTopTen=" + fundTopTen + ", avarageTopTen=" + avarageTopTen + ", csi300TopTen="
-				+ csi300TopTen + "]";
-	}
+	 
 	public TopTen(String fundTopTen, String avarageTopTen, String csi300TopTen) {
 		super();
 		this.fundTopTen = fundTopTen;

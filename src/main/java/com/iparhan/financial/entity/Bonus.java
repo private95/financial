@@ -22,10 +22,7 @@ public class Bonus {
 	public void setMoneyBonus(String moneyBonus) {
 		this.moneyBonus = moneyBonus;
 	}
-	@Override
-	public String toString() {
-		return "Bonus [dateBonus=" + dateBonus + ", moneyBonus=" + moneyBonus + "]";
-	}
+	 
 	public Bonus(String dateBonus, String moneyBonus) {
 		super();
 		this.dateBonus = dateBonus;

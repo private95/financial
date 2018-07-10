@@ -57,12 +57,6 @@ public class FOFFund {
 	public void setFundCompany(String fundCompany) {
 		this.fundCompany = fundCompany;
 	}
-	@Override
-	public String toString() {
-		return "FOFFund [id=" + id + ", fund_short_name=" + fund_short_name + ", newest_nav=" + newest_nav
-				+ ", estabilishTime=" + estabilishTime + ", thisYear_nav=" + thisYear_nav + ", top_rate=" + top_rate
-				+ ", fundManager=" + fundManager + ", fundCompany=" + fundCompany + "]";
-	}
 	public FOFFund(String id, String fund_short_name, Double newest_nav, String estabilishTime, Double thisYear_nav,
 			Double top_rate, String fundManager, String fundCompany) {
 		super();

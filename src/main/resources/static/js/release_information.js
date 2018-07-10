@@ -60,8 +60,10 @@ $(document).ready(function(){
 								//console.log(data)
 								if(data==1){
 									layer.msg("删除成功")
+									location.href="/release_information";
 								}else{
 									layer.msg("删除失败")
+									location.href="/release_information";
 								}
 							},
 							error:function(err){

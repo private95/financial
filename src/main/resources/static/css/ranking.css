@@ -93,6 +93,7 @@ a{
     box-sizing: border-box;
     outline: none;
     padding-left: 5px;
+    width: 600px;
 }
 #main_box>.main_list .list4 a{
     display: inline-block;
@@ -101,7 +102,7 @@ a{
     background-image: url("../images/ranking/sousuo.png");
     position: absolute;
     top: 13px;
-    right: -62px;
+    right: -490px;
 }
 #main_box>.stop a{
     display: inline-block;

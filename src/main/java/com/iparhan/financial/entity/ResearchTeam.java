@@ -22,11 +22,7 @@ public class ResearchTeam {
 	public void setIdea_ResearchTeam(String idea_ResearchTeam) {
 		this.idea_ResearchTeam = idea_ResearchTeam;
 	}
-	@Override
-	public String toString() {
-		return "ResearchTeam [name_ResearchTeam=" + name_ResearchTeam + ", idea_ResearchTeam=" + idea_ResearchTeam
-				+ "]";
-	}
+ 
 	public ResearchTeam() {
 		super();
 		// TODO Auto-generated constructor stub

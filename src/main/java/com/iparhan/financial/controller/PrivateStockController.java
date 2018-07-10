@@ -58,9 +58,9 @@ public class PrivateStockController {
 		//多条件查询
 		//System.out.println(searchnum);
 		List<PrivateCompany> inputSearchData = privateStockMapper.inputSearchData(searchnum);
-		for (PrivateCompany privateCompany : inputSearchData) {
+		//for (PrivateCompany privateCompany : inputSearchData) {
 			//System.out.println(privateCompany.toString());
-		}
+		//}
 		//return inputSearchData;
 		return Result.build(200, "查",inputSearchData);
 	}
@@ -72,9 +72,18 @@ public class PrivateStockController {
 		//多条件查询
 		//System.out.println(searchnum);
 		List<PrivateCompany> inputSearchData = privateStockMapper.inputSearchData(searchnum);
-		for (PrivateCompany privateCompany : inputSearchData) {
+		//for (PrivateCompany privateCompany : inputSearchData) {
 			//System.out.println(privateCompany.toString());
-		}
+		//}
+		//return inputSearchData;
+		return Result.build(200, "查",inputSearchData);
+	}
+	@RequestMapping(value = "/smphselectData")
+	@ResponseBody
+	public Result smphselectData(@RequestParam("aaaaa") String searchnum) {
+		//多条件查询
+		 System.out.println(searchnum+"-------------------------------------------");
+		List<Company> inputSearchData = privateStockMapper.selectSearchDatass(searchnum);
 		//return inputSearchData;
 		return Result.build(200, "查",inputSearchData);
 	}
@@ -84,9 +93,9 @@ public class PrivateStockController {
 	@ResponseBody
 	public Result selectByCpId(@RequestParam("cpId") Integer cpId) {
 		List<Company> inputSearchData = privateStockMapper.selectBycpId(cpId);
-		 for (Company company : inputSearchData) {
+		// for (Company company : inputSearchData) {
 			//System.out.println(company.toString());
-		}
+		//}
 		return Result.build(200, "产品详情",inputSearchData );
 	}
 	
@@ -110,9 +119,9 @@ public class PrivateStockController {
 	public Result getComptyIdShow(@RequestParam("comptyId") String comptyId) {
 		//System.out.println(comptyId);
 		List<PrivateCompany> privateStocks = privateStockMapper.getComptyIdShow(comptyId);
-		for (PrivateCompany privateCompany : privateStocks) {
+		//for (PrivateCompany privateCompany : privateStocks) {
 			//System.out.println(privateCompany.toString());
-		}
+		//}
 		return Result.build(200, "根据公司id查旗下基金", privateStocks);
 	}
 	

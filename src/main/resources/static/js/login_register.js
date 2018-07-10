@@ -255,7 +255,7 @@ function register(){
                      rtn = true;
                      layer.msg('恭喜您,注册成功');
                      setTimeout(function(){
-                    	 location.href="/";
+                    	 location.href="/login?tag=1";
                      },2000)
                      
                      
@@ -282,8 +282,6 @@ function register(){
                  
              },
              error: function (data) {
-                //$("#account_ms").html("链接服务器异常.");
-                 //rtn = false;
             	 layer.open({
 	           		  title: '提示信息',
 	           		  content: '链接服务器出错了...'
@@ -299,7 +297,7 @@ function register(){
 //微信登录
 
 $(".page_lt").click(function(){
-	alert("微信登录的js 文件");
+	//alert("微信登录的js 文件");
 	$.ajax({
 		  type: 'POST',
 		  url: "/index/weixin",
@@ -309,16 +307,6 @@ $(".page_lt").click(function(){
 });
 
 
-/*$(".page_lt").on("click",function(event){
-	alert("微信登录的js 文件");
-	$.ajax({
-		  type: 'POST',
-		  url: "/index/weixin",
-		  success: function(result){
-			  
-		  },
-		});
-}*/
 //找回密码-身份验证
 $('.forget').click(function(){
 	//alert();	
@@ -386,12 +374,12 @@ $('.next').click(function(){
 	 			dataType:"json",
 	 			success:function(res){
 	 				if(res.status==200){
-	 					alert("用户名和邮箱匹配")
 	 				}else{
-	 					alert("用户名和邮箱不匹配")
+	 					layer.open({
+	 		  				  title: '提示信息',
+	 		  				  content: '用户名和邮箱不匹配'
+	 		  			  	});
 	 				}
-	 				/*alert('yes')
-	 				console.log(res)*/
 	 			},
 	 			error:function(err){
 	 				layer.open({
@@ -409,7 +397,7 @@ $('.next').click(function(){
 
 //邮箱验证获取按钮
 $("#SendMark1").click(function(){
-	alert("获取邮箱验证");
+	//alert("获取邮箱验证");
 	//获取邮箱
 	var $email1=$("#Email2").val();
 	/*//获取用户名
@@ -501,9 +489,15 @@ $('#submit_pwd').click(function(){
 				dataType:"json",
 				success:function(data){
 					if(data.status==200){
-						alert("密码重置成功");
+						/*layer.open({
+									title: '提示信息',
+									content: '密码重置成功'
+									});*/
+						alert("密码重置成功，请登录！")
+						location.href="/login"
 					}else{
 						alert("密码重置失败")
+						location.href="/login"
 					}
 				},
 				error:function(err){

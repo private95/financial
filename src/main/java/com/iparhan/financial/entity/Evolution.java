@@ -127,15 +127,6 @@ public class Evolution {
 	public void setLastONe(String lastONe) {
 		this.lastONe = lastONe;
 	}
-	@Override
-	public String toString() {
-		return "Evolution [id=" + id + ", isPrivateProduction=" + isPrivateProduction + ", under300=" + under300
-				+ ", over50=" + over50 + ", age=" + age + ", education=" + education + ", job=" + job + ", houseIncome="
-				+ houseIncome + ", invest=" + invest + ", strock_expreince=" + strock_expreince + ", invest_expreince="
-				+ invest_expreince + ", yearOf_expreince=" + yearOf_expreince + ", invest_target=" + invest_target
-				+ ", plan_invest=" + plan_invest + ", invets_attuide=" + invets_attuide + ", lastTwo=" + lastTwo
-				+ ", lastONe=" + lastONe + "]";
-	}
 	public Evolution(String id, String isPrivateProduction, String under300, String over50, String age,
 			String education, String job, String houseIncome, String invest, String strock_expreince,
 			String invest_expreince, String yearOf_expreince, String invest_target, String plan_invest,

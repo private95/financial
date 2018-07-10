@@ -15,7 +15,7 @@ $(document).ready(function () {
 				var str='<li>'+
 			                '<ul>'+
 				                '<li>'+
-				                    '<a href="#">'+Data[0][i].name+'</a>'+
+				                    '<a href="/business_details?companyId='+Data[0][i].id+'">'+Data[0][i].name+'</a>'+
 				               '</li>'+
 				                '<li><span>成立日期 :'+Data[0][i].establishTime+'</span></li>'+
 				                '<li><span>法人代表 :'+ Data[0][i].personName+'</span></li>'+
@@ -91,12 +91,14 @@ $(document).ready(function () {
     		$('.one_jingzhi').text(data[0].nav)
     		$('.one_celue').text(data[0].corestrategy)
     		$('#abc').attr('href','/details?id='+data[0].id);
+    		$('.company_name1').attr('href','/details?id='+data[0].id);
     		  
     		$('.company_name2').text(data[1].fund_shortName)
     		$('.two_shouyi').text(data[1].cumulative_nav)
     		$('.two_jingzhi').text(data[1].nav)
     		$('.one_celue').text(data[1].corestrategy)
     		$('#def').attr('href','/details?id='+data[1].id);
+    		$('.company_name2').attr('href','/details?id='+data[1].id);
     	},
     	error:function(err){
     		layer.open({

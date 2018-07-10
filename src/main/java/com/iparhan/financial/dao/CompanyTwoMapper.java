@@ -53,8 +53,6 @@ public interface CompanyTwoMapper {
 			@Param("register_number") String register_number,
 			@Param("city") String city, 
 			
-			
-			
 			@Param("topOneMonth") String topOneMonth,
 			@Param("top2018") String top2018,
 			@Param("topThreeMonth") String topThreeMonth,
@@ -63,7 +61,6 @@ public interface CompanyTwoMapper {
 			@Param("top2016") String top2016,
 			@Param("topOne") String topOne,
 			@Param("top2015") String top2015,
-			
 			@Param("topTwo") String topTwo,
 			@Param("top2014") String top2014,
 			@Param("topThree") String topThree,
@@ -74,12 +71,44 @@ public interface CompanyTwoMapper {
 			@Param("top2011") String top2011,
 			
 			@Param("fund_short_name") String fund_short_name,
-			
-			
-	
-	
 			@Param("tuser_id") int tuser_id);
 	
+	
+	@Insert("INSERT INTO `t_spi_privatestock` "
+			+ "(`fund_shortName`, `fundCompany`, `nav`, `cumulative_nav`,"
+			+ "`topOneMonth`, `topThreeMonth`,`topHalfYear`, `topOne`, `topTwo`, `topThree`, `topFive`, `top2018`, `top2017`, `top2016`, `top2015`, `top2014`, `top2013`, `top2012`,`top2011`, "
+			+ "`price_date`, `company_id`, `annualized`, `sharpeatio`, `tuser_id`) "
+			+ "VALUES (#{fund_shortName},#{fundCompany},#{nav},#{cumulative_nav},"
+			+ "#{topOneMonth},#{topThreeMonth},#{topHalfYear},#{topOne},#{topTwo},#{topThree},#{topFive},#{top2018},#{top2017},#{top2016},#{top2015},#{top2014},#{top2013},#{top2012},#{top2011},"
+			+ "#{price_date},#{company_id},#{annualized},#{sharpeatio},#{tuser_id})")
+	void privatestock(
+			@Param("fund_shortName") String fund_shortName, 
+			@Param("fundCompany") String fundCompany, 
+			@Param("nav") String nav, 
+			@Param("cumulative_nav") String cumulative_nav, 
+			
+			@Param("topOneMonth") String topOneMonth,
+			@Param("top2018") String top2018,
+			@Param("topThreeMonth") String topThreeMonth,
+			@Param("top2017") String top2017,
+			@Param("topHalfYear") String topHalfYear,
+			@Param("top2016") String top2016,
+			@Param("topOne") String topOne,
+			@Param("top2015") String top2015,
+			@Param("topTwo") String topTwo,
+			@Param("top2014") String top2014,
+			@Param("topThree") String topThree,
+			@Param("top2013") String top2013,
+			@Param("topFive") String topFive,
+			@Param("top2012") String top2012,
+			@Param("top2011") String top2011,
+			
+			@Param("price_date") String price_date, 
+			@Param("company_id") String company_id,
+			@Param("annualized") String annualized, 
+			@Param("sharpeatio") String sharpeatio,
+			@Param("tuser_id") int tuser_id);
+
 	 
 	/**
 	 * 用户手动插入的企业信息
@@ -105,7 +134,7 @@ public interface CompanyTwoMapper {
 	public List<Company> getAllComByCumid();
 
 	// 根据id删除用户发布过的信息
-	@Delete("DELETE FROM t_company WHERE id = #{id}")
+	@Delete("DELETE FROM t_spi_company WHERE id = #{id}")
 	int deleteCompany(@Param("id") String id);
 
 	// 首页条件查询---基金名称 按照创建时间降序排列
@@ -131,6 +160,9 @@ public interface CompanyTwoMapper {
 	// 首页条件查询---风险等级 按照风险等级降序排列
 	@Select("SELECT * FROM `t_spi_privatestock` ORDER BY riskgrade DESC")
 	public List<PrivateStock> getProduction6();
+
+
+	
 
 
 }

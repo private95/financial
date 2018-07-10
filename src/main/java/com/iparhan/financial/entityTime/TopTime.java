@@ -75,14 +75,7 @@ public class TopTime {
 	public void setDefenseFundTopTime(String defenseFundTopTime) {
 		this.defenseFundTopTime = defenseFundTopTime;
 	}
-	@Override
-	public String toString() {
-		return "TopTime [fundTopTime=" + fundTopTime + ", avarageTopTime=" + avarageTopTime + ", csi300TopTime="
-				+ csi300TopTime + ", annualVolatilityTopTime=" + annualVolatilityTopTime
-				+ ", maximumRetracementTopTime=" + maximumRetracementTopTime + ", attackPercentTopTime="
-				+ attackPercentTopTime + ", attackFundTopTime=" + attackFundTopTime + ", defensePercetTopTime="
-				+ defensePercetTopTime + ", defenseFundTopTime=" + defenseFundTopTime + "]";
-	}
+ 
 	public TopTime() {
 		super();
 		// TODO Auto-generated constructor stub

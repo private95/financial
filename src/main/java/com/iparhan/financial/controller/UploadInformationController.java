@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.iparhan.financial.dao.BonusMapper;
 import com.iparhan.financial.dao.CompanyTwoMapper;
 import com.iparhan.financial.dao.DynamicRetraMapper;
@@ -35,15 +36,10 @@ import com.iparhan.financial.entity.HistoricalNet;
 import com.iparhan.financial.entity.Productions;
 import com.iparhan.financial.entity.ResearchTeam;
 import com.iparhan.financial.entity.Split;
-import com.iparhan.financial.entityTime.TopFive;
-import com.iparhan.financial.entityTime.TopHalfYear;
-import com.iparhan.financial.entityTime.TopOne;
-import com.iparhan.financial.entityTime.TopOneMonth;
 import com.iparhan.financial.entityTime.TopTen;
-import com.iparhan.financial.entityTime.TopThree;
-import com.iparhan.financial.entityTime.TopThreeMonth;
 import com.iparhan.financial.entityTime.TopTime;
-import com.iparhan.financial.entityTime.TopTwo;
+
+
 
 /**
  * <免费发布信息>页面的数据交互业务
@@ -152,6 +148,8 @@ public class UploadInformationController {
 		String topDate = company.getTopDate();
 		String top2011 = company.getTop2011();
 		
+		
+		
 		String fund_shortName = company.getFund_shortName();
 		
 		
@@ -174,6 +172,20 @@ public class UploadInformationController {
 				Integer.parseInt(tuser_id));
 		//System.out.println("企业信息存储到数据库============================DB");
 
+		
+		
+		
+		 String price_date = company.getPrice_date();
+		 String annualized = company.getAnnualized();
+		 String sharpeatio = company.getSharpeatio();
+		 String fundCompany = company.getFundCompany();
+		
+		//添加产品信息
+		 companyMapper.privatestock(
+				fund_shortName,fundCompany,nav,cumulative_nav,
+				topOneMonth,top2018,topThreeMonth,top2017,topHalfYear,top2016,topOne,top2015,topTwo,top2014,topThree,top2013,topFive,top2012,top2011,
+				price_date,company_id,annualized,sharpeatio,
+				  Integer.parseInt(tuser_id));
 		/*
 		 * 基金经理
 		 */

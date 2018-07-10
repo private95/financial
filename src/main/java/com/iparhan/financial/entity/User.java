@@ -89,15 +89,6 @@ public class User {
 		IdNumber = idNumber;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", repassword=" + repassword
-				+ ", email=" + email + ", realName=" + realName + ", IdType=" + IdType + ", IdNumber=" + IdNumber
-				+ ", getId()=" + getId() + ", getUsername()=" + getUsername() + ", getPassword()=" + getPassword()
-				+ ", getRepassword()=" + getRepassword() + ", getEmail()=" + getEmail() + ", getRealName()="
-				+ getRealName() + ", getIdType()=" + getIdType() + ", getIdNumber()=" + getIdNumber() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
-	}
 
 	public User(String id, String username, String password, String repassword, String email, String realName,
 			String idType, String idNumber) {

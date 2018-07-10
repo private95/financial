@@ -22,11 +22,6 @@ public class FundManager {
 	public void setIdea_fundManagerName(String idea_fundManagerName) {
 		this.idea_fundManagerName = idea_fundManagerName;
 	}
-	@Override
-	public String toString() {
-		return "FundManager [fundManagerName=" + fundManagerName + ", idea_fundManagerName=" + idea_fundManagerName
-				+ "]";
-	}
 	public FundManager(String fundManagerName, String idea_fundManagerName) {
 		super();
 		this.fundManagerName = fundManagerName;

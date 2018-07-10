@@ -78,14 +78,6 @@ public class TopTwo {
 		public void setDefenseFundTopTwo(String defenseFundTopTwo) {
 			this.defenseFundTopTwo = defenseFundTopTwo;
 		}
-		@Override
-		public String toString() {
-			return "TopTwo [fundTopTwo=" + fundTopTwo + ", avarageTopTwo=" + avarageTopTwo + ", csi300TopTwo="
-					+ csi300TopTwo + ", annualVolatilityTopTwo=" + annualVolatilityTopTwo
-					+ ", maximumRetracementTopTwo=" + maximumRetracementTopTwo + ", attackPercentTopTwo="
-					+ attackPercentTopTwo + ", attackFundTopTwo=" + attackFundTopTwo + ", defensePercetTopTwo="
-					+ defensePercetTopTwo + ", defenseFundTopTwo=" + defenseFundTopTwo + "]";
-		}
 		public TopTwo(String fundTopTwo, String avarageTopTwo, String csi300TopTwo, String annualVolatilityTopTwo,
 				String maximumRetracementTopTwo, String attackPercentTopTwo, String attackFundTopTwo,
 				String defensePercetTopTwo, String defenseFundTopTwo) {

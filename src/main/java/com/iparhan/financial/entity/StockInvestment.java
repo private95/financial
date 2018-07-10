@@ -55,12 +55,6 @@ public class StockInvestment {
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
-	@Override
-	public String toString() {
-		return "StockInvestment [stockName=" + stockName + ", stockCode=" + stockCode + ", shareNumbers=" + shareNumbers
-				+ ", changeStcokNum=" + changeStcokNum + ", ratio=" + ratio + ", changePercent=" + changePercent
-				+ ", endTime=" + endTime + "]";
-	}
 	public StockInvestment(String stockName, String stockCode, String shareNumbers, String changeStcokNum, String ratio,
 			String changePercent, String endTime) {
 		super();

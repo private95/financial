@@ -341,8 +341,8 @@ function ChangePwd(){
             data: {"NowPwd": NowPwd, "NewPwd": NewPwd},
             async: false,
             success: function (data) { 
-            	alert("修改密码成功");
-                location.href="/";  
+            	alert("修改密码成功,请你登录!");
+            	Logout();
             },
             error: function (data) {
             	alert("修改密码失败");
@@ -353,7 +353,24 @@ function ChangePwd(){
 
 }
 
-
+function Logout(){
+	alert(1)
+    localStorage.removeItem("login");
+     clearCookie('username')
+     $.ajax({
+			url:"/exitLogon",
+			type:"post",
+			dataType:"json",
+			success:function(data){
+				console.log(data)
+				if(data.status==200){
+					location.href="/login";
+				}else{
+					location.href="/login";
+				}
+			},
+		})
+ }
 
 
 
@@ -413,7 +430,7 @@ function ChangePwd(){
 						var _this=$(this);
 						var id=$(this).parent().parent().find('td').eq(0).text();
 						$.ajax({
-							url:'http://192.168.1.132/companyDelete',
+							url:'/companyDelete',
 							type:"post",
 							data:{"id":id},
 							dataType:"json",

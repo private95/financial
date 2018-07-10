@@ -72,10 +72,18 @@
 						'<td class="oneyearrating">'+arr[i].oneyearrating+'</td>'+
 						'<td><a href="/business_details?companyId='+arr[i].id+'">了解详情</a></td>'+
 					'</tr>'
-         		$('#tbody1').append(str)//试试
+         		$('#tbody1').append(str)
+         		CheckType()
          	}
          } 
-//
+     	 //0或者是null时显示--
+			function CheckType(){
+				$('td').each(function(index){
+					if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''||$(this).text()=='null%'){
+						$(this).text('--')
+					}
+				})
+			}
     	 
     </script>
 </head>

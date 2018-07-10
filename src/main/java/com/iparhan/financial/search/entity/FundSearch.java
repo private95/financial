@@ -58,12 +58,6 @@ public class FundSearch {
 	public void setPrice_date(String price_date) {
 		this.price_date = price_date;
 	}
-	@Override
-	public String toString() {
-		return "FundSearch [id=" + id + ", fund_shortName=" + fund_shortName + ", fundCompany=" + fundCompany + ", nav="
-				+ nav + ", cumulative_nav=" + cumulative_nav + ", topOneMonth=" + topOneMonth + ", price_date="
-				+ price_date + "]";
-	}
 	public FundSearch(String id, String fund_shortName, String fundCompany, Double nav, Double cumulative_nav,
 			Double topOneMonth, String price_date) {
 		super();

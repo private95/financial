@@ -26,9 +26,6 @@
 </ul>
 
 <script>
-
-
-
     $(document).ready(function(){
         var login = localStorage.getItem("login");
         if(login=="yes"){
@@ -39,25 +36,19 @@
         }else{
         	checkCookie()
         } 
-        //checkCookie()
+        
+        
         $('#fabu').click(function(){
-        	
-        	//我需要拿到那个值。。。。
-        	//每次就加上去了、、
-        	 username=getCookie("username");
+        	var username=getCookie("username");
         		$.ajax({
         			url:"/loginCheck",
         			type:"post",
         			data:{"username":username},
         			dataType:"json",
         			success:function(data){
-        				console.log(data)
-        				//如果成功了就可以了
-        				//调用
-        				release();
+        				release(data);
         			},
         			error:function(err){
-        				
         			}
         		})
         	
@@ -106,9 +97,9 @@
 	function clearCookie(name){    
 	    setCookie(name, "", -1);    
 	}
-	//閫�鍑虹櫥褰�
+	//退出登录
     function logout(){
-       localStorage.removeItem("login");
+        localStorage.removeItem("login");
         clearCookie('username')
         $.ajax({
 			url:"/exitLogon",
@@ -125,12 +116,12 @@
 		})
     }
 
-//    閸欐垵绔锋穱鈩冧紖鐠哄疇娴嗛崚銈嗘焽
-    function release(){
-        var login = localStorage.getItem("login");
+//  发布时根据登录信息跳转
+    function release(data){
         if(data == 1){
             location.href="/release_information";
         }else{
+        	alert("请你登录！")
             location.href="/login_page";
         }
     }

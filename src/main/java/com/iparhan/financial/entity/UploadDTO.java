@@ -137,15 +137,6 @@ public class UploadDTO {
 	public void setTopOneMonth(TopOneMonth topOneMonth) {
 		this.topOneMonth = topOneMonth;
 	}
-	@Override
-	public String toString() {
-		return "UploadDTO [id=" + id + ", company=" + company + ", fundManager=" + fundManager + ", researchTeam="
-				+ researchTeam + ", productions=" + productions + ", bonus=" + bonus + ", split=" + split
-				+ ", historicalNet=" + historicalNet + ", dynamicRetra=" + dynamicRetra + ", topTime=" + topTime
-				+ ", topTen=" + topTen + ", topFive=" + topFive + ", topThree=" + topThree + ", topTwo=" + topTwo
-				+ ", topOne=" + topOne + ", topHalfYear=" + topHalfYear + ", topThreeMonth=" + topThreeMonth
-				+ ", topOneMonth=" + topOneMonth + "]";
-	}
 	public UploadDTO(String id, CompanyTwo company, FundManager fundManager, ResearchTeam researchTeam,
 			Productions productions, Bonus bonus, Split split, HistoricalNet historicalNet, DynamicRetra dynamicRetra,
 			TopTime topTime, TopTen topTen, TopFive topFive, TopThree topThree, TopTwo topTwo, TopOne topOne,

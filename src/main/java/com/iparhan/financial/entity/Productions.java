@@ -227,19 +227,7 @@ public class Productions {
 	public void setLevel(String level) {
 		this.level = level;
 	}
-	@Override
-	public String toString() {
-		return "Productions [productName=" + productName + ", fundCompany=" + fundCompany + ", fundManage=" + fundManage
-				+ ", broker=" + broker + ", advisor=" + advisor + ", futuresBrokers=" + futuresBrokers
-				+ ", fundManager=" + fundManager + ", startPoint=" + startPoint + ", custodian=" + custodian
-				+ ", addPoint=" + addPoint + ", agencey=" + agencey + ", expression=" + expression + ", closedPeriod="
-				+ closedPeriod + ", recordCode=" + recordCode + ", productEsTime=" + productEsTime + ", netValue="
-				+ netValue + ", accumulatedNet=" + accumulatedNet + ", profitTisYear=" + profitTisYear
-				+ ", accumulatedIncome=" + accumulatedIncome + ", warnigLine=" + warnigLine + ", stopLine=" + stopLine
-				+ ", beginScale=" + beginScale + ", existence=" + existence + ", reward=" + reward + ", rate=" + rate
-				+ ", redemptionRate=" + redemptionRate + ", redemptionRateNote=" + redemptionRateNote + ", openDate="
-				+ openDate + ", runningState=" + runningState + ", isNote=" + isNote + ", level=" + level + "]";
-	}
+ 
 	public Productions(String productName, String fundCompany, String fundManage, String broker, String advisor,
 			String futuresBrokers, String fundManager, String startPoint, String custodian, String addPoint,
 			String agencey, String expression, String closedPeriod, String recordCode, String productEsTime,

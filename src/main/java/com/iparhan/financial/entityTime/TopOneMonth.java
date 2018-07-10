@@ -30,11 +30,6 @@ public class TopOneMonth {
 	public void setCsi300TopOneMonth(String csi300TopOneMonth) {
 		this.csi300TopOneMonth = csi300TopOneMonth;
 	}
-	@Override
-	public String toString() {
-		return "TopOneMonth [fundTopOneMonth=" + fundTopOneMonth + ", avarageTopOneMonth=" + avarageTopOneMonth
-				+ ", csi300TopOneMonth=" + csi300TopOneMonth + "]";
-	}
 	public TopOneMonth(String fundTopOneMonth, String avarageTopOneMonth, String csi300TopOneMonth) {
 		super();
 		this.fundTopOneMonth = fundTopOneMonth;

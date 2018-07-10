@@ -29,7 +29,7 @@
 			type:"POST",
 			url:"/showCompanyInfo?cid="+cid,
 			success:function(data){
-				console.log(data.data)
+				//console.log(data.data)
 				GetData(data.data)
     		}
 		});
@@ -48,8 +48,12 @@
          		$('#main').find($('.bah')[i]).html(arr[i].recordCode);
          		$('#main').find($('.hxrw')[i]).html(arr[i].personName);
          		$('#main').find($('.gsjs')[i]).html(arr[i].idea_company);
+         		 $('span').each(function(index){
+					if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()=='0个'||$(this).text()=='null%'){
+						$(this).text('--')
+					}
+				}) 
          	}
-         	
 			$.ajax({
 				url:"/getComptyIdShow?comptyId="+comptyId,
 				success:function(data){
@@ -65,7 +69,12 @@
 			                        '<td>'+a[j].annualized+'%'+'</td>'+
 			                        /* '<td><a href="#">了解操作</a></td>'+ */
                         	'</tr>'
-	                        $('#qixiajj').append(str)
+                        	$('#qixiajj').append(str)
+                        	 $('td').each(function(index){
+								if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''||$(this).text()=='null%'){
+									$(this).text('--')
+								}
+							}) 
 					}
 				}
 			});
@@ -133,9 +142,9 @@
                     <li>
                         <a class="btn" href="#">公司介绍</a>
                     </li>
-                   <!--  <li>
+                     <li>
                         <a href="#">收益曲线</a>
-                    </li> -->
+                    </li> 
                     <li>
                         <a href="#">旗下产品</a>
                     </li>
@@ -164,7 +173,7 @@
                             </p> -->
                         </div>
                             <!--2.收益曲线-->
-                       <!--  <div id="profit">
+                          <div id="profit">
                             <ul class="my_title">
                                 <li>
                                     <span></span>
@@ -205,7 +214,7 @@
                                     <a href="#">最近一年</a>
                                 </li>
                             </ul>
-                            <ul class="list_2">
+                           <!--  <ul class="list_2">
                                 <li>
                                     <i></i>
                                     <span>冠源一号</span>
@@ -218,8 +227,8 @@
                                     <i></i>
                                     <span>融智-股票策略指数</span>
                                 </li>
-                            </ul>
-                        </div> -->
+                            </ul> -->
+                        </div>  
                             <!--3.旗下产品-->
                         <div id="product">
                             <ul class="my_title">
@@ -230,14 +239,14 @@
                                     <span>旗下产品</span>
                                 </li>
                             </ul>
-                            <!-- <ul class="list_3">
+                             <ul class="list_3">
                                 <li>
                                     <a class="selected" href="#">运行中</a>
                                 </li>
                                 <li>
                                     <a href="#">已清算</a>
                                 </li>
-                            </ul> -->
+                            </ul> 
                             <table class="btn">
                                 <thead>
                                     <tr>

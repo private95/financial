@@ -23,10 +23,6 @@ public class DynamicRetra {
 	public void setRetraPercent(String retraPercent) {
 		this.retraPercent = retraPercent;
 	}
-	@Override
-	public String toString() {
-		return "DynamicRetra [date=" + date + ", retraPercent=" + retraPercent + "]";
-	}
 	public DynamicRetra(String date, String retraPercent) {
 		super();
 		this.date = date;

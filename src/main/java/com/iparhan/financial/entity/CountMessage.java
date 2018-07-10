@@ -29,10 +29,6 @@ public class CountMessage {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	@Override
-	public String toString() {
-		return "CountMessage [username=" + username + ", email=" + email + ", address=" + address + "]";
-	}
 	public CountMessage(String username, String email, String address) {
 		super();
 		this.username = username;
