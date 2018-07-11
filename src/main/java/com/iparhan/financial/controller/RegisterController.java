@@ -75,7 +75,7 @@ public class RegisterController {
 	
 	
 	
-	/*
+	/**
 	 * 重置密码
 	 */
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
@@ -94,7 +94,7 @@ public class RegisterController {
 		}
 	}
 	
-	/*
+	/**
 	 * 验证用户名和邮箱是否匹配
 	 */
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域

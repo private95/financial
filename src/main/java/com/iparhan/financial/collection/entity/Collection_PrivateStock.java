@@ -43,11 +43,7 @@ public class Collection_PrivateStock {
 	public void setTop2018(Double top2018) {
 		this.top2018 = top2018;
 	}
-	@Override
-	public String toString() {
-		return "Collection_PrivateStock [id=" + id + ", fund_shortName=" + fund_shortName + ", nav=" + nav
-				+ ", cumulative_nav=" + cumulative_nav + ", topOneMonth=" + topOneMonth + ", top2018=" + top2018 + "]";
-	}
+	 
 	public Collection_PrivateStock(String id, String fund_shortName, String nav, String cumulative_nav,
 			Double topOneMonth, Double top2018) {
 		super();

@@ -96,22 +96,22 @@
                 <span>公司规模 :</span>
                 <ul class="list2">
                     <li>
-                        <a href="#">全部</a>
+                        <a href="#" onclick="nox()">全部</a>
                     </li>
                     <li>
-                        <a href="#">0~1个亿</a>
+                        <a href="#" onclick="monery01()">0~1个亿</a>
                     </li>
                     <li>
-                        <a href="#">1~10个亿</a>
+                        <a href="#" onclick="monery110()">1~10个亿</a>
                     </li>
                     <li>
-                        <a href="#">10~20个亿</a>
+                        <a href="#" onclick="monery1020()">10~20个亿</a>
                     </li>
                     <li>
-                        <a href="#">20~50个亿</a>
+                        <a href="#" onclick="monery2050()"> 20~50个亿</a>
                     </li>
                     <li>
-                        <a href="#">50个亿以上</a>
+                        <a href="#" onclick="monery50()">50个亿以上</a>
                     </li>
                 </ul>
             </li>
@@ -148,8 +148,8 @@
                 <span>关 键 词 :</span>
                 <ul class="list4">
                     <li>
-                        <input type="text"/>
-                        <a href="#"></a>
+                        <input type="text"  placeholder="请输入关键词" id="ssgjz" />
+                        <a href="#" onclick="ssss()"></a>
                     </li>
                 </ul>
             </li>
@@ -234,22 +234,22 @@
                 <span>所在地区 :</span>
                 <ul>
                     <li>
-                        <a href="#">不限</a>
+                        <a href="#"  onclick="nox()">不限</a>
                     </li>
                     <li>
-                        <a href="#">北京</a>
+                        <a href="#" onclick="diqubj()">北京</a>
                     </li>
                     <li>
-                        <a href="#">上海</a>
+                        <a href="#" onclick="diqush()">上海</a>
                     </li>
                     <li>
-                        <a href="#">广州</a>
+                        <a href="#" onclick="diqugz()">广州</a>
                     </li>
                     <li>
-                        <a href="#">深圳</a>
+                        <a href="#" onclick="diqusz()">深圳</a>
                     </li>
                     <li>
-                        <a href="#">其他</a>
+                        <a href="#" onclick="nox()">其他</a>
                     </li>
                 </ul>
             </li>
@@ -257,22 +257,22 @@
                 <span>成立时间 :</span>
                 <ul>
                     <li>
-                        <a href="#">不限</a>
+                        <a href="#" onclick="time2019()">不限</a>
                     </li>
                     <li>
-                        <a href="#">2018年</a>
+                        <a href="#" onclick="time2018()">2018年</a>
                     </li>
                     <li>
-                        <a href="#">2017年</a>
+                        <a href="#" onclick="time2017()">2017年</a>
                     </li>
                     <li>
-                        <a href="#">2016年</a>
+                        <a href="#" onclick="time2016()">2016年</a>
                     </li>
                     <li>
-                        <a href="#">2015年</a>
+                        <a href="#" onclick="time2015()">2015年</a>
                     </li>
                     <li>
-                        <a href="#">2014年</a>
+                        <a href="#" onclick="time2014()">2014年</a>
                     </li>
                 </ul>
             </li>
@@ -291,20 +291,20 @@
                 <th>产品数</th>
                 <th>投资策略</th>
                 <th>代表产品</th>
-                <th>
-               		<span class="shorip">夏普比率</span>
-		            <span class="updown"><a></a><a></a></span>
-                </th>
                 <!-- <th class="dataTypes">
             		<span class="shorip">近一个月%</span>
 		            <span class="updown"><a></a><a></a></span>
                 </th> -->               
                 <th>
-                	<span class="shorip">最近净值</span>
+                	<span class="shorip">最新净值</span>
 		            <span class="updown"><a></a><a></a></span>
                 </th>
                 <th>
-                	<span class="shorip">累计%</span>
+                	<span class="shorip">累计净值</span>
+		            <span class="updown"><a></a><a></a></span>
+                </th>
+                <th>
+               		<span class="shorip">等级评定</span>
 		            <span class="updown"><a></a><a></a></span>
                 </th>
                 <th>
@@ -331,9 +331,9 @@
 						<td>{{product_count}}</td>
 						<td>{{corestrategy}}</td>
 						<td>{{production}}</td>
-						<td class="red changeType"></td>
-						<td class="red changeType">{{nav}}</td>
-						<td class="red">{{cumulative_nav}}%</td>
+						<td class="red">{{nav}}</td>
+						<td class="red">{{cumulative_nav}}</td>
+						<td class="red">{{riskgrade}}</td>
 						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
 					</tr>
 				{{/each}}
@@ -350,5 +350,7 @@
 <script src="js/common.js"></script>
 <script src="js/handlebars-1.0.0.beta.6.js"></script>
 <script src="js/enterpise_information.js"></script>
+<script src="js/reankingoffering.js"></script>
+<!-- <script src="js/enterpiseInformation.js"></script> -->
 <script src="layer/layer.js"></script>
 </html>

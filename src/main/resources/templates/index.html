@@ -16,7 +16,7 @@
 			window.location.href="/special_inquiry?SearchKey="+$("#Search").val();;		 
 		}
 </script>
-</head>
+</head> 
 <body>
 	<header id="top">
 		<div class="top-logo">
@@ -122,11 +122,11 @@
 						<th>基金公司</th>
 						<th>基金简称</th>
 						<th>最新净值</th>
-						<th>累计%</th>
-						<th>近一个月%</th>
-						<th>年化%</th>
+						<th>累计净值</th>
+						<th>近一个月</th>
+						<th>年化率</th>
 						<th>夏普比率</th>
-						<th>一年评级</th>
+						<th>等级评定</th>
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -271,12 +271,12 @@
 						<td>{{id}}</td>
 						<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
 						<td>{{fundCompany}}</td>
-						<td>{{nav}}</td>
-						<td class="red">{{cumulative_nav}}</td>
-						<td class="red" id="type">{{topOneMonth}}</td>
-						<td class="red">{{annualized}}</td>
+						<td class="red">{{nav}}%</td>
+						<td class="red">{{cumulative_nav}}%</td>
+						<td class="red" id="type">{{topOneMonth}}%</td>
+						<td class="red">{{annualincome}}%</td>
 						<td class="red">{{sharpeatio}}</td>
-						<td>{{oneyearrating}}</td>
+						<td>{{riskgrade}}</td>
 						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
 					</tr>
 				{{/each}}

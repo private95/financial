@@ -33,8 +33,7 @@ public interface PrivateStockMapper {
 	/*
 	 * 多条件查询私募排行
 	 */
-	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON t_spi_privatestock.company_id = t_spi_company.company_id WHERE concat(t_spi_company.`name`,t_spi_company.corestrategy,t_spi_privatestock.fund_shortName) LIKE '%${searchnum}%'\n" + 
-			"")
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON t_spi_privatestock.company_id = t_spi_company.company_id WHERE concat(t_spi_company.`name`,t_spi_company.corestrategy,t_spi_privatestock.fund_shortName,t_spi_company.personName,t_spi_company.production,t_spi_company.corestrategy) LIKE '%${searchnum}%'")
 	public List<Company> selectSearchDatass(@Param("searchnum") String searchnum);
 	
 	/*
@@ -183,6 +182,110 @@ public interface PrivateStockMapper {
 	
 	@Select("select * from t_spi_privatestock where company_id=#{conmtyId}")
 	public List<PrivateCompany> getComptyIdShow(String comptyId);
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company " + 
+			"ON t_spi_privatestock.company_id = t_spi_company.company_id ORDER BY t_spi_company.nav DESC")
+	public List<Company> indexSmphselectData();
+
+	
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company " + 
+			"ON t_spi_privatestock.company_id = t_spi_company.company_id ORDER BY t_spi_company.riskgrade DESC ")
+	public List<Company> smphselectDataOnx();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade>4")
+	public List<Company> smphselectDataOn5();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade=4")
+	public List<Company> smphselectDataOn4();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade=3")
+	public List<Company> smphselectDataOn3();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade=2")
+	public List<Company> smphselectDataOn2();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade=1")
+	public List<Company> smphselectDataOn1();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.riskgrade is null")
+	public List<Company> smphselectDataOn0();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id  WHERE concat(t_spi_company.address,t_spi_company.city) LIKE '%北京%'")
+	public List<Company> smphselectDatadiqubj();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id  WHERE concat(t_spi_company.address,t_spi_company.city) LIKE '%上海%'")
+	public List<Company> smphselectDatadiqush();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id  WHERE concat(t_spi_company.address,t_spi_company.city) LIKE '%广州%'")
+	public List<Company> smphselectDatadiqugz();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id  WHERE concat(t_spi_company.address,t_spi_company.city) LIKE '%深圳%'")
+	public List<Company> smphselectDatadiqusz();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id  WHERE concat(t_spi_company.address,t_spi_company.city) LIKE '%北京%'")
+	public List<Company> smphselectDatadiquqt();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM 	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE 	concat( t_spi_company.establishTime	) LIKE '%2018%'")
+	public List<Company> smphselectDatatime2018();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM 	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE 	concat( t_spi_company.establishTime	) LIKE '%2017%'")
+	public List<Company> smphselectDatatime2017();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM 	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE 	concat( t_spi_company.establishTime	) LIKE '%2016%'")
+	public List<Company> smphselectDatatime2016();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM 	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE 	concat( t_spi_company.establishTime	) LIKE '%2015%'")
+	public List<Company> smphselectDatatime2015();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM 	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE 	concat( t_spi_company.establishTime	) LIKE '%2014%'")
+	public List<Company> smphselectDatatime2014();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE	concat(	t_spi_company.corestrategy	) LIKE '%期货管理%'")
+	public List<Company> smphselectDataqhgl();
+
+	@Select("SELECT	t_spi_company.*, t_spi_privatestock.* FROM	t_spi_privatestock INNER JOIN t_spi_company ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE	concat(	t_spi_company.corestrategy	) LIKE '%股票策略%'")
+	public List<Company> smphselectDatatzcl();
+
+	
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.capitalMoney between 0 and 1")
+	public List<Company> smphselectDatamonery01();
+	
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.capitalMoney between 1 and 10")
+	public List<Company> smphselectDatamonery110();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.capitalMoney between 10 and 20")
+	public List<Company> smphselectDatamonery1020();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.capitalMoney between 20 and 50")
+	public List<Company> smphselectDatamonery2050();
+
+	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON "
+			+ "t_spi_privatestock.company_id = t_spi_company.company_id WHERE t_spi_company.capitalMoney >50")
+	public List<Company> smphselectDatamonery50();
+
+
 	
 
 }

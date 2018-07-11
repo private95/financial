@@ -240,7 +240,7 @@ $(document).ready(function(){
         	error:function(){
         		layer.open({
 					  title: '提示信息',
-					  content: 'sorry,数据被外星人绑架了'
+					  content: '服务器异常,稍后请重试'
 	    		});
         	}
         })

@@ -78,14 +78,24 @@ public class PrivateStockController {
 		//return inputSearchData;
 		return Result.build(200, "查",inputSearchData);
 	}
+	
 	@RequestMapping(value = "/smphselectData")
 	@ResponseBody
 	public Result smphselectData(@RequestParam("aaaaa") String searchnum) {
-		//多条件查询
-		 System.out.println(searchnum+"-------------------------------------------");
 		List<Company> inputSearchData = privateStockMapper.selectSearchDatass(searchnum);
-		//return inputSearchData;
 		return Result.build(200, "查",inputSearchData);
+	}
+	
+	
+	//查所有
+	@RequestMapping(value = "/indexsmphselectData")
+	@ResponseBody
+	public List<Company> indexSmphselectData() {
+		//多条件查询
+		//System.out.println(searchnum+"-------------------------------------------");
+		List<Company> inputSearchData = privateStockMapper.indexSmphselectData();
+		//return inputSearchData;
+		return inputSearchData;
 	}
 	
 	
@@ -330,7 +340,7 @@ public class PrivateStockController {
 	}
 
 	/**
-	 * 查询该用户的收藏的基金
+	 * 查询该用户的收藏的基金 
 	 */
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
 	@RequestMapping(value = "/selectMyCollect")
@@ -338,6 +348,177 @@ public class PrivateStockController {
 		return privateStockService.selectByTuserId(request);
 	}
 	
+	//星级
+	@RequestMapping("/smphselectDataOnx")
+	@ResponseBody
+	public Result smphselectDataOnx() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOnx();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn5")
+	@ResponseBody
+	public Result smphselectDataOn5() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn5();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn4")
+	@ResponseBody
+	public Result smphselectDataOn4() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn4();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn3")
+	@ResponseBody
+	public Result smphselectDataOn3() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn3();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn2")
+	@ResponseBody
+	public Result smphselectDataOn2() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn2();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn1")
+	@ResponseBody
+	public Result smphselectDataOn1() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn1();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataOn0")
+	@ResponseBody
+	public Result smphselectDataOn0() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataOn0();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	//地区
+	@RequestMapping("/smphselectDatadiqubj")
+	@ResponseBody
+	public Result smphselectDatadiqubj() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatadiqubj();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatadiqush")
+	@ResponseBody
+	public Result smphselectDatadiqush() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatadiqush();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatadiqugz")
+	@ResponseBody
+	public Result smphselectDatadiqugz() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatadiqugz();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatadiqusz")
+	@ResponseBody
+	public Result smphselectDatadiqusz() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatadiqusz();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDatadiquqt")
+	@ResponseBody
+	public Result smphselectDatadiquqt() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatadiquqt();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatatime2018")
+	@ResponseBody
+	public Result smphselectDatatime2018() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatime2018();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatatime2017")
+	@ResponseBody
+	public Result smphselectDatatime2017() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatime2017();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatatime2016")
+	@ResponseBody
+	public Result smphselectDatatime2016() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatime2016();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatatime2015")
+	@ResponseBody
+	public Result smphselectDatatime2015() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatime2015();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatatime2014")
+	@ResponseBody
+	public Result smphselectDatatime2014() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatime2014();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDataqhgl")
+	@ResponseBody
+	public Result smphselectDataqhgl() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDataqhgl();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
+	@RequestMapping("/smphselectDatatzcl")
+	@ResponseBody
+	public Result smphselectDatatzcl() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatatzcl();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatamonery01")
+	@ResponseBody
+	public Result smphselectDatamonery01() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatamonery01();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatamonery110")
+	@ResponseBody
+	public Result smphselectDatamonery110() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatamonery110();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatamonery1020")
+	@ResponseBody
+	public Result smphselectDatamonery1020() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatamonery1020();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatamonery2050")
+	@ResponseBody
+	public Result smphselectDatamonery2050() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatamonery2050();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	@RequestMapping("/smphselectDatamonery50")
+	@ResponseBody
+	public Result smphselectDatamonery50() {
+		List<Company> inputSearchData = privateStockMapper.smphselectDatamonery50();
+		return Result.build(200, "smphselectDataOnx",inputSearchData);
+	}
+	
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

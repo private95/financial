@@ -55,7 +55,7 @@ i{ font-style:normal}
     height: 30px;
     box-sizing: border-box;
     outline: none;
-
+    width: 600px;
 }
 #main_box>.main_list {
    /*  height: 150px; */
@@ -69,7 +69,7 @@ i{ font-style:normal}
     background-image: url("../images/ranking/sousuo.png");
     position: absolute;
     top: 13px;
-    right: -50px;
+    right: -490px;
 }
 #main_box>.stop a{
     display: inline-block;

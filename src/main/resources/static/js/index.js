@@ -17,13 +17,18 @@ $(document).ready(function () {
 				                '<li>'+
 				                    '<a href="/business_details?companyId='+Data[0][i].id+'">'+Data[0][i].name+'</a>'+
 				               '</li>'+
-				                '<li><span>成立日期 :'+Data[0][i].establishTime+'</span></li>'+
-				                '<li><span>法人代表 :'+ Data[0][i].personName+'</span></li>'+
-				                '<li><span>注册资本 :'+ Data[0][i].capitalMoney+'</span></li>'+
-				                '<li><span>注册地区 :'+Data[0][i].address+'</span></li>'+
+				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">成立日期 :<span>'+Data[0][i].establishTime+'</span></li>'+
+				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">法人代表 :<span>'+ Data[0][i].personName+'</span></li>'+
+				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">注册资本 :<span>'+ Data[0][i].capitalMoney+'万元</span></li>'+
+				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">注册地区 :<span>'+Data[0][i].address+'</span></li>'+
 				            '</ul>'+
 				        '</li>'
 				 $('.enterprise_list').append(str)
+				 $('span').each(function(index){
+					 if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'){
+						 $(this).text('--')
+					 }
+				 })
 			}
 		},
 		error:function(err){
@@ -112,7 +117,7 @@ $(document).ready(function () {
 	// 预编译模板
 	var template=Handlebars.compile(tpl);
     // 私募基金--默认为近一个月
-    GetData('DescPrivateStock');
+    GetData('/indexsmphselectData');
   //注册索引+1的helpe
     Handlebars.registerHelper("addOne",function(index,options){
     	  return parseInt(index)+1;
