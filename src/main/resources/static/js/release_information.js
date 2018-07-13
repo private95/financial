@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var tpl=$('#tpl').html();
 	//预编译模板
 	var template=Handlebars.compile(tpl);
-	DefaultData('/companyTwosQuery')//企业信息列表
+	DefaultData('companyTwosQuery')//企业信息列表
 	function DefaultData(url,data){
 		var newurl=url;
 		 //获取数据
@@ -13,9 +13,9 @@ $(document).ready(function(){
 	    	dataType:"json",
 	    	success:function(data){
 	    		//alert()
-	    		console.log(data)
+//	    		console.log(data)
 	    		var res=split_arr(data,50);
-				console.log(res)
+//				console.log(res)
 				//将数据插入到模板
 				var d=template(res[0]);
 				//console.log(d)
@@ -37,11 +37,13 @@ $(document).ready(function(){
 //						console.log(e);//回调
 						var index_page=template(res[e.current-1]);
 						$('tbody').html(index_page)
-						CheckType()
+//						CheckType()
+						Xinging()
 					}
 				}); 
 				//0或者是null时显示--
-				CheckType()
+//				CheckType()
+				Xinging()
 				if(pages==1){
 					//alert()
 					$('.zxfokbtn').hide()
@@ -52,7 +54,7 @@ $(document).ready(function(){
 						//alert(index)
 						var id=$(this).parent().parent().find('td').eq(0).text();
 						$.ajax({
-							url:'/companyDelete',
+							url:'companyDelete',
 							type:"post",
 							data:{"id":id},
 							dataType:"json",
@@ -60,10 +62,10 @@ $(document).ready(function(){
 								//console.log(data)
 								if(data==1){
 									layer.msg("删除成功")
-									location.href="/release_information";
+									location.href="release_information";
 								}else{
 									layer.msg("删除失败")
-									location.href="/release_information";
+									location.href="release_information";
 								}
 							},
 							error:function(err){
@@ -84,6 +86,33 @@ $(document).ready(function(){
 	    })
 	}
    
+	
+	
+    function Xinging(){
+    	$('.start').each(function(index){
+    		var id=$(this).text();
+    		if(id=='0'||id=='null'||id=='0%'||id==''||id=='%'){
+    			$($('.start')[index]).html('--');
+    			$($('.red')[index]).html('--');
+    		}
+			if(id==1){
+				$($('.start')[index]).html('<img src="imagse/xing/x1.png"/>');
+			}
+			if(id==2){
+				$($('.start')[index]).html('<img src="imagse/xing/x2.png"/>');
+			}
+			if(id==3){
+				$($('.start')[index]).html('<img src="imagse/xing/x3.png"/>');
+			}
+			if(id==4){
+				$($('.start')[index]).html('<img src="imagse/xing/x4.png"/>');
+			}
+			if(id>=5){
+				$($('.start')[index]).html('<img src="imagse/xing/x5.png"/>');
+			}
+			
+		})
+    }
 	////0或者是null时显示--
 	function CheckType(){
 		$('td').each(function(index){

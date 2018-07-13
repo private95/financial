@@ -144,7 +144,7 @@ function account(){
 		  return
     }else{
     	$.ajax({
-        	url: "/accountUpdate",
+        	url: "accountUpdate",
             type: "post",
             dataType: "json",
             data: {"username": $username, "email": $email,"address":$address},
@@ -210,14 +210,14 @@ function idCard(){
 		  return
     }else{
     	 $.ajax({
-    	    	url: "/idCard",
+    	    	url: "idCard",
     	        type: "post",
     	        dataType: "json",
     	        data: {"realName": $realName, "idType": $idType,"idNumber":$idNumber},
     	        async: false,
     	        success: function (data) {   
     	        	alert(data);
-    	            location.href="/";  
+    	            location.href="index";  
     	        },
     	        error: function (data) {
     	        	location.href="#";
@@ -268,13 +268,13 @@ function accountBind(){
     	return
     }else{
     	$.ajax({
-        	url: "/idCard",
+        	url: "idCard",
             type: "post",
             dataType: "json",
             data: {realName: $realName, idType: $idType,idNumber:$idNumber},
             async: false,
             success: function (data) {        
-                location.href="/";  
+                location.href="index";  
             },
             error: function (data) {
             	location.href="#";
@@ -358,15 +358,15 @@ function Logout(){
     localStorage.removeItem("login");
      clearCookie('username')
      $.ajax({
-			url:"/exitLogon",
+			url:"exitLogon",
 			type:"post",
 			dataType:"json",
 			success:function(data){
 				console.log(data)
 				if(data.status==200){
-					location.href="/login";
+					location.href="login";
 				}else{
-					location.href="/login";
+					location.href="login";
 				}
 			},
 		})
@@ -380,7 +380,7 @@ function Logout(){
 	var tpl=$('#tpl').html();
 	// 预编译模板
 	var template=Handlebars.compile(tpl);
-	DefaultData('/companyTwosQuery')// 企业信息列表
+	DefaultData('companyTwosQuery')// 企业信息列表
 	function DefaultData(url,data){
 		var newurl=url;
 		 // 获取数据
@@ -430,7 +430,7 @@ function Logout(){
 						var _this=$(this);
 						var id=$(this).parent().parent().find('td').eq(0).text();
 						$.ajax({
-							url:'/companyDelete',
+							url:'companyDelete',
 							type:"post",
 							data:{"id":id},
 							dataType:"json",

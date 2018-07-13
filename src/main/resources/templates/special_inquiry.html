@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" >
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/special_inquiry.css"/>
@@ -15,68 +16,36 @@
 	<script src="js/zxf_page.js"></script>
 	<script src="js/handlebars-1.0.0.beta.6.js"></script>
 	<script src="layer/layer.js"></script>
-<!-- <script src="js/special_inquiry.js"></script> -->
-    <script type="text/javascript">
-    
-		var url = location.search; //获取url中"?"符后的字串 ('?modFlag=business&role=1')
-		var theRequest = new Object();
-		var cnum = null;
-		if ( url.indexOf( "?" ) != -1 ) {
-		  var str = url.substr( 1 ); //substr()方法返回从参数值开始到结束的字符串；
-		  console.log(str);
-		  var strs = str.split( "&" );
-		  for ( var i = 0; i < strs.length; i++ ) {
-		    theRequest[ strs[ i ].split( "=" )[ 0 ] ] = ( strs[ i ].split( "=" )[ 1 ] );
-		  }
-		  console.log( theRequest.SearchKey ); //此时的theRequest就是我们需要的参数；
-		  cnum=theRequest.SearchKey ;
-		}
-		 
-		
-		$.ajax({
-			type:"POST",
-			url:"/inputsearchdata?searchnum="+cnum,//这个就是cnum
-			success:function(data){
-				GetData(data.data);
-				var newDataKye=getQueryString(cnum)
-    		}
-		});
-  	 	
-		function getQueryString(name) { 
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
-			var r = window.location.search.substr(1).match(reg); 
-			if (r != null) return decodeURI(r[2]); return null; 
-		}
-	
-    	function searchInput(){
-    		$.ajax({
-    			type:"POST",
-    			url:"/inputsearchdata?searchnum="+$("#Search").val(),
-    			success:function(data){
-    				GetData(data.data)
+	<script type="text/javascript">
+		function searchInput22(){
+			$.ajax({
+				type:"POST",
+				url:"inputsearchdata?searchnum="+$("#Search").val(),
+				success:function(data){
+					GetData(data.data)
 	    		}
-    		});
-    	}
-         function GetData(arr){	   
-        	 var str="";
-        	 $('#tbody1').html('');
-         	for(var i=0;i<arr.length;i++){
-         		var str='<tr>'+
-	                	'<td class="name">'+arr[i].name+'</td>'+
+			});
+		}
+	    function GetData(arr){	 
+	   	 var str="";
+	   	 $('#tbody1').html('');
+	    	for(var i=0;i<arr.length;i++){
+	    		var str='<tr>'+
+	               	'<td class="name"><a style="color:#000" href="business_details?companyId='+arr[i].id+'">'+arr[i].name+'</a></td>'+
 						'<td class="fund_shortName">'+arr[i].fund_shortName+'</td>'+
 						'<td class="fundCompany">'+arr[i].fundCompany+'</td>'+
-						'<td class="nav">'+arr[i].nav+'%'+'</td>'+
-						'<td class="cumulative_nav">'+arr[i].cumulative_nav+'%'+'</td>'+
-						'<td class="topOneMonth">'+arr[i].topOneMonth+'%'+'</td>'+
-						'<td class="annualized">'+arr[i].annualized+'%'+'</td>'+
-						'<td class="oneyearrating">'+arr[i].oneyearrating+'</td>'+
-						'<td><a href="/business_details?companyId='+arr[i].id+'">了解详情</a></td>'+
+						'<td class="nav" style="color:red">'+arr[i].nav+'%'+'</td>'+
+						'<td class="cumulative_nav" style="color:red">'+arr[i].cumulative_nav+'%'+'</td>'+
+						'<td class="topOneMonth" style="color:red">'+arr[i].topOneMonth+'%'+'</td>'+
+						'<td class="annualized" style="color:red">'+arr[i].annualincome+'%'+'</td>'+
+						'<td class="oneyearrating">'+arr[i].riskgrade+'</td>'+
+						'<td><a href="business_details?companyId='+arr[i].id+'">了解详情</a></td>'+
 					'</tr>'
-         		$('#tbody1').append(str)
-         		CheckType()
-         	}
-         } 
-     	 //0或者是null时显示--
+	    		$('#tbody1').append(str)
+	    		CheckType()
+	    	}
+	    } 
+		 //0或者是null时显示--
 			function CheckType(){
 				$('td').each(function(index){
 					if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''||$(this).text()=='null%'){
@@ -84,8 +53,10 @@
 					}
 				})
 			}
-    	 
-    </script>
+			
+		</script>
+	 <script src="js/special.js"></script>
+ 
 </head>
 <body>
     <header id="header">
@@ -95,11 +66,11 @@
        <div id="header_box2">
        		<div class="top">
 			    <div id="top-main">
-			        <span class="logo"><a href="/" ><img src="/images/logo.png"/></a></span>
+			        <span class="logo"><a href="index" ><img src="images/logo.png"/></a></span>
 			        <div class="search">
 			            <div class="search-main"> 
-			                <input type="text" placeholder="请输入产品 / 经理 / 公司等关键词" id="Search" value="" class="pig"/>
-			                <a id="Buttton" onclick="searchInput()"></a>
+			                <input type="text" placeholder="请输入产品 / 经理 / 公司等关键词5" id="Search" class="pig"/>
+			                <a id="Buttton" onclick="searchInput22()"></a>
 			            </div>
 			        </div>
 			    </div>
@@ -108,9 +79,9 @@
         <div class="groom">
             <p>专项查询</p>
             <ul>
-                <li><a href="/">首页</a></li>
+                <li><a href="index">首页</a></li>
                 <li>></li>
-                <li><a href="/release_information">专项查询</a></li>
+                <li><a href="release_information">专项查询</a></li>
             </ul>
         </div>
         <a class="TabClick"></a>
@@ -122,7 +93,7 @@
                 <a href="#main_box" id="jijin_part">基金</a>
             </li>
             <li class="qiye">
-                <a href="/enterprise_information" id="company_part">企业信息</a>
+                <a href="enterprise_information" id="company_part">企业信息</a>
             </li>
         </ul>
     </div>
@@ -260,13 +231,13 @@
 						<td>{{establishTime}}</td>
 						<td class="red">{{cumulative_nav}}</td>
 						<td>{{production}}</td>
-						<td><a href="/companyDetail">了解详情</a></td>
+						<td><a href="companyDetail">了解详情</a></td>
 					</tr>
 				{{/each}}
 			</script>
 			<!-- 分页 -->
 			<div class="zxf_pagediv" style="margin-bottom:50px"></div>
-			<div class="loading"><img src="/images/loading2.gif"/></div>
+			<div class="loading"><img src="images/loading2.gif"/></div>
         </div>
        	<div class="NotFoundData">
        		

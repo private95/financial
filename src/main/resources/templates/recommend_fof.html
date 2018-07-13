@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" >
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/recommend.css"/>
     <link rel="stylesheet" href="css/zxf_page.css"/>
@@ -18,7 +19,7 @@
     <div class="groom">
         <p>私募推荐</p>
         <ul>
-            <li><a href="">首页</a></li>
+            <li><a href="index">首页</a></li>
             <li>></li>
             <li><a href="#">私募推荐</a></li>
         </ul>
@@ -28,7 +29,7 @@
     <div class="nav-box">
         <ul class="nav-main">
             <li>
-                <a href="/recommend_march">私募基金排名</a>
+                <a href="recommend_march">私募基金排名</a>
             </li>
             <li>
                 <a class="in_click" href="#">FOF基金</a>
@@ -81,20 +82,20 @@
 				{{#each this}}
 					<tr>
 						<td>{{id}}</td>
-						<td><a href="/details" class="ClearAstyle">{{fund_short_name}}</a></td>
+						<td><a href="details" class="ClearAstyle">{{fund_short_name}}</a></td>
 						<td class="red">{{newest_nav}}</td>
 						<td>{{estabilishTime}}</td>
 						<td class="red">{{thisYear_nav}}%</td>
 						<td class="red">{{top_rate}}%</td>
 						<td>{{fundManager}}</td>
 						<td>{{fundCompany}}</td>
-						<td><a href="/details">了解详情</a></td>
+						<td><a href="details">了解详情</a></td>
 					</tr>
 				{{/each}}
 	</script>
 	<!-- 分页 -->
 	<div class="zxf_pagediv" style="margin-bottom:20px;margin-top:20px;"></div>
-	<div class="loading"><img src="/images/loading2.gif"/></div>
+	<div class="loading"><img src="images/loading2.gif"/></div>
 <footer id="foot">
 </footer>
 </body>

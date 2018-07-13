@@ -82,6 +82,9 @@ a{
 #main_box>.main_list ul a{
     color: #4B4B4B;
 }
+#main_box>.main_list ul li a:hover{
+    color: #f76500 !important;
+}
 #main_box>.main_list ul .bac_col a{
     color: #E60012;
 }
@@ -165,6 +168,9 @@ a{
 }
 #list>.tbn td>a{
     color: #91D2FB;
+}
+#list>.tbn td>a:hover{
+    color: #f76500;
 }
 #list>.tbn td:nth-child(6),
 #list>.tbn td:nth-child(7),

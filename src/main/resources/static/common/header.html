@@ -1,7 +1,7 @@
 <div class="top">
     <div id="top-main">
         <!--閸ョ偓鐖�-->
-        <span class="logo"><a href="/"><img src="/images/logo.png"/></a></span>
+        <span class="logo"><a href="index"><img src="images/logo.png"/></a></span>
         <!--鐎佃壈鍩呮稉搴㈡偝缁便垺顢�-->
         <div class="search">
             <div class="search-main">
@@ -13,7 +13,7 @@
 </div>
 <script type="text/javascript">
 		function Seach(){
-			window.location.href="/special_inquiry?SearchKey="+$("#Search").val();;		 
+			window.location.href="special_inquiry?SearchKey="+$("#Search").val();;		 
 		}
 </script>
 
@@ -22,7 +22,7 @@
 	function inputsearch(){
 		var searchnum = $("#SearchInputs").val();
 		$.ajax({
-        	url:"/inputsearchdata",
+        	url:"inputsearchdata",
         	type:"post",
         	data:{"searchnum":searchnum},
         	dataType:"json",

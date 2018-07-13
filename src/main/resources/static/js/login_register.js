@@ -68,7 +68,7 @@ function loginSubmit(){
     }else{
     	//console.log(getCookie("userInfo"))
     	$.ajax({
-            url:"/loginDemo",
+            url:"loginDemo",
             type:"post",
             dataType: "json",
             async:true,
@@ -88,7 +88,7 @@ function loginSubmit(){
                  	}
                 	layer.msg("登录成功")
                 	setTimeout(function(){
-                		location.href="/"
+                		location.href="index"
                 	},1500)
                 	 
                 }else{
@@ -166,7 +166,7 @@ $('#SendMark').click(function(){
 	    }else{
 	//获取邮箱
 	$.ajax({
-		url:"/getRandomText",
+		url:"getRandomText",
 		type:"post",
 		dataType:"json",
 		data:{"email":$email},
@@ -242,7 +242,7 @@ function register(){
 		 return
     }else{
     	 $.ajax({
-         	url: "/registerDemo",
+         	url: "registerDemo",
              type: "post",
              dataType: "json",
              data: {"username": $raccount, "password": $rpassword,"email":$Email,"code":$Mark},
@@ -255,7 +255,7 @@ function register(){
                      rtn = true;
                      layer.msg('恭喜您,注册成功');
                      setTimeout(function(){
-                    	 location.href="/login?tag=1";
+                    	 location.href="login?tag=1";
                      },2000)
                      
                      
@@ -291,20 +291,6 @@ function register(){
     }
     
 }
-
-
-
-//微信登录
-
-$(".page_lt").click(function(){
-	//alert("微信登录的js 文件");
-	$.ajax({
-		  type: 'POST',
-		  url: "/index/weixin",
-		  success: function(result){  
-		  },
-		});
-});
 
 
 //找回密码-身份验证
@@ -368,7 +354,7 @@ $('.next').click(function(){
 			  return
 	    }else{
 	    	 $.ajax({
-	 			url:'/VerificationUsernameEmail',
+	 			url:'VerificationUsernameEmail',
 	 			data:{"username":username,"email":email},
 	 			type:"post",
 	 			dataType:"json",
@@ -408,7 +394,7 @@ $("#SendMark1").click(function(){
 	var information=$("#information").val();*/
 	
 	$.ajax({
-		url:"/getRandomText",
+		url:"getRandomText",
 		type:"post",
 		dataType:"json",
 		data:{"email":$email1},
@@ -483,7 +469,7 @@ $('#submit_pwd').click(function(){
 	    }*/else{
 	    	 //重置密码数据提交
 		    $.ajax({
-				url:'/updateUserPassword',
+				url:'updateUserPassword',
 				data:{"username":username,"email":$email2,"information":information,"password":password},
 				type:"post",
 				dataType:"json",
@@ -494,10 +480,10 @@ $('#submit_pwd').click(function(){
 									content: '密码重置成功'
 									});*/
 						alert("密码重置成功，请登录！")
-						location.href="/login"
+						location.href="login"
 					}else{
 						alert("密码重置失败")
-						location.href="/login"
+						location.href="login"
 					}
 				},
 				error:function(err){

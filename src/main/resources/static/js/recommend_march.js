@@ -8,7 +8,7 @@ $(document).ready(function(){
     //私募基金--默认为近一个月
     GetData('DescPrivateStock','TopThreeYears');
     function GetData(url,str){
-    	var url='/'+url;
+    	var url=url;
     	$.ajax({
         	url:url,
         	type:"post",
@@ -35,7 +35,7 @@ $(document).ready(function(){
 				//console.log(data.list.length)
 				var length=data.length;
 				var pages=Math.ceil(length/50)
-				console.log(pages)
+//				console.log(pages)
 				
 				
 				//初始化分页
@@ -49,10 +49,12 @@ $(document).ready(function(){
 //						console.log(e);//回调
 						var index_page=template(res[e.current-1]);
 						$('tbody').html(index_page)
-						CheckType()
+						Xinging();
+//						CheckType()
 					}
 				}); 
-				CheckType()
+				Xinging();
+//				CheckType()
 				if(pages==1){
 					//alert()
 					$('.zxfokbtn').hide()
@@ -66,6 +68,34 @@ $(document).ready(function(){
         	}
         })
     }
+    
+    function Xinging(){
+    	$('.start').each(function(index){
+    		var id=$(this).text();
+    		if(id=='0'||id=='null'||id=='0%'||id==''||id=='%'){
+    			$($('.start')[index]).html('--');
+    			$($('.aaa')[index]).html('--');
+    			
+    		}
+			if(id==1){
+				$($('.start')[index]).html('<img src="imagse/xing/x1.png"/>');
+			}
+			if(id==2){
+				$($('.start')[index]).html('<img src="imagse/xing/x2.png"/>');
+			}
+			if(id==3){
+				$($('.start')[index]).html('<img src="imagse/xing/x3.png"/>');
+			}
+			if(id==4){
+				$($('.start')[index]).html('<img src="imagse/xing/x4.png"/>');
+			}
+			if(id>=5){
+				$($('.start')[index]).html('<img src="imagse/xing/x5.png"/>');
+			}
+			
+		})
+    }
+    
     ////分割数组的方法
 	function split_arr(arr,len){
 		var a_len=arr.length;

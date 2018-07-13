@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" >
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/release_information.css"/>
@@ -19,9 +20,9 @@
         <div class="groom">
             <p>发布信息</p>
             <ul>
-                <li><a href="/">首页</a></li>
+                <li><a href="index">首页</a></li>
                 <li>></li>
-                <li><a href="/release_information">发布信息</a></li>
+                <li><a href="release_information">发布信息</a></li>
             </ul>
         </div>
     </header>
@@ -29,7 +30,7 @@
         <div id="main_top">
             <div class="sheet_box">
                 <span>您已成功发布<span id="count">1</span>条信息</span>
-                <a href="/free_release">免费发布信息</a>
+                <a href="free_release">免费发布信息</a>
             </div>
         </div>
         <div id="list">
@@ -67,7 +68,7 @@
 				{{#each this}}
 					<tr>
 						<td>{{id}}</td>
-							<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
+							<td><a href="business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
 						<td>{{production}}</td>
 						<td>{{establishTime}}</td>
 						<td>--</td>

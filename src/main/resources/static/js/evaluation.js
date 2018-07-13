@@ -17,7 +17,7 @@ $(document).ready(function(){
 		}
 		console.log(newarr)
 		$.ajax({
-			url:"/evolutionData",
+			url:"evolutionData",
 			data:newarr,
 			type:"post",
 			success:function(data){

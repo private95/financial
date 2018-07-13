@@ -50,7 +50,7 @@
    
     //
     function GetData(url,str,name){
-    	var url='/'+url+str;
+    	var url=url+str;
     	$.ajax({
         	url:url,
         	type:"post",

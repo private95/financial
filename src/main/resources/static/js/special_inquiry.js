@@ -74,25 +74,25 @@ $(()=>{
 			// 获取数据
 			switch (SearchId) {
 				case  'id=0':
-					DefaultData2('/getProduction');
+					DefaultData2('getProduction');
 					break;
 				case  'id=1':
-					DefaultData2('/getProduction2');
+					DefaultData2('getProduction2');
 					break;
 				case  'id=2':
-					DefaultData2('/getProduction3');
+					DefaultData2('getProduction3');
 					break;
 				case  'id=3':
-					DefaultData2('/getProduction4');
+					DefaultData2('getProduction4');
 					break;
 				case  'id=4':
-					DefaultData2('/getProduction5');
+					DefaultData2('getProduction5');
 					break;
 				case  'id=5':
-					DefaultData2('/getProduction6');
+					DefaultData2('getProduction6');
 					break;
 				case  'id=11':
-					DefaultData2('/getCompanyName');
+					DefaultData2('getCompanyName');
 					break;  
 			}
 			
@@ -202,7 +202,7 @@ $(()=>{
 		})
 	// 企业信息方法
 	function DefaultData(url,data){
-		var newurl="/"+url;
+		var newurl=url;
 		 // 获取数据
 	    $.ajax({
 	    	url:newurl,
@@ -361,7 +361,7 @@ $(()=>{
 			$('#SearchInputs').val('')
 			// 向后台发送ajax拿到数据
 			$.ajax({
-			url:"/inputsearchdata",
+			url:"inputsearchdata",
 			type:"post",
 			dataType:"json",
 			success:function(data){
@@ -375,7 +375,7 @@ $(()=>{
 	        }
 		})
 		})
-}
+})
 
 
 

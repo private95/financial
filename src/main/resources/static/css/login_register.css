@@ -226,3 +226,11 @@
 	left:170px;
 	display:none;
 }
+
+#main>.main_page .page .page_ewm{
+	text-align:center;
+	padding-top:50px;
+}
+#main>.main_page .page .page_ewm p{
+	line-height:50px;
+}

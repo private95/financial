@@ -187,6 +187,9 @@
 #financing>.Recommend{
     margin: 20px 0;
     display: flex;
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+display: -moz-flex; /* Firefox 18+ */
+display: -ms-flexbox;    /* IE10 */ 
     width: 100%;
 
 }
@@ -208,7 +211,11 @@
 #financing  .fund{
     width: 87%;
 }
-#financing  .fund>div{
+#financing .fund>div:nth-child(1){
+	 padding: 0px 0 30px 30px;
+	 height:170px;
+}
+#financing .fund>div{
     height: 200px;
     border-bottom:1px solid #EBEBEB;
     padding: 30px 0 30px 30px;
@@ -219,6 +226,9 @@
 }
 #financing  .fund ul{
     display: flex;
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+display: -moz-flex; /* Firefox 18+ */
+display: -ms-flexbox;    /* IE10 */ 
 
 }
 #financing  .fund ul li{
@@ -258,6 +268,10 @@
 #financing  .fund ul li:nth-child(3) p{
     font-size: 30px;
     color: #666666;
+    width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 #financing  .fund ul li:nth-child(4){
     width: 14%;
@@ -309,6 +323,9 @@
 #Ranking>.btns a{
     color: #91D2FB;
 }
+#Ranking>.btns a:hover{
+    color: #f76500;
+}
 #Ranking>p{
     font-size: 30px;
     text-align: center;
@@ -355,6 +372,9 @@ th{
 }
 #special>.query,#special>.query_1{
     display: flex;
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+display: -moz-flex; /* Firefox 18+ */
+display: -ms-flexbox;    /* IE10 */ 
     justify-content: center;
     margin-bottom: 30px;
 }
@@ -452,6 +472,9 @@ th{
 .enterprise_list{
 	/* width:1200px; */
 	display: flex;
+	display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+display: -moz-flex; /* Firefox 18+ */
+display: -ms-flexbox;    /* IE10 */ 
 	justify-content: space-between;
 }
 #enterprise>.enterprise_list>li{

@@ -4,5 +4,5 @@
  */
 function evolutionConfirm(){
 	
-	location.href="/";
+	location.href="index";
 }

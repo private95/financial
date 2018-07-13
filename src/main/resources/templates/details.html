@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" />
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
      <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/details.css"/>
@@ -14,6 +15,7 @@
 	<script src="js/common.js"></script>
 	<script src="js/details.js"></script>
 	<script src="js/mychart.js"></script>
+	<script src="js/busunsess.js"></script>
     <script type="text/javascript">
 	    var url = location.search; //获取url中"?"符后的字串 
 		var theRequest = new Object();
@@ -30,7 +32,7 @@
 		
 		$.ajax({
 			type:"POST",
-			url:"/selectByCpId?cpId="+cpId,
+			url:"selectByCpId?cpId="+cpId,
 			success:function(data){
 				console.log(data.data)
 				GetData(data.data);
@@ -91,11 +93,11 @@
     <div class="groom">
         <p>产品详情</p>
         <ul>
-            <li><a href="/">首页</a></li>
+            <li><a href="index">首页</a></li>
             <li>></li>
-            <li><a href="/ranking_offering">产品推荐</a></li>
+            <li><a href="ranking_offering">产品推荐</a></li>
             <li>></li>
-            <li><a href="/ranking_offering">产品详情</a></li>
+            <li><a href="ranking_offering">产品详情</a></li>
         </ul>
     </div>
 </header>
@@ -153,39 +155,8 @@
                     <span></span>
                     <p>浏览记录</p>
                 </div>
-                <ul>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
+                <ul class="lljl">
+                   
                 </ul>
             </div>
             <!--右侧-->
@@ -713,39 +684,7 @@
                     <span></span>
                     <p>浏览记录</p>
                 </div>
-                <ul>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
-                    <li>
-                        <p>北京得东科技发展有限公司</p>
-                        <span>3分钟前</span>
-                    </li>
+                <ul class="lljl">
                 </ul>
             </div>
         </div>

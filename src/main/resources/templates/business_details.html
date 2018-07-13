@@ -7,6 +7,7 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand"> 
     <title>理财百科</title>
     <link rel="stylesheet" href="css/base.css"/>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/business_details.css"/> 
     <script src="js/jquery-1.11.3.js"></script>
 	<script src="js/common.js"></script>
@@ -63,7 +64,7 @@
 					for(var j = 0;j<a.length;j++){
 						var str='<tr>'+
 			                        '<td>'+ c++ +'</td>'+
-			                        '<td><a href="/details?id='+a[j].id+'" style="color: #000;">'+a[j].fund_shortName+'</a></td>'+
+			                        '<td><a href="/details?id='+a[j].id+'">'+a[j].fund_shortName+'</a></td>'+
 			                        '<td>'+a[j].nav+'%'+'</td>'+
 			                        '<td>'+a[j].topOneMonth+'%'+'</td>'+
 			                        '<td>'+a[j].annualized+'%'+'</td>'+
@@ -80,6 +81,8 @@
 			});
          }
 	 </script>
+	<script src="js/busunsess.js"></script>
+   
 </head>
 
 <body>
@@ -90,7 +93,7 @@
         <div class="groom">
             <p>企业详情</p>
             <ul>
-                <li><a href="">首页</a></li>
+                <li><a href="index" >首页</a></li>
                 <li>&gt</li>
                 <li><a href="#">企业信息</a></li>
                 <li>&gt</li>
@@ -123,9 +126,9 @@
            <li class="selected">
                <a data-toggle="tab" href="#introduce">公司介绍</a>
            </li>
-           <li>
+          <!--  <li>
                <a data-toggle="tab" href="#manager">基金经理</a>
-           </li>
+           </li> -->
            <li>
                <a data-toggle="tab" href="#idea">投资理念</a>
            </li>
@@ -133,7 +136,7 @@
                <a data-toggle="tab" href="#team">探究团队</a>
            </li>
            <li>
-               <a href="/">返回首页</a>
+               <a href="index">返回首页</a>
            </li>
        </ul>
     </div>
@@ -181,7 +184,7 @@
                                 <li>
                                     <span></span>
                                 </li>
-                            <li>
+                            	<li>
                                     <span>收益曲线</span>
                                 </li> 
                             </ul>
@@ -232,6 +235,7 @@
                                 </li>
                             </ul> -->
                         </div>  
+                            <div id="my_profit"></div>
                             <!--3.旗下产品-->
                         <div id="product">
                             <ul class="my_title">
@@ -275,39 +279,8 @@
                             <span></span>
                             <p>浏览记录</p>
                         </div>
-                        <ul>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
+                        <ul class = "lljl">
+                           
                         </ul>
                     </div>
                 </div>
@@ -320,12 +293,12 @@
                     <li>
                         <a class="btn" href="#">人物介绍</a>
                     </li>
-                   <!--  <li>
+                    <li>
                         <a href="#">收益曲线</a>
                     </li>
                     <li>
                         <a href="#">旗下产品</a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -360,39 +333,8 @@
                             <span></span>
                             <p>浏览记录</p>
                         </div>
-                        <ul>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
+                        <ul class="lljl">
+                            
                         </ul>
                     </div>
                 </div>
@@ -443,39 +385,8 @@
                             <span></span>
                             <p>浏览记录</p>
                         </div>
-                        <ul>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
-                            <li>
-                                <p>北京得东科技发展有限公司</p>
-                                <span>3分钟前</span>
-                            </li>
+                        <ul class="lljl">
+                           
                         </ul>
                     </div>
                 </div>

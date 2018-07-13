@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>理财百科</title>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
+    <link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/login_register.css"/>
+	<link rel="stylesheet" href="css/animate.min.css"/>
 </head>
-<body>
+<script type='text/javascript' src='http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js'></script>
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/tool.js"></script>
 
+<script src="layer/layer.js"></script>
+ <script type="text/javascript">
+	$.ajax({
+		  type: 'GET',
+		  url: "wxLoginPage",
+		  success: function(result){  
+			   console.log(result)
+			   jQuery('#qrcode').qrcode({
+				   width: 200,
+				   height: 200,
+				   text: result
+				});
+				/* $('#qrcode').on('click',function(){
+			        window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1611abf6bf19751a&redirect_uri=https%3A%2F%2Fwww.donglongxun.com%2Furl%2F&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+			    	});*/
+				  }, 
+		});
+	
+	
+	
+</script>
+<body>
+<header id="header">
+    <!--导航-->
+    <div id="navs"></div>
+    <div id="header_box"></div>
+    <div class="groom">
+        <p>登陆与注册</p>
+        <ul>
+            <li><a href="index">首页</a></li>
+            <li>></li>
+            <li><a href="#content1">扫描二维码登录</a></li>
+        </ul>
+    </div>
+</header>
+
+    <!--主体-->
+    <section id="main">
+        <div class="main_page">
+            <div class="page page_log_reg page_ewm" id="page1" style="min-height: 330px;">
+            	<div class="page_ewm">
+	            	<div id="qrcode"></div>
+	            	<p>微信扫描二维码登录网站</p>
+            	</div>
+            </div>
+        </div>
+        <!--身份验证-->
+        
+        <div id="main_bac"></div>
+    </section>
+<!--底部-->
+<footer id="foot"></footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

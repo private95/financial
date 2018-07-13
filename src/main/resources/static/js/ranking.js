@@ -28,6 +28,72 @@ $(".stop>a").click(e=>{
             $(".tbn_nf").html(year);
         }
     });
+    $(".list2").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list6").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list7").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list8").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list9").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list10").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
    
     //初始化模板
 	var tpl=$('#tpl').html();
@@ -70,7 +136,7 @@ $(".stop>a").click(e=>{
    
     //
     function GetData(url,str,name){
-    	var url='/'+url+str;
+    	var url=url+str;
     	$.ajax({
         	url:url,
         	type:"post",
@@ -96,7 +162,7 @@ $(".stop>a").click(e=>{
     			//console.log(data.list.length)
     			var length=data.length;
     			var pages=Math.ceil(length/50)
-    			console.log(pages)
+//    			console.log(pages)
     			//
     			$(data).each(function(index){
     				$('tbody').find('tr').each(function(item){
@@ -114,7 +180,8 @@ $(".stop>a").click(e=>{
     					var index_page=template(res[e.current-1]);
     					$('tbody').html(index_page)
     					//0或者是null时显示--
-    					CheckType()
+//    					CheckType()
+    					Xinging()
     				}
     			});
     			
@@ -122,7 +189,8 @@ $(".stop>a").click(e=>{
     				$(this).text(data[index][name]+"%")
     			})
     			//0或者是null时显示--
-    			CheckType()
+//    			CheckType()
+    			Xinging()
     			if(pages==1){
 					//alert()
 					$('.zxfokbtn').hide()
@@ -135,6 +203,33 @@ $(".stop>a").click(e=>{
         		});
         	}
         })
+    }
+    
+    
+    function Xinging(){
+    	$('.start').each(function(index){
+    		var id=$(this).text();
+    		if(id=='0'||id=='null'||id=='0%'||id==''||id=='%'){
+    			$($('.start')[index]).html('--');
+    			$($('.red')[index]).html('--');
+    		}
+			if(id==1){
+				$($('.start')[index]).html('<img src="imagse/xing/x1.png"/>');
+			}
+			if(id==2){
+				$($('.start')[index]).html('<img src="imagse/xing/x2.png"/>');
+			}
+			if(id==3){
+				$($('.start')[index]).html('<img src="imagse/xing/x3.png"/>');
+			}
+			if(id==4){
+				$($('.start')[index]).html('<img src="imagse/xing/x4.png"/>');
+			}
+			if(id>=5){
+				$($('.start')[index]).html('<img src="imagse/xing/x5.png"/>');
+			}
+			
+		})
     }
   //0或者是null时显示--
     function CheckType(){

@@ -87,6 +87,24 @@ img{
     line-height: 40px;
     margin-right: 190px;
 }
+#navs>.navs>li>a{
+    font-size: 14px;
+}
+#navs>.navs>li>a:hover{
+    color: #DA6017;
+}
+#navs{
+    position: absolute;
+    top: 20px;
+}
+#navs .navs>li{
+    margin-left: 50px;
+}
+#navs .nav-link a{
+    font-size: 14px;
+    padding: 0 5px;
+}
+
 
 /*闁诲簼绲绘竟鍫ュ春閸涙潙绾ч柍銉ㄥ皺閻熴垽鏌熼崗鑲╃煂闁稿被鍔岄々濂告晸閿燂拷*/
 #top-main .search{

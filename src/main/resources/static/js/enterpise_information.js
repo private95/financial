@@ -50,13 +50,91 @@ $(document).ready(function(){
 			})
 		})
 	}
-    $('.list-item').each(function(){
-		$(this).click(function(){
-			$('body').find($('.list-item')).not($(this)).removeClass('bac_col ');
-			$(this).addClass('bac_col');
-		})
-		$('body').find($('.list-item')[0]).trigger('click')
-	})
+//    $('.list-item').each(function(){
+//		$(this).click(function(){
+//			$('body').find($('.list-item')).not($(this)).removeClass('bac_col ');
+//			$(this).addClass('bac_col');
+//		})
+//		$('body').find($('.list-item')[0]).trigger('click')
+//	})
+    $(".list1").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list2").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list6").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list7").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list8").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list9").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list10").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+	
     //收益周期
     $(".list1").on("click","a",e=>{
         e.preventDefault();
@@ -69,7 +147,72 @@ $(document).ready(function(){
             $(".tbn_nf").html(year);
         }
     });
-    
+    $(".list2").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list6").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list7").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list8").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list9").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
+    $(".list10").on("click","a",e=>{
+        e.preventDefault();
+        var $tar=$(e.target);
+        var $idx=$tar.parent().index()+1;
+        console.log($idx);
+        if(!$tar.parent().hasClass(".bac_col")){
+            $tar.parent().addClass("bac_col").siblings(".bac_col").removeClass("bac_col");
+            var year=$tar.html();
+            $(".tbn_nf").html(year);
+        }
+    });
     
     //初始化模板
 	var tpl=$('#tpl').html();
@@ -77,7 +220,7 @@ $(document).ready(function(){
 	var template=Handlebars.compile(tpl);
 	DefaultData('topOneMonth')//企业信息列表
 	function DefaultData(url,data){
-		var newurl="/"+url;
+		var newurl=url;
 		 //获取数据
 	    $.ajax({
 	    	url:newurl,
@@ -115,11 +258,13 @@ $(document).ready(function(){
 					backfun: function(e) {
 						var index_page=template(res[e.current-1]);
 						$('tbody').html(index_page)
-						CheckType()
+//						CheckType()
+						Xinging()
 					}
 				}); 
 				//0或者是null时显示--
-				CheckType()
+//				CheckType()
+				Xinging()
 				if(pages==1){
 					//alert()
 					$('.zxfokbtn').hide()
@@ -188,7 +333,7 @@ $(document).ready(function(){
     	})
     }
     function GetData(url,name){
-    	var url='/'+url;
+    	var url=url;
     	$.ajax({
         	url:url,
         	type:"post",
@@ -226,11 +371,13 @@ $(document).ready(function(){
 //    					console.log(e);//回调
     					var index_page=template(res[e.current-1]);
     					$('tbody').html(index_page)
-    					CheckType()
+//    					CheckType()
+    					Xinging()
     				}
     			});
     			//0或者是null时显示--
-    			CheckType()
+//    			CheckType()
+    			Xinging()
     			//changeType
     			$('.changeType').each(function(index){
     				$(this).text(data[index][name]+"%")
@@ -245,6 +392,34 @@ $(document).ready(function(){
         	}
         })
     }
-
+    
+    function Xinging(){
+    	$('.start').each(function(index){
+    		var id=$(this).text();
+    		if(id=='0'||id=='null'||id=='0%'||id==''||id=='%'){
+    			$($('.start')[index]).html('--');
+    			$($('.red')[index]).html('--');
+    		}
+    		if(id=='null'){
+    			$($('.sfrd')[index]).html('--');
+    		}
+			if(id==1){
+				$($('.start')[index]).html('<img src="imagse/xing/x1.png"/>');
+			}
+			if(id==2){
+				$($('.start')[index]).html('<img src="imagse/xing/x2.png"/>');
+			}
+			if(id==3){
+				$($('.start')[index]).html('<img src="imagse/xing/x3.png"/>');
+			}
+			if(id==4){
+				$($('.start')[index]).html('<img src="imagse/xing/x4.png"/>');
+			}
+			if(id>=5){
+				$($('.start')[index]).html('<img src="imagse/xing/x5.png"/>');
+			}
+			
+		})
+    }
    
 });

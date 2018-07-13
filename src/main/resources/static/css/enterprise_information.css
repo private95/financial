@@ -45,6 +45,10 @@ i{ font-style:normal}
 #main_box>.main_list ul a{
     color: #4B4B4B;
 }
+#main_box>.main_list ul li a:hover{
+    color: #f76500 !important;
+}
+
 #main_box>.main_list ul .bac_col a {
     color: #E60012;
 }
@@ -148,6 +152,9 @@ i{ font-style:normal}
 }
 #list>.tbn td a{
     color: #63C1F9;
+}
+#list>.tbn td>a:hover{
+    color: #f76500;
 }
 #list>.tbn td:nth-child(5),
 #list>.tbn td:nth-child(6),

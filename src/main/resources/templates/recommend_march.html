@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="edge">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <title>理财百科</title>
+<link rel="shortcut icon" href="imagse/favicon.ico">
 <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/recommend.css" />
@@ -19,9 +20,9 @@
 		<div class="groom">
 			<p>产品推荐</p>
 			<ul>
-				<li><a href="/">首页</a></li>
+				<li><a href="index">首页</a></li>
 				<li>></li>
-				<li><a href="/ranking_offering">产品推荐</a></li>
+				<li><a href="ranking_offering">产品推荐</a></li>
 			</ul>
 		</div>
 	</header>
@@ -42,9 +43,9 @@
 						<th>基金简称</th>
 						<th>基金公司</th>
 						<th>最新净值</th>
-						<th>累计%</th>
+						<th>累计净值</th>
 						<th>近一个月%</th>
-						<th>年化%</th>
+						<th>年化率</th>
 						<th>夏普比率</th>
 						<th>一年评级</th>
 						<th>操作</th>
@@ -73,15 +74,15 @@
 				{{#each this}}
 					<tr>
 						<td>{{id}}</td>
-						<td><a href="/details?id={{id}}" >{{fund_shortName}}</a></td>
+						<td><a href="details?id={{id}}" style="color:#000;" >{{fund_shortName}}</a></td>
 						<td id="fundCompany">{{fundCompany}}</td>
-						<td>{{nav}}</td>
+						<td class="red">{{nav}}%</td>
 						<td class="red">{{cumulative_nav}}%</td>
 						<td class="red">{{topOneMonth}}%</td>
-						<td>{{annualized}}</td>
-						<td>{{sharpeatio}}</td>
-						<td>{{oneyearrating}}</td>	
-						<td><a href="/details?id={{id}}" >了解详情</a></td>		
+						<td class="aaa">{{annualincome}}</td>
+						<td class="aaa">{{sharpeatio}}</td>
+						<td class="start">{{riskgrade}}</td>	
+						<td><a style="color:#000;" href="details?id={{id}}" >了解详情</a></td>		
 					</tr>
 				{{/each}}
 	</script>
@@ -90,7 +91,7 @@
 	<!-- 分页 -->
 	<div class="zxf_pagediv" style="margin-bottom: 20px"></div>
 	<div class="loading">
-		<img src="/images/loading2.gif" />
+		<img src="images/loading2.gif" />
 	</div>
 	<footer id="foot"> </footer>
 </body>

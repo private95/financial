@@ -101,14 +101,14 @@ $(()=>{
 		        // 几个参数需要注意一下
 				type: "POST",// 方法类型
 				dataType: "json",// 预期服务器返回的数据类型
-				url: "/uploadInformation " ,// url
+				url: "uploadInformation " ,// url
 				data:array,
 			   success: function (result) {
 				   // console.log(result)
 				   if(result==1){
 					   layer.msg("发布成功");
 					   setTimeout(function(){
-						   location.href="/release_information"
+						   location.href="release_information"
 					   },1500)
 					   
 				   }else{

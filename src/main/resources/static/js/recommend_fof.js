@@ -8,7 +8,7 @@ $(document).ready(function(){
     //私募基金--默认为近一个月
     GetData('fofFundQuery','fofFund');
     function GetData(url,str){
-    	var url='/'+url;
+    	var url=url;
     	$.ajax({
         	url:url,
         	type:"post",

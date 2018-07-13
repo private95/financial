@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" />
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/base.css"/>
 	<link rel="stylesheet" href="css/ranking.css"/>
@@ -105,7 +106,7 @@
                             <option value="">一年期</option>
                         </select>
                     </li> -->
-                    <li class="bac_col2">
+                    <li class="bac_col">
                         <a href="#" onclick="nox();">不限</a>
                     </li>
                     <li>
@@ -177,7 +178,7 @@
             <li>
                 <span>年化收益 :</span>
                 <ul class="list6">
-                    <li>
+                    <li class="bac_col">
                         <a href="#">不限</a>
                     </li>
                     <li>
@@ -200,7 +201,7 @@
             <li>
                 <span>是否分级 :</span>
                 <ul class="list7">
-                    <li>
+                    <li class="bac_col">
                         <a href="#">不限</a>
                     </li>
                     <li>
@@ -213,8 +214,8 @@
             </li>
             <li>
                 <span>机构类型 :</span>
-                <ul>
-                    <li>
+                <ul class="list8">
+                    <li class="bac_col">
                         <a href="#">不限</a>
                     </li>
                     <li>
@@ -227,8 +228,8 @@
             </li>
             <li>
                 <span>所在地区 :</span>
-                <ul>
-                    <li>
+                <ul class="list9">
+                    <li class="bac_col">
                         <a href="#" onclick="nox()">不限</a>
                     </li>
                     <li>
@@ -250,8 +251,8 @@
             </li>
             <li>
                 <span>成立时间 :</span>
-                <ul>
-                    <li>
+                <ul class="list10">
+                    <li class="bac_col">
                         <a href="#" onclick="nox()">不限</a>
                     </li>
                     <li>
@@ -273,7 +274,7 @@
             </li>
         </ul>
         <div class="stop">
-            <a href="#">收起<span></span></a>
+            <a href="#">更多选项设置<span></span></a>
         </div> 
         </div>
         <!--数据列表-->
@@ -321,21 +322,21 @@
 				{{#each this}}
 					<tr>
 						<td>{{id}}</td>
-						<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
-						<td>{{fund_shortName}}</td>
+						<td><a href="business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
+						<td class="ccc">{{fund_shortName}}</td>
 						<td>{{corestrategy}}</td>
 						<td class="red">{{nav}}</td>
 						<td class="red" >{{cumulative_nav}}</td>
 						<td class="red" id="type">{{topOneMonth}}</td>
 						<td class="red">{{annualincome}}</td>
-						<td>{{riskgrade}}</td>
-						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
+						<td class="start">{{riskgrade}}</td>
+						<td><a href="business_details?companyId={{id}}">了解详情</a></td>
 					</tr>
 				{{/each}}
 	</script>
 	
 	<!-- 分页 -->
-	<div class="loading"><img src="/images/loading2.gif"/></div>
+	<div class="loading"><img src="images/loading2.gif"/></div>
 	<div class="zxf_pagediv" style="margin-bottom:50px"></div>
     <footer id="foot"></footer>
 </body>

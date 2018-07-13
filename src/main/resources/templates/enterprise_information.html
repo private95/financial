@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="edge" />
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <title>理财百科</title>
+    <link rel="shortcut icon" href="imagse/favicon.ico">
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/enterprise_information.css"/>
@@ -20,7 +21,7 @@
     <div class="groom">
         <p>企业信息</p>
         <ul>
-            <li><a href="/">首页</a></li>
+            <li><a href="index">首页</a></li>
             <li>></li>
             <li><a href="#">企业信息</a></li>
         </ul>
@@ -39,25 +40,25 @@
             <li>
                 <span>收益周期 :</span>
                 <ul class="list1">
-                    <li class="list-item">
+                    <li class="bac_col">
                         <a class="active">近一个月</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近三个月</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近半年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近一年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近两年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近三年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>近五年</a>
                     </li>
                    <!--  <li class="list-item">
@@ -66,22 +67,22 @@
                     <li class="list-item">
                         <a>今年以来</a>
                     </li> -->
-                     <li class="list-item">
+                     <li>
                         <a>2018年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>2017年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>2016年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>2015年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>2014年</a>
                     </li>
-                    <li class="list-item">
+                    <li>
                         <a>2013年</a>
                     </li>
                    <!--  <li class="list-item">
@@ -95,22 +96,22 @@
             <li>
                 <span>公司规模 :</span>
                 <ul class="list2">
-                    <li>
+                    <li  class="bac_col">
                         <a href="#" onclick="nox()">全部</a>
                     </li>
-                    <li>
+                    <li >
                         <a href="#" onclick="monery01()">0~1个亿</a>
                     </li>
-                    <li>
+                    <li >
                         <a href="#" onclick="monery110()">1~10个亿</a>
                     </li>
-                    <li>
+                    <li >
                         <a href="#" onclick="monery1020()">10~20个亿</a>
                     </li>
-                    <li>
+                    <li >
                         <a href="#" onclick="monery2050()"> 20~50个亿</a>
                     </li>
-                    <li>
+                    <li >
                         <a href="#" onclick="monery50()">50个亿以上</a>
                     </li>
                 </ul>
@@ -118,30 +119,12 @@
             <li>
                 <span>投资策略 :</span>
                 <ul class="list3">
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>股票策略
+                   <li>
+                       <a onclick="tzcl()" href="#"> <input type="checkbox" name="vehicle"  value="Car"/>股票策略</a>
                     </li>
-                   <!--  <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>宏观策略
-                    </li> -->
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>管理期货
+                     <li>
+                       <a onclick="qhgl()" href="#"> <input type="checkbox" name="vehicle"  value="Car"/>期货管理</a>
                     </li>
-                   <!--  <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>事件驱动
-                    </li>
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>相对价值
-                    </li>
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>固定收益
-                    </li>
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>组合策略
-                    </li>
-                    <li>
-                        <input type="checkbox" name="vehicle" value="Car"/>复合策略
-                    </li> -->
                 </ul>
             </li>
             <li>
@@ -157,7 +140,7 @@
                 <span>产品类型 :</span>
                 <ul class="list5">
                     <li>
-                        <input type="checkbox">不限</input>
+                        <input type="checkbox" />不限
                     </li>
                     <li>
                         <input type="checkbox">信托产品</input>
@@ -182,22 +165,22 @@
             <li>
                 <span>年化收益 :</span>
                 <ul class="list6">
-                    <li>
+                    <li class="list-item6">
                         <a href="#">不限</a>
                     </li>
-                    <li>
+                    <li class="list-item6">
                         <a href="#">50%以上</a>
                     </li>
-                    <li>
+                    <li class="list-item6">
                         <a href="#">40%-50%</a>
                     </li>
-                    <li>
+                    <li class="list-item6">
                         <a href="#">30%-40%</a>
                     </li>
-                    <li>
+                    <li class="list-item6">
                         <a href="#">20%-30%</a>
                     </li>
-                    <li>
+                    <li class="list-item6">
                         <a href="#">10%-20%</a>
                     </li>
                 </ul>
@@ -205,13 +188,13 @@
             <li>
                 <span>是否分级 :</span>
                 <ul class="list7">
-                    <li>
+                    <li class="list-item7">
                         <a href="#">不限</a>
                     </li>
-                    <li>
+                    <li class="list-item7">
                         <a href="#">不分级</a>
                     </li>
-                    <li>
+                    <li  class="list-item7">
                         <a href="#">分级资金</a>
                     </li>
                 </ul>
@@ -219,13 +202,13 @@
             <li>
                 <span>机构类型 :</span>
                 <ul>
-                    <li>
+                    <li  class="list-item8">
                         <a href="#">不限</a>
                     </li>
-                    <li>
+                    <li  class="list-item8">
                         <a href="#">私募机构</a>
                     </li>
-                    <li>
+                    <li  class="list-item8">
                         <a href="#">非私募机构</a>
                     </li>
                 </ul>
@@ -233,22 +216,22 @@
             <li>
                 <span>所在地区 :</span>
                 <ul>
-                    <li>
+                    <li class="list-item9">
                         <a href="#"  onclick="nox()">不限</a>
                     </li>
-                    <li>
+                    <li class="list-item9">
                         <a href="#" onclick="diqubj()">北京</a>
                     </li>
-                    <li>
+                    <li class="list-item9">
                         <a href="#" onclick="diqush()">上海</a>
                     </li>
-                    <li>
+                    <li class="list-item9">
                         <a href="#" onclick="diqugz()">广州</a>
                     </li>
-                    <li>
+                    <li class="list-item9">
                         <a href="#" onclick="diqusz()">深圳</a>
                     </li>
-                    <li>
+                    <li class="list-item9">
                         <a href="#" onclick="nox()">其他</a>
                     </li>
                 </ul>
@@ -256,22 +239,22 @@
             <li>
                 <span>成立时间 :</span>
                 <ul>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2019()">不限</a>
                     </li>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2018()">2018年</a>
                     </li>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2017()">2017年</a>
                     </li>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2016()">2016年</a>
                     </li>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2015()">2015年</a>
                     </li>
-                    <li>
+                    <li class="list-item10">
                         <a href="#" onclick="time2014()">2014年</a>
                     </li>
                 </ul>
@@ -310,10 +293,6 @@
                 <th>
                 	操作
                 </th>
-                <!-- <th>
-                	<span class="shorip">产品星级</span>
-		            <span class="updown"><a></a><a></a></span>
-                </th> -->
             </tr>
             </thead>
             <tbody> 
@@ -326,21 +305,21 @@
 			
 				{{#each this}}
 					<tr>
-						<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
-						<td>{{personName}}</td>
+						<td><a href="business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
+						<td class="sfrd">{{personName}}</td>
 						<td>{{product_count}}</td>
-						<td>{{corestrategy}}</td>
-						<td>{{production}}</td>
+						<td class="ccc">{{corestrategy}}</td>
+						<td class="ccc">{{production}}</td>
 						<td class="red">{{nav}}</td>
 						<td class="red">{{cumulative_nav}}</td>
-						<td class="red">{{riskgrade}}</td>
-						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
+						<td class="start">{{riskgrade}}</td>
+						<td><a style="color:#000;" href="business_details?companyId={{id}}">了解详情</a></td>
 					</tr>
 				{{/each}}
 </script>
 <!-- 分页 -->
 <div class="zxf_pagediv" style="margin-bottom:50px"></div>
-<div class="loading"><img src="/images/loading2.gif"/></div>
+<div class="loading"><img src="images/loading2.gif"/></div>
     <!--底部-->
 <footer id="foot"></footer>
 
@@ -350,7 +329,6 @@
 <script src="js/common.js"></script>
 <script src="js/handlebars-1.0.0.beta.6.js"></script>
 <script src="js/enterpise_information.js"></script>
-<script src="js/reankingoffering.js"></script>
-<!-- <script src="js/enterpiseInformation.js"></script> -->
+ <script src="js/reankingoffering.js"></script> 
 <script src="layer/layer.js"></script>
 </html>

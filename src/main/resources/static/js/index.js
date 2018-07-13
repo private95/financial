@@ -3,7 +3,7 @@ $(document).ready(function () {
 	// checkCookie();
 	// 企业信息
 	$.ajax({
-		url:"/companyQuery",
+		url:"companyQuery",
 		type:"get",
 		dataType:"json",
 		success:function(res){
@@ -15,7 +15,7 @@ $(document).ready(function () {
 				var str='<li>'+
 			                '<ul>'+
 				                '<li>'+
-				                    '<a href="/business_details?companyId='+Data[0][i].id+'">'+Data[0][i].name+'</a>'+
+				                    '<a href="business_details?companyId='+Data[0][i].id+'">'+Data[0][i].name+'</a>'+
 				               '</li>'+
 				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">成立日期 :<span>'+Data[0][i].establishTime+'</span></li>'+
 				                '<li style="font-size: 14px;line-height: 22px;color: #919191;">法人代表 :<span>'+ Data[0][i].personName+'</span></li>'+
@@ -35,7 +35,8 @@ $(document).ready(function () {
 			console.log(err)
 		}
 	})
-    $(window).scroll(()=> {
+    //$(window).scroll(()=> {
+	$(window).scroll(function(){
         // 获得滚动高度:
     	$('.classificationlist').hide();
     	$('.HistorySearch').hide();
@@ -85,7 +86,7 @@ $(document).ready(function () {
    
     // 产品推荐
     $.ajax({
-    	url:'/selectCompanyByTwo',
+    	url:'selectCompanyByTwo',
     	data:{"company":"topOneMonth"},
     	dataType:"json",
     	type:"post",
@@ -95,15 +96,15 @@ $(document).ready(function () {
     		$('.one_shouyi').text(data[0].cumulative_nav)
     		$('.one_jingzhi').text(data[0].nav)
     		$('.one_celue').text(data[0].corestrategy)
-    		$('#abc').attr('href','/details?id='+data[0].id);
-    		$('.company_name1').attr('href','/details?id='+data[0].id);
+    		$('#abc').attr('href','details?id='+data[0].id);
+    		$('.company_name1').attr('href','details?id='+data[0].id);
     		  
     		$('.company_name2').text(data[1].fund_shortName)
     		$('.two_shouyi').text(data[1].cumulative_nav)
     		$('.two_jingzhi').text(data[1].nav)
     		$('.one_celue').text(data[1].corestrategy)
-    		$('#def').attr('href','/details?id='+data[1].id);
-    		$('.company_name2').attr('href','/details?id='+data[1].id);
+    		$('#def').attr('href','details?id='+data[1].id);
+    		$('.company_name2').attr('href','details?id='+data[1].id);
     	},
     	error:function(err){
     		layer.open({
@@ -117,7 +118,7 @@ $(document).ready(function () {
 	// 预编译模板
 	var template=Handlebars.compile(tpl);
     // 私募基金--默认为近一个月
-    GetData('/indexsmphselectData');
+    GetData('indexsmphselectData');
   //注册索引+1的helpe
     Handlebars.registerHelper("addOne",function(index,options){
     	  return parseInt(index)+1;
@@ -133,18 +134,14 @@ $(document).ready(function () {
         	dataType:"json",
         	success:function(data){
         		
-        		// alert()
         		console.log(data)
         		var res=split_arr(data,10);
-    			// console.log(res)
     			// 将数据插入到模板
     			var d=template(res[0]);
-    			// console.log(d)
     			$('tbody').html(d)
-    			// console.log(data.list.length)
+    			Xinging();
     			var length=data.length;
     			var pages=Math.ceil(length/10)
-    			// console.log(pages)
     			
     			// 初始化分页
     			$(".zxf_pagediv").createPage({
@@ -154,24 +151,31 @@ $(document).ready(function () {
     				backfun: function(e) {
     					var index_page=template(res[e.current-1]);
     					$('tbody').html(index_page)
+    					Xinging();
+    					
     					// 0或者是null时显示--
-		    			$('td').each(function(index){
-		    				if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''){
-		    					$(this).text('--')
-		    				}
-		    			})
+//		    			$('td').each(function(index){
+//		    				if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''){
+//		    					$(this).text('--')
+//		    				}
+//		    			}) 
     				}
     			});
-    			// 0或者是null时显示--
-    			$('td').each(function(index){
-    				if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''){
-    					$(this).text('--')
-    				}
-    			})
+    			Xinging();
+    			// 0或者是null时显示--  
+//    			$('td').each(function(index){
+//    				if($(this).text()=='0'||$(this).text()=='null'||$(this).text()=='0%'||$(this).text()==''){
+//    					$(this).text('--')
+//    				}
+//    			})
     			if(pages==1){
 					// alert()
 					$('.zxfokbtn').hide()
 				}
+//    			var arr=[];
+    			//alert($('.start').length)
+    			
+    			
         	},
         	error:function(){
         		layer.open({
@@ -182,8 +186,35 @@ $(document).ready(function () {
         })
     }
     
+    function Xinging(){
+    	$('.start').each(function(index){
+    		var id=$(this).text();
+    		if(id=='0'||id=='null'||id=='0%'||id==''||id=='%'){
+    			$($('.start')[index]).html('--');
+    			$($('.red')[index]).html('--');
+    			
+    		}
+			if(id==1){
+				$($('.start')[index]).html('<img src="imagse/xing/x1.png"/>');
+			}
+			if(id==2){
+				$($('.start')[index]).html('<img src="imagse/xing/x2.png"/>');
+			}
+			if(id==3){
+				$($('.start')[index]).html('<img src="imagse/xing/x3.png"/>');
+			}
+			if(id==4){
+				$($('.start')[index]).html('<img src="imagse/xing/x4.png"/>');
+			}
+			if(id>=5){
+				$($('.start')[index]).html('<img src="imagse/xing/x5.png"/>');
+			}
+			
+		})
+    }
     
-    // //分割数组的方法
+    
+    // //分割数组的方法   
 	function split_arr(arr,len){
 		var a_len=arr.length;
 		var result=[];
@@ -192,10 +223,6 @@ $(document).ready(function () {
 		}
 		return result;
 	}
-	
-	
-	
-	
 	//点击搜索按钮
 	/*$('#searchData').click(function(){
 		//Search()
@@ -243,15 +270,15 @@ $(document).ready(function () {
 	};
 	 
     //存值方法,新的值添加在首位  
-	function setHistoryItems(keyword) {  
-	    let { historyItems } = localStorage;  
-	    if (historyItems === undefined) {  
-	        localStorage.historyItems = keyword;  
-	    } else {  
-	        historyItems = keyword + '|' + historyItems.split('|').filter(e => e != keyword).join('|');  
-	        localStorage.historyItems = historyItems;  
-	    }  
-	};  
+//	function setHistoryItems(keyword) {  
+//	    let { historyItems } = localStorage;  
+//	    if (historyItems === undefined) {  
+//	        localStorage.historyItems = keyword;  
+//	    } else {  
+//	        historyItems = keyword + '|' + historyItems.split('|').filter(e => e != keyword).join('|');  
+//	        localStorage.historyItems = historyItems;  
+//	    }  
+//	};  
     //搜所的方法
 	function Search(){
 		var text=$('.all_text').text();
@@ -261,22 +288,21 @@ $(document).ready(function () {
 		if(input!==''){
 			SiteSearch()			
 		}
-				
 		// 判断搜索类型
 		if(text=="公司"){
 			// var name=$('.searchInput').val();
 			localStorage.setItem('SearchType',input+'#1');
-			window.location.href="/special_inquiry";
+			window.location.href="special_inquiry";
 			$('.searchInput').val('')
 		}else if(text=="基金"){
 			// alert()
 			localStorage.setItem('SearchType',input+'#2');
-			window.location.href="/special_inquiry";
+			window.location.href="special_inquiry";
 			$('.searchInput').val('')
 		}else if(text=="全部"){
 			// alert()
 			localStorage.setItem('SearchType',input+'#2');
-			window.location.href="/special_inquiry";
+			window.location.href="special_inquiry";
 			$('.searchInput').val('')
 		}
 		else if(input==''){
