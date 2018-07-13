@@ -1,0 +1,207 @@
+package com.iparhan.financial.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.iparhan.financial.dao.OverSeasFundMapper;
+import com.iparhan.financial.entity.OverSeasFund;
+
+
+@RestController
+@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+public class OverSeasFundController {
+	
+	
+	@Autowired
+	private OverSeasFundMapper OverSeasFundMapper;
+	
+	/*
+	 * 企业信息展现
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topOneMonthOverSeasFund")
+	public @ResponseBody  List<OverSeasFund>companyTest(OverSeasFund OverSeasFund ){
+		//System.out.println("参数接受"+ OverSeasFund);
+		//1.先查询数据库
+		List<OverSeasFund> OverSeasFunds =  OverSeasFundMapper.selectOverSeasFundByOneMonth(OverSeasFund);
+		//System.out.println("企业信息展现"+OverSeasFunds);
+		//2.查询一个月以来的数据
+		
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 根据三月以来的数据查询全部数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value="/topThreeMonthOverSeasFund")
+	public  List<OverSeasFund> topThreeMonth(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundByThreeMonth(OverSeasFund);
+		return OverSeasFunds;
+		
+	}
+	
+	/*
+	 * 根据半年的数据来查询全部的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topHalfYearOverSeasFund")
+	public List<OverSeasFund> topHalfYear(OverSeasFund OverSeasFund){
+		//1.查询数据库
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytopHalfYear(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 根据一年以来的数据查询全部的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topOneOverSeasFund")
+	public List<OverSeasFund> topOne(OverSeasFund OverSeasFund){
+		//1.先查询数据库
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytopOne(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 两年以来的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topTwoOverSeasFund")
+	public List<OverSeasFund> topTwo(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds =  OverSeasFundMapper.selectOverSeasFundBytopTwo(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 三年以来的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topThreeOverSeasFund")
+	public List<OverSeasFund> topThree(OverSeasFund OverSeasFund){
+		//1.查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytopThree(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 五年以来的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topFiveOverSeasFund")
+	public List<OverSeasFund> topFive(OverSeasFund OverSeasFund){
+		//1.先查询数据库
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytopFive(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 成立以来的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/topDateOverSeasFund")
+	public List<OverSeasFund> topDate(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytopDate(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2018的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2018OverSeasFund")
+	public List<OverSeasFund> top2018(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2018(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2017的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2017OverSeasFund")
+	public List<OverSeasFund> top2017(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2017(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2016的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2016OverSeasFund")
+	public List<OverSeasFund> top2016(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2016(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	
+	/*
+	 * 2015的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2015OverSeasFund")
+	public List<OverSeasFund> top2015(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2015(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2014的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2014OverSeasFund")
+	public List<OverSeasFund> top2014(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2014(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2013的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2013OverSeasFund")
+	public List<OverSeasFund> top2013(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2013(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	/*
+	 * 2012的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2012OverSeasFund")
+	public List<OverSeasFund> top2012(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> companies = OverSeasFundMapper.selectOverSeasFundBytop2012(OverSeasFund);
+		return companies;
+	}
+	
+	/*
+	 * 2011的数据
+	 */
+	@CrossOrigin(origins = "*", maxAge = 3600)   //使用于前端的跨域
+	@RequestMapping(value ="/top2011OverSeasFund")
+	public List<OverSeasFund> top2011(OverSeasFund OverSeasFund){
+		//1.先查询数据
+		List<OverSeasFund> OverSeasFunds = OverSeasFundMapper.selectOverSeasFundBytop2011(OverSeasFund);
+		return OverSeasFunds;
+	}
+	
+	
+
+}

@@ -1,0 +1,162 @@
+package com.iparhan.financial.service.impl;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.solr.client.solrj.SolrClient;
+import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
+import org.apache.solr.common.SolrInputDocument;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.iparhan.financial.admin.entity.SearchResult;
+import com.iparhan.financial.search.dao.CompanySearchDao;
+import com.iparhan.financial.search.entity.CompanySearch;
+
+
+@Service
+public class CompanySearchServiceImpl implements CompanySearchService {
+
+
+	@Autowired
+	private SolrClient solrServer;
+
+	@Autowired
+	private CompanySearchDao companySearchDao;
+
+	/**
+	 * 查询
+	 * 
+	 * @throws IOException
+	 * @throws SolrServerException
+	 */
+	@Override
+	public void importCompanyToIndex() throws Exception {
+		// 查询商品列表
+		List<CompanySearch> searchList = companySearchDao.getCompanySearchList();
+		// 将商品列表导入solr
+		for (CompanySearch company : searchList) {
+			SolrInputDocument document = new SolrInputDocument();
+			document.addField("id", company.getId());
+			document.addField("name", company.getName());
+			document.addField("personName", company.getPersonName());
+			document.addField("product_count", company.getProduct_count());
+			document.addField("establishTime", company.getEstablishTime());
+			document.addField("cumulative_nav", company.getCumulative_nav());
+			document.addField("production", company.getProduction());
+			document.addField("fund_shortName", company.getFund_shortName());
+			document.addField("fundCompany", company.getFundCompany());
+			document.addField("nav", company.getNav());
+			document.addField("topOneMonth", company.getTopOneMonth());
+			document.addField("price_date", company.getPrice_date());
+			// 将文档写入索引库
+			solrServer.add(document);
+		}
+		// 提交修改
+		solrServer.commit();
+	}
+	
+
+	/**
+	 * 实现商品搜索
+	 */
+	@Override
+	public SearchResult searcCompany(String queryString, Integer page) throws Exception {
+		Integer PAGE_SIZE = 10;
+		// 创建一个查询对象
+		SolrQuery solrQuery = new SolrQuery();
+		// 查询条件
+		if (StringUtils.isBlank(queryString)) {
+			solrQuery.setQuery("*:*");
+		} else {
+			//System.out.println("查询条件为 ： " + queryString);
+			solrQuery.setQuery(queryString);
+		}
+		// 分页条件
+		if (page == null) {
+			page = 1;
+		}
+		solrQuery.setStart((page - 1) * PAGE_SIZE);
+		solrQuery.setRows(PAGE_SIZE);
+		// 高亮显示
+		solrQuery.setHighlight(true);
+		// 设置高亮显示的域
+		solrQuery.addHighlightField("name");
+		// 高亮显示前缀
+		solrQuery.setHighlightSimplePre("<em style=\"color:red\">");
+		// 后缀
+		solrQuery.setHighlightSimplePost("</em>");
+		// 设置默认搜索域
+//		solrQuery.set("df", "item_keywords");
+
+		// 执行查询
+		SearchResult result =searchItem(solrQuery);
+		//System.out.println("执行 2 结果 : "+result);
+		// 计算分页
+		Long recordCount = result.getNumFound();
+		int pageCount = (int) (recordCount / PAGE_SIZE);
+		if (recordCount % PAGE_SIZE > 0) {
+			pageCount++;
+		}
+		result.setPageCount(pageCount);
+		result.setPage(page);
+
+		return result;
+
+	}
+
+
+	private SearchResult searchItem(SolrQuery solrQuery) throws Exception {
+
+		// 根据查询条件搜索索引库
+		QueryResponse response = solrServer.query(solrQuery);
+		// 取商品列表
+		SolrDocumentList documentList = response.getResults();
+		//System.out.println("documentList : "+documentList);
+		// 商品列表
+		List<CompanySearch> itemList = new ArrayList<>();
+		for (SolrDocument solrDocument : documentList) {
+			CompanySearch company = new CompanySearch();
+			company.setId((String) solrDocument.get("id"));
+			// 取高亮显示
+			Map<String, Map<String, List<String>>> highlighting = response.getHighlighting();
+			List<String> list = highlighting.get(solrDocument.get("id")).get("name");
+			String title = "";
+			if (null != list && !list.isEmpty()) {
+				title = list.get(0);
+			} else {
+				title = (String) solrDocument.get("name");
+			}
+			company.setName(title);
+			company.setPersonName((String) solrDocument.get("personName"));
+			company.setProduct_count((String) solrDocument.get("product_count"));
+			company.setEstablishTime((String) solrDocument.get("establishTime"));
+			company.setCumulative_nav((String) solrDocument.get("cumulative_nav"));
+			company.setProduction((String) solrDocument.get("production"));
+			company.setFund_shortName((String) solrDocument.get("fund_shortName"));
+			company.setFundCompany((String) solrDocument.get("fundCompany"));
+			company.setNav((Double) Double.valueOf((String) solrDocument.get("nav")));
+			company.setTopOneMonth((Double) Double.valueOf((String) solrDocument.get("topOneMonth")));
+			company.setPrice_date((String) solrDocument.get("price_date"));
+			//System.out.println( "每次 add 结果 ： "+ company );
+			itemList.add(company);
+		}
+		SearchResult result = new SearchResult();
+		// 商品列表
+		result.setItemList(itemList);
+		// 总记录数据
+		result.setNumFound(documentList.getNumFound());
+
+		return result;
+	}
+	
+	
+	
+
+}

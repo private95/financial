@@ -1,0 +1,361 @@
+/*导航*/
+#main_box{
+    display: flex;
+    height: 85px;
+}
+
+#main_box>.my-lt{
+    display: flex;
+    width: 30%;
+    height: 30px;
+}
+#main_box>.my-lt>span{
+    margin-top: 10px;
+    font-size: 20px;
+}
+#main_box>.my-lt>ul{
+    display: flex;
+    line-height: 30px;
+}
+#main_box>.my-lt>ul>li{
+    width:80px;
+    text-align: center;
+    font-size: 14px;
+    margin:0 5px;
+}
+#main_box>.my-lt>ul>li:not(:first-child){
+    color:#D63F38;
+    border:1px solid #D63F38;
+    border-radius: 5px;
+}
+#main_box>.my-rt{
+    width: 70%;
+}
+#main_box>.my-rt>ul{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: right;
+}
+#main_box>.my-rt>ul>li{
+    margin-right: 30px;
+    width: 140px;
+    text-align: left;
+    margin-bottom: 5px;
+}
+#main_box>.my-rt>ul>li>span{
+    color: #F66C09;
+}
+
+#main>.list_nav{
+    height: 47px;
+    background-color: #F0F0F0;
+    line-height: 45px;
+    border: 2px solid #E7E7E7;
+    box-sizing: border-box;
+}
+
+#navigation{
+    display: flex;
+}
+#navigation>li>a{
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    color: #6E6E6E;
+    margin-right: 20px;
+}
+#navigation>.selected a{
+    background-color: #ffffff;
+    border-left: 2px solid #E7E7E7;
+    border-right: 2px solid #E7E7E7;
+}
+
+#main .nav1{
+    height: 47px;
+    line-height: 45px;
+    border-bottom: 2px solid #E7E7E7;
+}
+
+#main .nav1 ul{
+    display: flex;
+}
+#main .nav1 a{
+    display: inline-block;
+    width: 100px;
+    color: #6E6E6E;
+    font-size: 16px;
+    text-align: center;
+}
+#main .nav1 .btn a{
+    border-bottom: 4px solid #F66701;
+    box-sizing: border-box;
+}
+#main .my_title{
+    display: flex;
+    line-height: 45px;
+}
+#main .my_title li:nth-child(1) span {
+    display: inline-block;
+    width: 10px;
+    height: 28px;
+    background-color: #F78901;
+    margin-top: 8px;
+}
+#main .my_title li:nth-child(2) span{
+    font-size: 18px;
+    margin: 0 30px 0 10px;
+}
+#main .main_tal{
+    display: flex;
+    justify-content: space-between;
+}
+/*公司介绍*/
+#main_rt{
+    width: 70%;
+}
+#introduce_box .introduce{
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+#introduce_box .introduce p{
+    font-size: 15px;
+    color: #6B6B6B;
+    line-height: 30px;
+}
+/*收益曲线*/
+#profit{
+    margin: 30px 0;
+}
+#main_part .idx{
+    display: flex;
+    padding-left: 20px;
+    height: 30px;
+    line-height: 30px;
+}
+#main_part .idx>li:nth-child(1){
+    font-size: 16px;
+    color: #6B6B6B;
+}
+#main_part .idx>li:nth-child(2) select{
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    margin: 0 40px 0 5px;
+    outline: none;
+}
+#main_part .idx>li:nth-child(3) select{
+    border-radius: 5px;
+    width: 135px;
+    height: 30px;
+    outline: none;
+}
+
+#main_part .list_1{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+#main_part .list_1 a{
+    display: inline-block;
+    margin: 0 5px;
+    width: 95px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #EBEBEB;
+    color: #B1B1B1;
+}
+#main_part .list_1 a:hover{
+	color: #f76500;
+}
+#main_part .list_1 .colour a{
+    background-image: url(../images/common/ditu.png);
+    color: #FEEEDE;
+}
+
+
+
+/*旗下产品*/
+#main_part .list_3{
+    display: flex;
+}
+#main_part .list_3 a{
+    display: inline-block;
+    margin:0 30px 0 18px;
+    width: 95px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #EBEBEB;
+    color: #B1B1B1;
+}
+#main_part .list_3 .selected a{
+    background-image: url(../images/common/ditu.png);
+    color: #FEEEDE;
+}
+#product .btn{
+    width: 100%;
+    border:1px solid #EEEEEE;
+    border-collapse: collapse;
+    margin: 50px 0;
+}
+#main_part .btn th{
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+    font-size: 15px;
+    color: #3D3D3D;
+}
+#main_part .btn td{
+    height: 65px;
+    font-size: 15px;
+    color: #3D3D3D;
+    text-align: center;
+    box-sizing: border-box;
+}
+#main_part .btn td a{
+    color: #5BBBFB;
+}
+#main_part .btn td:nth-child(2) a{
+    color: #000;
+}
+#main_part .btn td:hover a{
+    color: #f76500;
+}
+#main_part .btn td:nth-child(4),#main_part .btn td:nth-child(5){
+    color: #DC6460;
+}
+
+/*基金经理*/
+#manager_rt{
+    width: 70%;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+#manager_rt .character a{
+    display: inline-block;
+    margin-right:  18px;
+    width: 95px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #EBEBEB;
+    color: #B1B1B1;
+}
+#manager_rt .character .active{
+    background-image: url(../images/common/ditu.png);
+    color: #FEEEDE;
+}
+#manager_rt .rw_character1,#manager_rt .rw_character2 p{
+    font-size: 14px;
+    margin: 20px 0;
+    line-height: 23px;
+    color: #6B6B6B;
+}
+#manager_lt{
+    width: 30%;
+}
+#manager_rt .btn_box{
+    width: 100%;
+    border: 1px solid #EEEEEE;
+    border-collapse: collapse;
+    margin: 50px 0;
+}
+
+
+
+/*投资理念*/
+#idea,#manager,#team,#introduce{
+    display: none;
+    margin-bottom: 50px;
+}
+#main_part .active{
+    display: block;
+}
+#idea .idea_rt,#team .team_rt{
+    width: 70%;
+}
+#idea>.idea_rt>.tet{
+    padding: 30px 50px;
+}
+
+
+/*投研团队*/
+
+#team .team_rt .txt_1{
+    display: flex;
+    padding-right: 10px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+#team .team_rt .txt_1>div{
+    width: 90%;
+}
+#team .team_rt .txt_1 p{
+    font-size: 15px;
+    line-height: 30px;
+    color: #666666;
+}
+#team .team_rt .txt_1 h5{
+        font-size: 16px;
+    margin-bottom: 20px;
+}
+#team .team_rt .txt_1 span{
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    background-image: url("../images/free_release.png");
+}
+
+
+/*左侧-浏览记录*/
+#main_lt,#idea_lt,.team_lt{
+    width: 30%;
+}
+#main .sidebar {
+    width: 100%;
+    border: 1px solid #F3F2F7;
+    border-top: none;
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+#main .sidebar>div {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 25px;
+    position: relative;
+}
+#main .sidebar>div>span {
+    display: inline-block;
+    width: 10px;
+    height: 28px;
+    background-color: #F78901;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+#main .sidebar>div>p {
+    display: inline-block;
+    font-size: 18px;
+}
+#main .sidebar>ul {
+    margin-left: 25px;
+}
+#main .sidebar>ul>li {
+    margin-bottom: 5px;
+    color: #838383;
+}
+#main .sidebar>ul p {
+    font-size: 16px;
+}
+#main .sidebar>ul span {
+    font-size: 14px;
+}
+

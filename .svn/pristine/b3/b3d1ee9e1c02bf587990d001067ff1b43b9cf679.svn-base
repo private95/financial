@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>理财百科</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/base.css"/>
+	<link rel="stylesheet" href="css/ranking.css"/>
+	<link rel="stylesheet" href="css/zxf_page.css"/>
+</head>
+<body>
+    <header id="header">
+        <!--导航-->
+        <div id="navs"></div>
+        <div id="header_box"></div>
+        <div class="groom">
+            <p>私募排名</p>
+            <ul>
+                <li><a href="">首页</a></li>
+                <li>></li>
+                <li><a href="#">私募排名</a></li>
+            </ul>
+        </div>
+    </header>
+    <section id="main">
+       <!--  <div class="nav-box">
+            <ul class="nav-main">
+                <li>
+                    <a class="in_click" href="#">私募基金</a>
+                </li>
+                <li>
+                    <a href="/ranking_overseas">海外基金</a>
+                </li>
+                <li>
+                    <a href="/ranking_product">单账户产品</a>
+                </li>
+                <li>
+                    <a href="/ranking_sampan">新三板</a>
+                </li>
+            </ul>
+        </div> -->
+        <div id="main_box">
+            <ul class="main_list">
+                <li>
+                    <span>排名周期 :</span>
+                    <ul class="list1">
+                        <li class="bac_col">
+                            <a>近一个月</a>
+                        </li>
+                        <li>
+                            <a>近三个月</a>
+                        </li>
+                        <li>
+                            <a>近半年</a>
+                        </li>
+                        <li>
+                            <a>近一年</a>
+                        </li>
+                        <li>
+                            <a>近两年</a>
+                        </li>
+                        <li>
+                            <a>近三年</a>
+                        </li>
+                        <li>
+                            <a>近五年</a>
+                        </li>
+                        <li>
+                            <a>2018年</a>
+                        </li>
+                        <li>
+                            <a>2017年</a>
+                        </li>
+                        <li>
+                            <a>2016年</a>
+                        </li>
+                        <li>
+                            <a>2015年</a>
+                        </li>
+                        <li>
+                            <a>2014年</a>
+                        </li>
+                        <li>
+                            <a>2013年</a>
+                        </li>
+                        <li>
+                            <a>所有数据</a>
+                        </li> 
+                       <!--  <li>
+                            <a>2012年</a>
+                        </li>
+                        <li>
+                            <a>2011年</a>
+                        </li> -->
+                    </ul>
+                </li>
+                <li>
+                <span>产品星级 :</span>
+                <ul class="list2">
+                    <!-- <li>
+                        <select>
+                            <option value="">一年期</option>
+                        </select>
+                    </li> -->
+                    <li class="bac_col2">
+                        <a href="#" onclick="nox();">不限</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="no5();">五星级</a>
+                    </li>
+                    <li>
+                        <a href="#"  onclick="no4();">四星级</a>
+                    </li>
+                    <li>
+                        <a href="#"  onclick="no3();">三星级</a>
+                    </li>
+                    <li>
+                        <a href="#"  onclick="no2();">二星级</a>
+                    </li>
+                    <li>
+                        <a href="#"  onclick="no1();">一星级</a>
+                    </li>
+                    <li>
+                        <a href="#"  onclick="no0();">未评级</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>投资策略 :</span>
+                <ul class="list3">
+                    <li>
+                       <a onclick="tzcl()" href="#"> <input type="checkbox" name="vehicle"  value="Car"/>股票策略</a>
+                    </li>
+                     <li>
+                       <a onclick="qhgl()" href="#"> <input type="checkbox" name="vehicle"  value="Car"/>期货管理</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>关 键 词 :</span>
+                <ul class="list4">
+                    <li>
+                        <input type="text" placeholder="请输入关键词" id="ssgjz"/>
+                        <a href="#" onclick="ssss();"></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>产品类型 :</span>
+                <ul class="list5">
+                    <li>
+                        <input type="checkbox">不限
+                    </li>
+                    <li>
+                        <input type="checkbox">信托产品
+                    </li>
+                    <li>
+                        <input type="checkbox">自主发行
+                    </li>
+                    <li>
+                        <input type="checkbox">公募专户
+                    </li>
+                    <li>
+                        <input type="checkbox">券商资管
+                    </li>
+                    <li>
+                        <input type="checkbox">期货资管
+                    </li>
+                    <li>
+                        <input type="checkbox">有限合伙
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>年化收益 :</span>
+                <ul class="list6">
+                    <li>
+                        <a href="#">不限</a>
+                    </li>
+                    <li>
+                        <a href="#">50%以上</a>
+                    </li>
+                    <li>
+                        <a href="#">40%-50%</a>
+                    </li>
+                    <li>
+                        <a href="#">30%-40%</a>
+                    </li>
+                    <li>
+                        <a href="#">20%-30%</a>
+                    </li>
+                    <li>
+                        <a href="#">10%-20%</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>是否分级 :</span>
+                <ul class="list7">
+                    <li>
+                        <a href="#">不限</a>
+                    </li>
+                    <li>
+                        <a href="#">不分级</a>
+                    </li>
+                    <li>
+                        <a href="#">分级资金</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>机构类型 :</span>
+                <ul>
+                    <li>
+                        <a href="#">不限</a>
+                    </li>
+                    <li>
+                        <a href="#">私募机构</a>
+                    </li>
+                    <li>
+                        <a href="#">非私募机构</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>所在地区 :</span>
+                <ul>
+                    <li>
+                        <a href="#" onclick="nox()">不限</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="diqubj()" >北京</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="diqush()">上海</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="diqugz()">广州</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="diqusz()">深圳</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="nox()">其他</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>成立时间 :</span>
+                <ul>
+                    <li>
+                        <a href="#" onclick="nox()">不限</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="time2018()">2018年</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="time2017()">2017年</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="time2016()">2016年</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="time2015()">2015年</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="time2014()">2014年</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="stop">
+            <a href="#">更多选项设置<span></span></a>
+        </div> 
+        </div>
+        <!--数据列表-->
+        <div id="list" style="margin-top: 25px;">
+            <table class="tbn table  table-responsive">
+                <thead>
+                    <tr>
+                  		<th>排名</th>
+						<th>基金公司</th>
+						<th>基金名称</th>
+						<th>投资策略</th>
+						<th>
+							<span class="shorip">最新净值</span>
+		               		<span class="updown"><a></a><a></a></span>
+						</th>
+						<th>
+							<span class="shorip">累计净值</span>
+		               		<span class="updown"><a></a><a></a></span>
+						</th>
+						<th>
+							<span class="shorip">近一个月</span>
+		               		<span class="updown"><a></a><a></a></span>
+						</th>
+						<th>
+							<span class="shorip">年化率</span>
+		               		<span class="updown"><a></a><a></a></span>
+						</th>     
+						<th>
+							<span class="shorip">等级评定</span>
+						</th>
+						<th>							
+							<span class="shorip">操作</span>
+						</th>
+                	</tr>
+                </thead>
+                <tbody>
+              	 
+                </tbody>
+            </table>
+        </div>
+    </section>
+	<!-- template模板 -->
+	<script id="tpl" type="text/x-handlebars-template">
+			
+				{{#each this}}
+					<tr>
+						<td>{{id}}</td>
+						<td><a href="/business_details?companyId={{id}}" class="ClearAstyle">{{name}}</a></td>
+						<td>{{fund_shortName}}</td>
+						<td>{{corestrategy}}</td>
+						<td class="red">{{nav}}</td>
+						<td class="red" >{{cumulative_nav}}</td>
+						<td class="red" id="type">{{topOneMonth}}</td>
+						<td class="red">{{annualincome}}</td>
+						<td>{{riskgrade}}</td>
+						<td><a href="/business_details?companyId={{id}}">了解详情</a></td>
+					</tr>
+				{{/each}}
+	</script>
+	
+	<!-- 分页 -->
+	<div class="loading"><img src="/images/loading2.gif"/></div>
+	<div class="zxf_pagediv" style="margin-bottom:50px"></div>
+    <footer id="foot"></footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="js/zxf_page.js"></script>
+<script src="js/common.js"></script>
+<script src="js/ranking.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/reankingoffering.js"></script>
+</html>

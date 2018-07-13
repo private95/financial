@@ -1,0 +1,110 @@
+package com.iparhan.financial.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+
+import com.iparhan.financial.entity.Product;
+
+@Mapper
+public interface ProductMapper {
+	
+	
+
+	/*
+	 * 查询一个月以来的收益有数据的全部企业信息
+	 * 思路：根据t_Product表里面的数据根据topOneMonth字段来查询
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topOneMonth != 0")
+	List<Product> selectProductByOneMonth (Product Product);
+	
+	/*
+	 * 查询根据三个月以来的收益数据来查询
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topThreeMonth != 0")
+	List<Product> selectProductByThreeMonth(Product Product);
+	
+	/*
+	 * 根据半年的数据来查询全部数据
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topHalfYear != 0")
+	List<Product> selectProductBytopHalfYear(Product Product);
+	
+	/*
+	 * 根据一年以来的数据来查询全部数据
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topOne != 0")
+	List<Product> selectProductBytopOne(Product Product);
+	
+	/*
+	 * 两年以来的数据
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topTwo != 0")
+	List<Product> selectProductBytopTwo(Product Product);
+	
+	/*
+	 * 三年以来的数据
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topThree != 0")
+	List<Product> selectProductBytopThree(Product Product);
+	
+	/*
+	 * 5年以来的数据
+	 */
+	@Select("SELECT * FROM t_spi_product WHERE topFive != 0")
+	List<Product> selectProductBytopFive(Product Product);
+	
+	
+	
+	/*
+	 * 2018的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2018 != 0")
+	List<Product> selectProductBytop2018(Product Product);
+	
+	/*
+	 * 2017的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2017 != 0")
+	List<Product> selectProductBytop2017(Product Product);
+	
+	/*
+	 * 2016的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2016 != 0")
+	List<Product> selectProductBytop2016(Product Product);
+	
+	/*
+	 * 2015的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2015 != 0")
+	List<Product> selectProductBytop2015(Product Product);
+	
+	/*
+	 * 2014的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2014 != 0")
+	List<Product> selectProductBytop2014(Product Product);
+	
+	/*
+	 * 2013的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2013 != 0")
+	List<Product> selectProductBytop2013(Product Product);
+	
+	/*
+	 * 2012的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2012 != 0")
+	List<Product> selectProductBytop2012(Product Product);
+	
+	/*
+	 * 2011的数据
+	 */
+	@Select("SELECT * from t_spi_Product where top2011 != 0")
+	List<Product> selectProductBytop2011(Product Product);
+	
+
+
+}

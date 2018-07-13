@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+	<meta name="viewport" content ="width=device-width,initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="edge" >
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<title>理财百科</title>
+	<link rel="shortcut icon" href="imagse/favicon.ico">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+	<!-- 可选的Bootstrap主题文件(一般不用引入) -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<!-- jQuery文件，在bootstrap.min.js之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+	<!-- Bootstrap核心JavaScript文件 -->
+	<script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="panel panel-default">
+	    <div class="panel-heading">登陆界面</div>
+	    <div class="panel-body">
+	            <form role="form">
+	                <div class="form-group">
+	                    <label for="username">用户名:</label>
+	                    <input id="username" type="email" class="form-control" placeholder="请输入昵称">
+	                </div>
+	                
+	                <button class="btn btn-block btn-primary">
+	                    		登录系统
+	                </button>
+	            </form>
+	      </div>
+	</div>
+</body>
+<script>
+$(function(){
+    var $btn=$(".btn");
+    var $username=$("#username");
+    $btn.on(
+        "click",function(){
+             $.ajax({
+                 url:"callBack",
+                 data:"$username",
+                 dataType:"jason",
+                 type:"post",
+                success:function(){
+                   alert("success");
+                }
+              })
+    })
+})
+</script>
+</html>

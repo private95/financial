@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>理财百科</title>
+<link rel="shortcut icon" href="imagse/favicon.ico">
+</head>
+<body>
+<script type='text/javascript' src='http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js'></script>
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+ <script type="text/javascript">
+	$.ajax({
+		  type: 'GET',
+		  url: "wxLoginPage",
+		  success: function(result){  
+			   console.log(result)
+			   var c = result.data;
+			   jQuery('#qrcode').qrcode({
+				   width: 200,
+				   height: 200,
+				   text: c
+				});
+		  },
+		});
+</script>
+<div id="qrcode"></div>
+</body>
+</html> 

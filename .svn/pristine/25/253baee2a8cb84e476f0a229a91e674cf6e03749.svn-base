@@ -1,0 +1,354 @@
+.ClearAstyle{
+	color:#333!important;
+}
+.ClearAstyle:hover{
+	color:#E60012!important;
+}
+a:hover{
+	 text-decoration:none!important;
+}
+td:hover{
+	color:#E60012;
+}
+.red{
+	color:#DA534D;
+}
+/*闁荤姳绀佹晶浠嬫偪閸℃稒鐒绘慨妯块哺閺嗗繘鏌″鍛Щ缂佹唻鎷�*/
+body{
+    font:12px "microsoft yahei",Arial,Helvetica,sans-serif;
+    margin:0;
+    padding:0;
+    min-width:1280px;
+    height:100%;
+}
+p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+/*闂佸憡顭囩划顖滄暜閿熺禈闂佸搫绉村ú鈺咁敊閸ヮ剚鍎嶉柛鏇ㄤ簽閻熸捇鏌涢幒鎾崇闁搞倧鎷�*/
+a{
+    text-decoration:none;
+    cursor: pointer;
+}
+
+/*闁荤姳绀佹晶浠嬫偪閸℃稑鐐婇柛鎾楀喚鏆梺绯曟櫈濞咃綁宕垫惔銏⑩枖闁告繂瀚崐璇测槈閹垮嫭瀚�*/
+img{
+    vertical-align:bottom;
+}
+/*濠电偞鎸搁幊蹇涖�冮悢鐚存嫹濞戞瑥濮囬柛妯绘尵濡叉劙鎮╃�圭姷妾ㄩ梺鍛婃煟閸斿矂骞冨Δ鍐＜婵炲棙鍨甸悡鎴︽煕韫囨挸鏆熺紒锟藉畝锟介弫顕�鏁傞懞銉╂闂佹眹鍔岀�氼剚绺介弽顓炰紶闁跨噦鎷�*/
+.clear:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+/*閻庡綊娼婚梽鍕嫚閻愬搫绀夐柕濞垮劜鐎氭煡鏌涘▎鎺撶彧閻犲洨鍋ゅ畷婵嬫晸閿燂拷*/
+.lf { float:left;}
+.rt { float:right;}
+
+/*婵犮垼鍩栭幐鎶藉磿閿燂拷*/
+#header{
+    position: relative;
+}
+#header_box>.top{
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/recommend/beijing.png");
+    background-size:100% 100%;
+    padding-top: 30px;
+    box-sizing: border-box;
+
+}
+#header_box2>.top{
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/recommend/beijing.png");
+    background-size:100% 100%;
+    padding-top: 30px;
+    box-sizing: border-box;
+
+}
+#top-main,#main .nav-main,#header .groom,#list,
+#main_box,#main_part,#analysis,.sheet_box,#main_nav>.list_nav div,
+#navigation{
+    width:87%;
+    margin: 0 auto;
+
+}
+
+
+#top-main .logo{
+    font-size: 25px;
+    display: inline-block;
+    text-align: center;
+    width: 130px;
+    height: 40px;
+    color: #ffffff;
+    line-height: 40px;
+    margin-right: 190px;
+}
+#navs>.navs>li>a{
+    font-size: 14px;
+}
+#navs>.navs>li>a:hover{
+    color: #DA6017;
+}
+#navs{
+    position: absolute;
+    top: 20px;
+}
+#navs .navs>li{
+    margin-left: 50px;
+}
+#navs .nav-link a{
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+
+/*闁诲簼绲绘竟鍫ュ春閸涙潙绾ч柍銉ㄥ皺閻熴垽鏌熼崗鑲╃煂闁稿被鍔岄々濂告晸閿燂拷*/
+#top-main .search{
+    line-height: 40px;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+}
+#navs .navs>li{
+    float: left;
+    color:#ffffff;
+}
+#navs .navs>li{
+    margin-left: 20px;
+}
+#navs  a{
+    color:#ffffff;
+}
+#link-info a{
+    margin:0 10px;
+}
+#navs .nav-link a{
+    padding: 0 5px;
+}
+
+#link-info .icon-user{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-image: url("../images/common/gr_top.png");
+}
+#detailLink{
+    position: absolute;
+    right: -15px;
+    width: 110px;
+    text-align: center;
+    padding: 10px;
+    display: none;
+
+}
+#detailLink:before{
+    content: " ";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0  10px 10px ;
+    position: absolute;
+    border-color: transparent  transparent #ffffff ;
+    left: 50%;
+    top: 0;
+    margin-left: -6px;
+}
+#detailLink>ul{
+    background-color: #ffffff;
+    border-radius: 3px;
+    z-index: 10;
+}
+#detailLink>ul>li{
+    padding: 5px 8px;
+}
+#detailLink>ul a{
+    display: inline-block;
+    width: 100%;
+    color: #333333;
+    font-size: 12px;
+    line-height: 30px;
+    border-bottom: 1px dashed #CCCCCC;
+}
+#detailLink>ul a:hover{
+    color: #DA6017;
+
+}
+#detailLink>ul li:last-child a{
+    border-bottom: none;
+}
+#personal{
+    position: relative;
+}
+#personal:hover #detailLink{
+    display: block;
+}
+#link-info .member-name{
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#top-main .search-main{
+    display: inline-block;
+    width: 365px;
+    position: relative;
+}
+#top-main .search-main input{
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    height: 35px;
+    outline:none;
+    border-bottom-color:#9A9A9A;
+    background:none transparent !important;
+    color: #ffffff;
+}
+#top-main .search-main a{
+    display: inline-block;
+    width: 47px;
+    height: 35px;
+    background-image: url("../images/recommend/sousuo.jpg");
+    position: absolute;
+    top: 3px;
+    right: 0;
+}
+
+#header .groom{
+    position: relative;
+    top: -80px;
+    left: 0;
+}
+#header .groom>p{
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+#header .groom>ul{
+    display: flex;
+}
+#header .groom>ul>li{
+    font-size: 14px;
+    color: #ffffff;
+    margin-right:10px;
+}
+#header .groom>ul>li>a{
+    color: #ffffff;
+}
+#navs{
+    position: absolute;
+    top:43px;
+    right: 7%;
+}
+/*婵犮垼鍩栭幐鎶藉磿鐎靛摜纾奸柟鎯х摠鐏忥拷*/
+
+/*闁圭厧鐡ㄥú鐔煎磿閿燂拷*/
+#foot{
+    width: 100%;
+    height: 132px;
+    background-color: #333333;
+    display: block;
+    float: left;
+   
+}
+#foot:before{
+
+    content:"";
+display:table
+
+}
+#foot>.foot_box{
+    width:89%;
+    margin: 0 auto;
+
+}
+#foot .foot_link{
+    margin:40px 0;
+}
+#foot .foot_link p{
+    font-size: 18px;
+    color: #F6F6F6;
+    margin-bottom: 20px;
+}
+#foot .foot_link ul{
+    display: flex;
+}
+#foot .foot_link li a{
+    color: #F6F6F6;
+    margin-right: 25px;
+    font-size: 14px;
+}
+#foot .copyright{
+    border-top:1px solid #5B5B5B;
+    text-align: center;
+}
+#foot .copyright ul{
+    display: flex;
+    ;justify-content: center;
+    margin: 25px 0;
+}
+#foot .copyright a{
+    color: #F6F6F6;
+    font-size: 14px;
+    margin: 0 8px;
+}
+#foot .copyright p{
+    color: #F6F6F6;
+    font-size: 14px;
+}
+/*闁圭厧鐡ㄥú鐔煎磿鐎靛摜纾奸柟鎯х摠鐏忥拷*/
+.left{
+	text-align:left!important;
+}
+td{
+	/* min-width:100px; */
+}
+.id{
+	/* width:50px!important; */
+}
+
+th  span{
+	display:block;
+	float:left;	
+	/* height:100% */
+	
+}
+th span a{
+	display:block;
+	width:8px;
+	height:8px;
+	
+}
+th span :first-child{
+	 background-image: url("../images/common/up.png");
+	 margin-top:20px;
+	 margin-bottom:0px
+}
+th span :last-child{
+	 background-image: url("../images/common/down.png");
+}
+.shorip{
+	/* width:80%; */
+	line-height:56px;
+	text-align:right;
+	/* padding-right:10px; */
+}
+.updown{
+	/* width:20%; */
+}
+.#list>.tbn th{
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 56px;
+    border-bottom:none;
+    padding:0;
+    
+}
+.foot_box{
+	/* position:absolute;
+	bottom:0;
+	left:0; */
+}

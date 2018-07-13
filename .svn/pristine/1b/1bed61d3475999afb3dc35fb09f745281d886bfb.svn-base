@@ -1,0 +1,70 @@
+<div class="top">
+    <div id="top-main">
+        <!--閸ョ偓鐖�-->
+        <span class="logo"><a href="/"><img src="/images/logo.png"/></a></span>
+        <!--鐎佃壈鍩呮稉搴㈡偝缁便垺顢�-->
+        <div class="search">
+            <div class="search-main">
+                <input type="text" placeholder="请输入公司/基金等关键词"  class="pig" id="Search"/>
+                <a id="SearchButtton"  onclick="Seach();" ></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+		function Seach(){
+			window.location.href="/special_inquiry?SearchKey="+$("#Search").val();;		 
+		}
+</script>
+
+
+<script>
+	function inputsearch(){
+		var searchnum = $("#SearchInputs").val();
+		$.ajax({
+        	url:"/inputsearchdata",
+        	type:"post",
+        	data:{"searchnum":searchnum},
+        	dataType:"json",
+        	success:function(data){//data是一个list集合
+        		alert("成功之后的数据"+data)
+        	error:function(){
+        		layer.open({
+					  title: '提示信息',
+					  content: '服务器异常,稍后请重试'
+	    		});
+        	}
+        })
+		
+	}
+
+
+
+
+
+
+	//console.log()
+	/*  $('input').blur(function(){
+		$('#SearchButtton').attr("name",$(this).val())
+	})
+	$('#SearchButtton').click(function(){
+		$('input').val('')
+		var valueInput=$(this).attr('name')
+		var this_url=window.location.href;
+		if(this_url.indexOf("enterprise")>-1 || this_url.indexOf("release")>-1 || this_url.indexOf("free")>-1){
+			//浼佷笟淇℃伅椤甸潰鎼滅储璺宠浆鍒颁笓椤规煡璇㈤〉闈紝骞堕粯璁ゆ樉绀哄叕鍙�
+			localStorage.setItem('SearchType',valueInput+'#1');
+			window.location.href="/special_inquiry";
+
+		}else if(this_url.indexOf("special")>-1){
+			//alert(valueInput)
+			localStorage.setItem('SearchType',valueInput+'#1');
+		}
+		else{
+			//浜у搧鎺ㄨ崘锛岀鍕熸帓琛岄〉闈㈡悳绱㈣烦杞埌涓撻」鏌ヨ椤甸潰锛屽苟榛樿鏄剧ず绉噾
+			localStorage.setItem('SearchType',valueInput+'#2');
+			window.location.href="/special_inquiry";
+		} */
+		//special_inquiry
+	}) 
+</script>
