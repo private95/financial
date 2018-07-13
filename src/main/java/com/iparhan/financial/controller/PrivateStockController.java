@@ -35,9 +35,9 @@ public class PrivateStockController {
 	 */
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
 	@RequestMapping(value = "/DescPrivateStock")
-	public @ResponseBody List<PrivateCompany> DescPrivateStock() {
+	public @ResponseBody List<Company> DescPrivateStock() {
 		// 1.先查询数据库
-		List<PrivateCompany> privateStocks = privateStockMapper.getAllPriByCumDesc();
+		List<Company> privateStocks = privateStockMapper.getAllPriByCumDesc();
 		//System.out.println("私募产品排行信息显示" + privateStocks);
 		//for (PrivateCompany privateCompany : privateStocks) {
 		//	//System.out.println("夏普比率"+privateCompany.getSharpeatio());
@@ -57,7 +57,7 @@ public class PrivateStockController {
 	public Result searchData(@Param("searchnum") String searchnum) {
 		//多条件查询
 		//System.out.println(searchnum);
-		List<PrivateCompany> inputSearchData = privateStockMapper.inputSearchData(searchnum);
+		List<Company> inputSearchData = privateStockMapper.inputSearchData(searchnum);
 		//for (PrivateCompany privateCompany : inputSearchData) {
 			//System.out.println(privateCompany.toString());
 		//}
@@ -71,7 +71,7 @@ public class PrivateStockController {
 	public Result searchDatas(@Param("searchnums") String searchnum) {
 		//多条件查询
 		//System.out.println(searchnum);
-		List<PrivateCompany> inputSearchData = privateStockMapper.inputSearchData(searchnum);
+		List<Company> inputSearchData = privateStockMapper.inputSearchData(searchnum);
 		//for (PrivateCompany privateCompany : inputSearchData) {
 			//System.out.println(privateCompany.toString());
 		//}
@@ -115,9 +115,9 @@ public class PrivateStockController {
 	 */
 	@CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
 	@RequestMapping(value = "/selectCompanyName")
-	public @ResponseBody List<PrivateCompany> selectCompanyName(@Param("companyName") String companyName) {
+	public @ResponseBody List<Company> selectCompanyName(@Param("companyName") String companyName) {
 		//System.out.println("传过来的公司名称是"+companyName);
-		List<PrivateCompany> privateStocks = privateStockMapper.getProductCompanyName(companyName);
+		List<Company> privateStocks = privateStockMapper.getProductCompanyName(companyName);
 		//System.out.println("私募产品排行信息显示" + privateStocks);
 		return privateStocks;
 	}
@@ -127,11 +127,7 @@ public class PrivateStockController {
 	@RequestMapping("/getComptyIdShow")
 	@ResponseBody
 	public Result getComptyIdShow(@RequestParam("comptyId") String comptyId) {
-		//System.out.println(comptyId);
 		List<PrivateCompany> privateStocks = privateStockMapper.getComptyIdShow(comptyId);
-		//for (PrivateCompany privateCompany : privateStocks) {
-			//System.out.println(privateCompany.toString());
-		//}
 		return Result.build(200, "根据公司id查旗下基金", privateStocks);
 	}
 	

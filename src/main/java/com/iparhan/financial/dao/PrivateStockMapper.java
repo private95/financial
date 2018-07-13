@@ -20,15 +20,15 @@ public interface PrivateStockMapper {
 	/*
 	 * 首页私募排行查询，按照累计排名，降序  查询公司表，基金表，两表关联为company_id
 	 */
-	@Select("SELECT `t_spi_company`.`name`,`t_spi_privatestock`.`fundCompany`,`t_spi_privatestock`.`id`,`t_spi_privatestock`.`fund_shortName`,`t_spi_privatestock`.`nav`,`t_spi_privatestock`.`cumulative_nav`,`t_spi_privatestock`.`topOneMonth`,`t_spi_privatestock`.annualized,`t_spi_privatestock`.sharpeatio,`t_spi_privatestock`.oneyearrating FROM `t_spi_company`,`t_spi_privatestock` WHERE `t_spi_company`.`company_id`=`t_spi_privatestock`.`company_id` ORDER BY `t_spi_privatestock`.cumulative_nav DESC")
+	@Select("SELECT `t_spi_company`.*,`t_spi_privatestock`.* FROM `t_spi_company`,`t_spi_privatestock` WHERE `t_spi_company`.`company_id`=`t_spi_privatestock`.`company_id` ORDER BY `t_spi_privatestock`.cumulative_nav DESC")
 	// list返回sql语句要查询的字段，是一个新建的实体
-	public List<PrivateCompany> getAllPriByCumDesc();
+	public List<Company> getAllPriByCumDesc();
 	
 	/*
 	 * 多条件查询
 	 */
 	@Select("SELECT t_spi_company.*,t_spi_privatestock.* FROM t_spi_privatestock  INNER JOIN t_spi_company  ON t_spi_privatestock.company_id = t_spi_company.company_id WHERE concat(t_spi_company.`name`,t_spi_company.personName,t_spi_privatestock.fund_shortName,t_spi_privatestock.fund_shortName) LIKE '%${searchnum}%'")
-	public List<PrivateCompany> inputSearchData(@Param("searchnum") String searchnum);
+	public List<Company> inputSearchData(@Param("searchnum") String searchnum);
 	
 	/*
 	 * 多条件查询私募排行
@@ -40,7 +40,7 @@ public interface PrivateStockMapper {
 	 * 根据公司名称查询公司有多少基金
 	 */
 	@Select("SELECT `t_spi_company`.* FROM `t_spi_company` INNER JOIN `t_spi_privatestock` on `t_spi_company`.`company_id`=`t_spi_privatestock`.`company_id` where `name`=#{companyName}")
-    public List<PrivateCompany> getProductCompanyName(@Param("companyName") String companyName);
+    public List<Company> getProductCompanyName(@Param("companyName") String companyName);
 	
 	
 	/**

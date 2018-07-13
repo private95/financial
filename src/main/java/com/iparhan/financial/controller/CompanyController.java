@@ -1,8 +1,10 @@
 package com.iparhan.financial.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.iparhan.financial.dao.CompanyMapper;
+import com.iparhan.financial.dao.HistoricalMapper;
 import com.iparhan.financial.entity.Company;
+import com.iparhan.financial.entity.Historical;
+import com.iparhan.financial.entity.User;
 import com.iparhan.financial.until.Result;
+import com.sun.mail.handlers.handler_base;
 
 /**
  * 企业信息展现
@@ -26,6 +32,9 @@ public class CompanyController {
 	@Autowired
 	private CompanyMapper companyMapper;
 
+	
+	@Autowired
+	private HistoricalMapper historicalMapper;
 	/*
 	 * 企业---了解详情 
 	 * 如果前端没有调用接口，测试时候路径后面+/getAllCompanyInfo？id=2 
@@ -45,8 +54,22 @@ public class CompanyController {
 	
 	@RequestMapping("showCompanyInfo")
 	@ResponseBody
-	public Result showCompanyInfo(@RequestParam("cid") Integer cid) {
-		List<Company> companies = companyMapper.getAllCompanyInfo(cid);
+	public Result showCompanyInfo(@RequestParam("cid") Integer company_Id,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		List<Company> companies = companyMapper.getAllCompanyInfo(company_Id);
+		String company_name = null;
+		Date time = new Date();
+		for (Company c : companies) {
+			company_name = c.getName();
+		}
+		if(session.getAttribute("user")!=null) {
+			User user = (User) session.getAttribute("user");
+			Integer tuser_Id =  Integer.parseInt(user.getId());
+			historicalMapper.addHistorcals(tuser_Id,company_Id,company_name,time);
+		}else {
+			historicalMapper.addHistorcal(company_Id,company_name,time);
+		}
+		
 		return Result.build(200, "公司信息",companies);
 	}
 	

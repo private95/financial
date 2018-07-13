@@ -1,11 +1,9 @@
 package com.iparhan.financial.controller;
 
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.core.support.ReactiveRepositoryInformation;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +14,6 @@ import com.iparhan.financial.until.MD5Utils;
 import com.iparhan.financial.until.Verification;
 import com.iparhan.financial.vo.CommonResponseVO;
 
-import net.minidev.json.writer.CollectionMapper;
 
 @CrossOrigin(origins = "*", maxAge = 3600) // 使用于前端的跨域
 @RestController
@@ -68,7 +65,7 @@ public class RegisterController {
 		CommonResponseVO responseVO = new CommonResponseVO();
 		codeCompa = Verification.getStringRandom();
 		System.out.println("生成的验证码 :"+codeCompa);
-		mailService.sendSimpleMail(email, "邮箱注册验证码", codeCompa);
+		mailService.sendSimpleMail(email, "理财百科邮箱验证码：", codeCompa);
 		responseVO.success("验证码发送成功！");
 		return responseVO;
 	}
